@@ -91,49 +91,125 @@
   <li><a href="data_management-news.html">News</a></li>
   <li><a href="data_management-events.html">Events</a></h4></li>
   <li><a href="data_management-facilities_parks.html">Facilities/Parks</a></h4></li>
-  <li class="active"><a href="#">Conditions</a></li>
+  <li><a href="data_management-conditions.html">Conditions</a></li>
   <li><a href="data_management-contacts.html">Contacts</a></li>
-  <li><a href="data_management-settings.html">Settings</a></li>
+  <li class="active"><a href="data_management-settings.html">Settings</a></li>
 </ul>
-<div class="panel panel-default data-panels" id="data-management-pane">
-  <div class="panel-body" >   
-          <table class="table col-md-12">
+<div class="panel panel-default" id="data-management-pane">
+
+  <div class="panel-body" >
+  <form id="form-data_import">
+        <div class="col-md-6 col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h4>Import Data</h4></div>
+            <div class="panel-body">
+            <fieldset id="data_import">
+              <label class="col-md-12">
+                <div class="input-group">
+                <span class="input-group-addon">File</span><input type="file" class="form-control" id="data_import-file" name="data_import-file">
+              </div>
+              </label>
+              <label class="col-md-8">
+                <div class="input-group">
+                <span class="input-group-addon">Area</span>
+                  <select class="form-control" id="data_import-area" name="data_import-area">
+                    <option value="news">News</option>
+                    <option value="events">Events</option>
+                    <option value="facilities_parks">Facilities/Parks</option>
+                    <option value="contacts">Contacts</option>
+                  </select>
+                </div>
+              </label>
+              <div class="col-md-4 "><input type="submit" value="Submit" class="btn btn-success btn-block"></div>  
+            </fieldset>       
+            </div>
+          </div>
+        </div>
+  </form>
+          <div class="col-md-6 col-sm-6">
+          <div class="panel panel-default data-panels">
+            <div class="panel-heading"><h4>Controllable Text Areas</h4></div>
+            <div class="panel-body">
+   <div class="panel-body" >       
+            <table class="table table-striped">
               <tbody>
               <tr>
-                <th>Name</th>
-                <th>Address</th>
-                <th>Status</th>
-                <th>Note</th>
-                <th>Active</th>
-                <th> <button type="submit" class="btn btn-success" id="submit">Create Condition Update</button></th>
+                <th>ID</th>
+                <th>Content</th>
+                <th></th>       
+
               </tr>
               <tr>
-                <td>Olympic Fields</td>
-                <td>1800 Gold Medal Lane</td>
-                <td>North end of field #3 closed for ground repair</td>
-                <td class="status">open</td>
-                <td><input type="checkbox" checked="checked" disabled="disabled"></td>
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td>Welcome Message</td>
+                <td>Welcome to our app!</td>
+                <td><button class="btn btn-default">Edit</button></td>
               </tr>
               <tr>
-                <td>Jones Park</td>
-                <td>123 Abc St.</td>
-                <td>Restrooms & drinking fountains have been closed for winter</td>
-                <td class="status">open</td>
-                <td><input type="checkbox" checked="checked" disabled="disabled"></td>               
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
-              </tr>               
-              <tr>
-                <td>Cardinal Park</td>
-                <td>987 Willow dr.</td>
-                <td>Restrooms & drinking fountains have been closed for winter</td>
-                <td class="status">open</td>
-                <td><input type="checkbox" checked="checked" disabled="disabled"></td>               
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td>About Us</td>
+                <td>We are a park district located in...</td>
+                <td><button class="btn btn-default">Edit</button></td>
               </tr>
-              </tbody>
+              <tr>
+                <td>Office Hours</td>
+                <td>Mon-Fri   8am - 5pm...</td>
+                <td><button class="btn btn-default">Edit</button></td>
+              </tr>              
+            </tbody>              
             </table>
-     
+            </div>
+          </div>
+        </div>
+<!--
+  <form id="form-facility_closings" class="clearfix">
+        <div class="col-md-6 col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h4>Variable Element Management</h4></div>
+            <div class="panel-body">
+              <p>Facility Closings</p>
+              <fieldset id="facility_closings">
+              <label class="col-md-12">
+                <div class="input-group">
+                <span class="input-group-addon">Jones Park</span>
+                <select class="form-control"  id="facility_closings-jones_park" name="facility_closings-jones_park">
+                    <option value="open">open</option>
+                    <option value="closed">closed</option>
+                  </select>
+                </div>
+              </label>
+              <label class="col-md-12">
+                <div class="input-group">
+                <span class="input-group-addon">Cardinal Park</span>
+                <select class="form-control" id="facility_closings-cardinal_park" name="facility_closings-cardinal_park">
+                    <option value="open">open</option>
+                    <option value="closed">closed</option>
+                  </select>
+                </div>
+              </label>
+              <label class="col-md-12">
+                <div class="input-group">
+                <span class="input-group-addon">Olympic Fields</span>
+                <select class="form-control" id="facility_closings-olympic_fields" name="facility_closings-olympic_fields">
+                    <option value="open">open</option>
+                    <option value="closed">closed</option>
+                  </select>
+                </div>
+              </label>
+              <label class="col-md-12">
+                <div class="input-group">
+                <span class="input-group-addon">O'Neal Sportsplex</span>
+                <select class="form-control" id="facility_closings-oneal_sportsplex" name="facility_closings-oneal_sportsplex" >
+                    <option value="open">open</option>
+                    <option value="closed">closed</option>
+                  </select>
+                </div>
+              </label>
+              </fieldset>               
+              <div class="col-md-12 "><input class="btn btn-lg btn-primary btn-block" type="submit" value="Push Open/Closed Notification"></div>  
+            </div>
+          </div>
+        </div>
+  </form>
+-->
   </div>
 </div>  
 

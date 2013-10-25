@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+            h1 {margin-bottom: 20px;}
+            .table tbody>tr>th,
+            .table tbody>tr>td {vertical-align: middle;
+            }
+            td>button{margin:0 5px;
+            }
+            #controlButtons div {margin-bottom: 10px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <!--[if lt IE 9]>
+            <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <!--navbar-->
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data Management<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="data_management-home.html">Home</a></li>
+                <li><a href="data_management-news.html">News</a></li>
+                <li><a href="data_management-events.html">Events</a></li>
+                <li><a href="data_management-facilities_parks.html">Facilities/Parks</a></li>
+                <li><a href="data_management-conditions.html">Conditions</a></li>
+                <li><a href="data_management-contacts.html">Contacts</a></li>
+              </ul>
+            </li>
+            <li><a href="push_notifications.html">Push Notifications</a></li>
+            <li><a href="user_management.html">Users</a></li>
+            <li><a href="settings.html">Settings</a></li>
+          </ul>
+            <div class="navbar-right">
+              <button type="button" class="btn btn-default navbar-btn" id="logOut_btn">Log Out&nbsp;&nbsp;<span class="glyphicon glyphicon-log-out"></span></button>
+            </div>
+        </div>            
+        <!--/navbar-->
+      </div>
+    </div>
+
+    <div class="container">
+           <h1>Edit/Create News</h1>
+<form id="form-edit-create_news">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h4>User Info</h4></div>
+            <div class="panel-body">
+            <fieldset id="edit-create_news">
+              <label class="col-md-12">
+                <div class="input-group ">
+                <span class="input-group-addon">Headline</span><input type="text" class="form-control" id="news-headline" name="news-headline">
+                </div>
+              </label>              
+              <label class="col-sm-6">
+                <div class="input-group">
+                <span class="input-group-addon">Publish Date</span><input type="text" class="form-control" id="news-publish_date" name="news-publish_date">
+              </div>
+              </label>
+              <label class="col-sm-6" style="margin-bottom:10px;">
+                <div class="input-group">
+                <span class="input-group-addon">Expire Date</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+              </div>
+              </label>                
+              <label class="col-md-12">
+                <div class="input-group">
+                <span class="input-group-addon">Body Content</span><textarea rows="3" class="form-control" id="news-body_content" name="news-body_content"></textarea>
+              </div>
+              </label>
+
+              <label class="col-md-12">
+                <div class="input-group">
+                <span class="input-group-addon">More Info URL</span><input type="text" class="form-control" id="news-more_info_url" name="news-more_info_url">
+              </div>
+              </label>              
+            </fieldset>       
+            </div>
+          </div>
+          <div id="controlButtons">
+            <div class="col-md-1 col-xs-12"></div>
+            <div class="col-md-4 col-xs-12">
+              <input class="btn btn-success btn-block" type="submit" value="Save">
+            </div>
+            <div class="col-md-2 col-xs-12"></div>  
+            <div class="col-md-4 col-xs-12">
+              <button class="btn btn-danger btn-block"> Cancel</button>
+              </div>
+              <div class="col-md-1 col-xs-12"></div>
+          </div>
+        </div>
+
+
+</form>  
+    </div>
+<footer>
+  <hr>
+  <p>powered by <a href="http://www.linkstechnology.com"><img src="img/LinksLogo.png" alt="Links Technology" /></a></p>
+</footer>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/plugins/datepicker.js"></script>
+        <script>
+$('#news-publish_date, #news-expire_date').datepicker({'format':'mm/dd/yyyy'})
+  .on('changeDate',function(){ $(this).datepicker('hide')} );
+/*    Add analytics when available
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+*/
+        </script>
+    </body>
+</html>

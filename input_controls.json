@@ -1,0 +1,78 @@
+[
+
+{"page":"settings.html", "forms":{
+	"settings":[
+		{"type":"fieldset","id":"org_info","fields":[
+			{"id":"org_info-name","name":"org_info-name","type":"text"},
+			{"id":"org_info-logo","name":"org_info-logo","type":"file"}
+			]
+		},
+		{"type":"fieldset","id":"add_url","fields":[
+			{"id":"add_url-display-name","name":"add_url-display-name","type":"text"},
+			{"id":"add_url-icon","name":"add_url-icon","type":"file"},
+			{"id":"add_url-url","name":"add_url-url","type":"text"}
+			]
+		},
+		{"type":"fieldset","id":"app_style","fields":[
+			{"id":"app_style-bar_color","name":"app_style-bar_color","type":"text"},
+			{"id":"app_style-background_1","name":"app_style-background","type":"radio","value":"taken from #upload"},
+			{"id":"app_style-background_2","name":"app_style-background","type":"radio","value":"gradient"},
+			{"id":"app_style-background_3","name":"app_style-background","type":"radio","value":"nature"},
+			{"id":"app_style-background_4","name":"app_style-background","type":"radio", "value":"pattern"},
+			{"id":"upload","type":"file"}
+			]
+		},
+		{"type":"submit","value":"save"}
+	]
+	}
+},
+
+{"page":"create-edit_user.html", "forms":{
+	"form-edit-create_user": {"type":"fieldset","id":"edit-create_user","fields":[
+		{"id":"user-first_name","name":"user-first_name","type":"text"},
+		{"id":"user-last_name","name":"user-last_name","type":"text"},
+		{"id":"user-phone","name":"user-phone","type":"text"},
+		{"id":"ser-email","name":"user-email","type":"text"},
+		{"id":"user-password","name":"user-password","type":"text"},
+		{"id":"user-role_1","name":"user-role","type":"radio","value":"admin"},
+		{"id":"user-role_1","name":"user-role","type":"radio","value":"content editor"},
+		{"type":"submit","value":"save"}
+		]
+		}
+	}
+},
+
+{"page":"data_management-home.html", "forms":{
+	"form-data_import": {"type":"fieldset","id":"data_import","fields":[
+		{"id":"data_import-file","name":"data_import-file","type":"file"},
+		{"id":"data_import-area","name":"data_import-area","type":"select","options":["news","events","facilities_parks","contacts"]},
+		{"type":"submit","value":"submit"}
+		]
+		},
+	"form-facility_closings": {"type":"fieldset","id":"facility_closings","fields":[
+		{"id":"facility_closings-jones_park","name":"facility_closings-jones_park","type":"select","options":["open","closed"]},
+		{"id":"facility_closings-cardinal_park","name":"facility_closings-cardinal_park","type":"select","options":["open","closed"]},
+		{"id":"facility_closings-olympic_fields","name":"facility_closings-olympic_fields","type":"select","options":["open","closed"]},
+		{"id":"facility_closings-oneal_sportsplex","name":"facility_closings-oneal_sportsplex","type":"select","options":["open","closed"]},
+		{"type":"submit","value":"Push Open/Closed Notification"}
+		]
+		}
+	}
+},
+
+{"page":"create-edit_news.html", "forms":{
+	"form-edit-create_news": {"type":"fieldset","id":"edit-create_news","fields":[
+		{"id":"news-headline","name":"news-headline","type":"text"},
+		{"id":"news-publish_date","name":"news-publish_date","type":"text"},
+		{"id":"news-expire_date","name":"news-expire_date","type":"text"},
+		{"id":"news-body_content","name":"news-body_content","type":"text"},
+		{"id":"news-more_info_url","name":"news-more_info_url","type":"text"},
+		{"type":"submit","value":"save"}
+		]
+		}
+	}
+},
+
+
+
+]

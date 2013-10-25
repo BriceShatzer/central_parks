@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <style>
+            body {
+min-width: 560px;
+padding-top: 50px;
+padding-bottom: 20px;
+}
+            h1 {
+margin-bottom: 20px;
+}
+            .table tbody>tr>th,
+            .table tbody>tr>td {
+vertical-align: middle;
+}
+            td>button{margin:0 5px;
+}
+            #data-management-nav{
+border-left:0px;
+}
+            #data-management-pane{
+border-top-left-radius:0; 
+background-image: -webkit-gradient(linear,left 0,left 20%,from(#F5F5F5),to(#ffffff));
+background-image: -webkit-linear-gradient(top,#f5f5f5,0%,#ffffff,20%);
+background-image: -moz-linear-gradient(top,#f5f5f5 0,#ffffff 20%);
+background-image: linear-gradient(to bottom,#F5F5F5 0,#ffffff 20%);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5',endColorstr='#ffe8e8e8',GradientType=0);
+}
+            #controlButtons div {
+margin-bottom: 10px;
+}
+            #facility_closings option[value="open"] {
+background-color: #fff;
+color:#555;
+}
+            #facility_closings option[value="closed"],
+            .closed{
+background-color: #b20000 !important;
+color:#000;
+}            
+        </style>
+        <!--[if lt IE 9]>
+            <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <!--navbar-->
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data Management<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="data_management-news.html">News</a></li>
+                <li><a href="data_management-events.html">Events</a></li>
+                <li><a href="data_management-facilities_parks.html">Facilities/Parks</a></li>
+                <li><a href="data_management-conditions.html">Conditions</a></li>
+                <li><a href="data_management-contacts.html">Contacts</a></li>
+              </ul>
+            </li>
+            <li><a href="push_notifications.html">Push Notifications</a></li>
+            <li><a href="user_management.html">Users</a></li>
+            <li><a href="settings.html">Settings</a></li>
+          </ul>
+            <div class="navbar-right">
+              <button type="button" class="btn btn-default navbar-btn" id="logOut_btn">Log Out&nbsp;&nbsp;<span class="glyphicon glyphicon-log-out"></span></button>
+            </div>
+        </div>            
+        <!--/navbar-->
+      </div>
+    </div>
+
+    <div class="container">
+           <h1>Data Management</h1>
+
+<ul class="nav nav-tabs" id="data-management-nav">
+  <li class="active"><a href="#">Home</a></li>
+  <li><a href="data_management-news.html">News</a></li>
+  <li><a href="data_management-events.html">Events</a></h4></li>
+  <li><a href="data_management-facilities_parks.html">Facilities/Parks</a></h4></li>
+  <li><a href="data_management-conditions.html">Conditions</a></li>
+  <li><a href="data_management-contacts.html">Contacts</a></li>
+</ul>
+<div class="panel panel-default" id="data-management-pane">
+
+  <div class="panel-body" >
+  <form id="form-data_import">
+        <div class="col-md-6 col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h4>Import Data</h4></div>
+            <div class="panel-body">
+            <fieldset id="data_import">
+              <label class="col-md-12">
+                <div class="input-group">
+                <span class="input-group-addon">File</span><input type="file" class="form-control" id="data_import-file" name="data_import-file">
+              </div>
+              </label>
+              <label class="col-md-8">
+                <div class="input-group">
+                <span class="input-group-addon">Area</span>
+                  <select class="form-control" id="data_import-area" name="data_import-area">
+                    <option value="news">News</option>
+                    <option value="events">Events</option>
+                    <option value="facilities_parks">Facilities/Parks</option>
+                    <option value="contacts">Contacts</option>
+                  </select>
+                </div>
+              </label>
+              <div class="col-md-4 "><input type="submit" value="Submit" class="btn btn-success btn-block"></div>  
+            </fieldset>       
+            </div>
+          </div>
+        </div>
+  </form>
+
+  <form id="form-facility_closings" class="clearfix">
+        <div class="col-md-6 col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h4>Variable Element Management</h4></div>
+            <div class="panel-body">
+              <p>Facility Closings</p>
+              <fieldset id="facility_closings">
+              <label class="col-md-12">
+                <div class="input-group">
+                <span class="input-group-addon">Jones Park</span>
+                <select class="form-control"  id="facility_closings-jones_park" name="facility_closings-jones_park">
+                    <option value="open">open</option>
+                    <option value="closed">closed</option>
+                  </select>
+                </div>
+              </label>
+              <label class="col-md-12">
+                <div class="input-group">
+                <span class="input-group-addon">Cardinal Park</span>
+                <select class="form-control" id="facility_closings-cardinal_park" name="facility_closings-cardinal_park">
+                    <option value="open">open</option>
+                    <option value="closed">closed</option>
+                  </select>
+                </div>
+              </label>
+              <label class="col-md-12">
+                <div class="input-group">
+                <span class="input-group-addon">Olympic Fields</span>
+                <select class="form-control" id="facility_closings-olympic_fields" name="facility_closings-olympic_fields">
+                    <option value="open">open</option>
+                    <option value="closed">closed</option>
+                  </select>
+                </div>
+              </label>
+              <label class="col-md-12">
+                <div class="input-group">
+                <span class="input-group-addon">O'Neal Sportsplex</span>
+                <select class="form-control" id="facility_closings-oneal_sportsplex" name="facility_closings-oneal_sportsplex" >
+                    <option value="open">open</option>
+                    <option value="closed">closed</option>
+                  </select>
+                </div>
+              </label>
+              </fieldset>               
+              <div class="col-md-12 "><input class="btn btn-lg btn-primary btn-block" type="submit" value="Push Open/Closed Notification"></div>  
+            </div>
+          </div>
+        </div>
+  </form>
+  </div>
+</div>  
+
+        
+        
+<footer>
+  <hr>
+  <p>powered by <a href="http://www.linkstechnology.com"><img src="img/LinksLogo.png" alt="Links Technology" /></a></p>
+</footer>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+$('#facility_closings select').change( function() {
+if($(this).val()==="closed"){$(this).addClass('closed')}
+  else{$(this).removeClass('closed')}
+});
+
+/*    Add analytics when available
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+*/
+        </script>
+    </body>
+</html>

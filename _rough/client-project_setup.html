@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+              padding-top: 50px;
+              padding-bottom: 20px;
+            }
+            h1 {margin-bottom: 20px;
+            }
+            .table tbody>tr>th,
+            .table tbody>tr>td {vertical-align: middle;
+            }
+            td>button{margin:0 5px;
+            }
+            .sampleBackgrounds{
+              margin-top: 10px;
+              padding:0;
+              text-align: center;
+            }
+            #controlButtons {
+              clear:left;
+            }
+            #controlButtons div {margin-bottom: 10px;margin-top: 15px; 
+            }
+            .testGradient {
+              height: 96px;
+              width: 96px;
+              background: #008000;
+              filter: progid: DXImageTransform.Microsoft.gradient(
+                startColorstr = '#008000', endColorstr = '#ffffff');
+              -ms-filter: progid: DXImageTransform.Microsoft.gradient(
+                startColorstr = '#008000', endColorstr = '#ffffff');
+              background-image: -moz-linear-gradient(top, #008000, #ffffff);
+              background-image: -ms-linear-gradient(top, #008000, #ffffff);
+              background-image: -o-linear-gradient(top, #008000, #ffffff);
+              background-image: -webkit-gradient(linear, 
+                center top, center bottom, from(#008000), to(#ffffff));
+              background-image: -webkit-linear-gradient(top, #008000, #ffffff);
+              background-image: linear-gradient(top, #008000, #ffffff);
+}
+
+
+
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <!--[if lt IE 9]>
+            <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <!--navbar-->
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data Management<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="data_management-home.html">Home</a></li>
+                <li><a href="data_management-news.html">News</a></li>
+                <li><a href="data_management-events.html">Events</a></li>
+                <li><a href="data_management-facilities_parks.html">Facilities/Parks</a></li>
+                <li><a href="data_management-conditions.html">Conditions</a></li>
+                <li><a href="data_management-contacts.html">Contacts</a></li>
+              </ul>
+            </li>
+            <li><a href="push_notifications.html">Push Notifications</a></li>
+            <li><a href="user_management.html">Users</a></li>
+            <li><a href="settings.html">Settings</a></li>
+          </ul>
+            <div class="navbar-right">
+              <button type="button" class="btn btn-default navbar-btn" id="logOut_btn">Log Out&nbsp;&nbsp;<span class="glyphicon glyphicon-log-out"></span></button>
+            </div>
+        </div>            
+        <!--/navbar-->
+      </div>
+    </div>
+
+    <div class="container">
+           <h1>Client Project Setup</h1>
+
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h4>Organization Info</h4></div>
+            <div class="panel-body">
+              <fieldset id="org_info">
+                <label>
+                  <div class="input-group">
+                    <span class="input-group-addon">Name</span><input type="text" class="form-control" id="org_info-name">
+                  </div>
+                </label>              
+                <label>
+                  <div class="input-group">
+                    <span class="input-group-addon">Logo</span><input type="file" class="form-control" id="org_info-logo">
+                  </div>
+                </label>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h4>Additional URL</h4></div>
+            <div class="panel-body">
+              <fieldset id="add_url">
+                <label>
+                  <div class="input-group">
+                    <span class="input-group-addon">Display Name</span><input type="text" class="form-control" id="add_url-display-name">
+                  </div>
+                </label>              
+                <label>
+                  <div class="input-group">
+                    <span class="input-group-addon">Icon</span><input type="file" class="form-control" id="add_url-icon">
+                  </div>
+                </label>
+                <label>
+                  <div class="input-group">
+                    <span class="input-group-addon">URL</span><input type="text" class="form-control" id="add_url-url">
+                  </div>
+                </label>                
+              </fieldset>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h4>Application Style</h4></div>
+            <div class="panel-body">
+              <fieldset id="app_style">
+                <label>
+                  <div class="input-group">
+                    <span class="input-group-addon">App Bar Color</span><input type="text" class="form-control color" id="app_style-bar_color">
+                  </div>
+                </label>              
+                <label>App Background
+                  <div class="col-md-12 sampleBackgrounds">
+                    <input type="radio" style="float:left" name="app_style-background" value=""> <input type="file" style="float:left;margin-left:10px;">
+                  </div>
+                  <br>
+                  <div class="sampleBackgrounds col-md-4 col-xs-4" style="text-align:center;">
+                    <div class="testGradient" style=""></div>
+                    <input type="radio" name="app_style-background" value="fall">
+                  </div>
+                  <div class="sampleBackgrounds col-md-4 col-xs-4" style="text-align:center;">
+                    <img src="http://www.yuvog.com/uploads/groupicons/Nature_nature-summer-wallpaper.jpg" alt="img" >
+                    <input type="radio" name="app_style-background" value="nature">
+                  </div>
+                  <div class="sampleBackgrounds col-md-4 col-xs-4" style="text-align:center;">
+                    <img src="http://www.sewtopia.com/1864.14411.jpg" alt="img">
+                    <input type="radio" name="app_style-background" value="pattern">
+                  </div>                                    
+                </label>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+<!--
+
+                  <div class="input-group">
+                    <span class="input-group-addon">App Background</span>
+                    <input type="text" class="form-control" id="app_style-icon">
+                  </div>
+                </label>
+                <label>
+                
+                    <span class="input-group-addon">App Background</span>
+                    <input type="text" class="form-control" id="app_style-icon">
+                  </div>
+                </label>                
+
+                <label>
+                  <div class="input-group">
+                    <span class="input-group-addon">URL</span><input type="text" class="form-control" id="app_style-url">
+                  </div>
+                </label>               
+              </fieldset>
+            </div>
+          </div>
+        </div>              
+<!--
+
+              <label>
+                <div class="input-group">
+                <span class="input-group-addon">Email Address</span><input type="text" class="form-control" id="user-email">
+              </div>
+              </label>
+              <label>
+                <div class="input-group">
+                <span class="input-group-addon">Phone Number</span><input type="text" class="form-control" id="user-phone">
+              </div>
+              </label>
+              <hr>
+              <div class="col-xs-6">
+              <label>
+                  <input type="radio" name="user-role" value="admin">Administrator
+              </label>
+              </div>
+              <div class="col-xs-6">
+              <label>
+                  <input type="radio" name="user-role" value="content editor">Content Editor
+              </label>
+              </div>
+            </fieldset>       
+            </div>
+          </div>
+        -->
+          <div id="controlButtons">
+            <div class="col-md-2 col-xs-12"></div>
+            <div class="col-md-3 col-xs-12">
+              <input class="btn btn-success btn-block btn-lg" type="submit" value="Save">
+            </div>
+            <div class="col-md-2 col-xs-12"></div>  
+            <div class="col-md-3 col-xs-12">
+              <button class="btn btn-danger btn-block btn-lg"> Cancel</button>
+              </div>
+              <div class="col-md-2 col-xs-12"></div>
+          </div>
+        </div>
+
+
+</form>  
+    </div>
+<footer>
+  <hr>
+  <p>powered by <a href="http://www.linkstechnology.com"><img src="img/LinksLogo.png" alt="Links Technology" /></a></p>
+</footer>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/plugins/jscolor/jscolor.js"></script>
+        <script>
+/*    Add analytics when available
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+*/
+        </script>
+    </body>
+</html>

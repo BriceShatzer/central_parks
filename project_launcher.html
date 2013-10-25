@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+            #define_functionality label {display: block;
+            }
+            #news_feed_setup input[type="radio"],
+            #events_feed_setup input[type="radio"] {margin-left:15px;
+            }
+            .define_feed_location {margin-top:10px;
+            }
+            .define_feed_location input {margin-top:10px; 
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <!--[if lt IE 9]>
+            <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <!--navbar-->
+ <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data Management<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="data_management-home.html">Home</a></li>
+                <li><a href="data_management-news.html">News</a></li>
+                <li><a href="data_management-events.html">Events</a></li>
+                <li><a href="data_management-facilities_parks.html">Facilities/Parks</a></li>
+                <li><a href="data_management-conditions.html">Conditions</a></li>
+                <li><a href="data_management-contacts.html">Contacts</a></li>
+              </ul>
+            </li>
+            <li><a href="push_notifications.html">Push Notifications</a></li>
+            <li><a href="user_management.html">Users</a></li>
+            <li><a href="settings.html">Settings</a></li>
+          </ul>
+            <div class="navbar-right">
+              <button type="button" class="btn btn-default navbar-btn" id="logOut_btn">Log Out&nbsp;&nbsp;<span class="glyphicon glyphicon-log-out"></span></button>
+            </div>
+        </div>                  
+        <!--/navbar-->
+      </div>
+    </div>
+
+    <div class="container">
+      <h1>Project Launcher</h1>
+<form>
+          <div class="col-md-4" style="clear:left;">
+          <h3>Project Name</h3>
+          <input type="text" class="form-control input-lg" placeholder="Project Name" style="margin-bottom:25px;">
+
+          <div class="panel panel-default">
+            <div class="panel-heading"><h4>Modules/Functionality</h4></div>
+            <div class="panel-body">
+              <p>Select which components will be used in the project</p>
+            <fieldset id="define_functionality">  
+              <label>
+                <input type="checkbox" class="input-md" id="define_functionality-news">News 
+              </label>
+              <label>
+                <input type="checkbox" class="input-md" id="define_functionality-events" value="events">Events 
+              </label>              
+              <label>
+                <input type="checkbox" class="input-md" id="define_functionality-facilities" value="facilities">Facilities/Parks 
+              </label>     
+              <label>
+                <input type="checkbox" class="input-md" id="define_functionality-conditions" value="conditions">Conditions 
+              </label>     
+              <label>
+                <input type="checkbox" class="input-md" id="define_functionality-contacts" value="contacts">Contacts
+              </label>
+              <label>
+                <input type="checkbox" class="input-md" id="define_functionality-notifications" value="notifications">Push Notifications  
+              </label>                                                  
+              <label>
+                <input type="checkbox" class="input-md" id="define_functionality-manageUsers" value="manageUsers">Manage Users                 
+              </label>     
+              <label>
+                <input type="checkbox" class="input-md" id="define_functionality-syndication" value="syndication">Syndication of Content
+              </label>                 
+              <label>
+                <input type="checkbox" class="input-md" id="define_functionality-stats" value="stats">View Stats 
+              </label>     
+              <label>
+                <input type="checkbox" class="input-md" id="define_functionality-additionalURL" value="additionalURL">Additional URL
+              </label>
+              <hr>
+
+              <label>
+                <input type="checkbox" class="input-md" id="define_functionality-customBG" value="customBG">
+                Allow a custom background to be loaded? 
+              </label>                        
+            </fieldset>       
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h4>News Feed Setup</h4></div>
+            <div class="panel-body">
+              <p>How data is provided to module</p>
+            <fieldset id="news_feed_setup">
+                <label>
+                  <input type="radio" name="news-data_input" value="manual">Import File/Manual Entry
+                </label>
+                <label>
+                  <input type="radio" name="news-data_input" value="feed">Feed
+                </label>
+                <div class="define_feed_location">
+                <label>
+                  Define Feed Location 
+                  <input type="text" class="form-control" id="news-data_feed_location">
+                </label>
+                </div>
+                <hr>
+              <p>Map data feed to pre-defined app fields</p> 
+              <label>
+                <div class="input-group">
+                <span class="input-group-addon">Headline</span><input type="text" class="form-control" id="news-data_map-headline">
+                </div>
+              </label>              
+              <label>
+                <div class="input-group">
+                <span class="input-group-addon">Publish Date</span><input type="text" class="form-control" id="news-data_map-publish_date">
+              </div>
+              </label>  
+              <label>
+                <div class="input-group">
+                <span class="input-group-addon">Expire Date</span><input type="text" class="form-control" id="news-data_map-expire_date">
+              </div>
+              </label>
+              <label>
+                <div class="input-group">
+                <span class="input-group-addon">Body Content</span><input type="text" class="form-control" id="news-data_map-body_content">
+              </div>
+              </label>                
+              <label>
+                <div class="input-group">
+                <span class="input-group-addon">More Info URL</span><input type="text" class="form-control" id="news-data_map-more_info_url">
+              </div>
+              </label> 
+            </fieldset>       
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h4>Events Feed Setup</h4></div>
+            <div class="panel-body">
+              <p>How data is provided to module</p>
+            <fieldset id="events_feed_setup">
+                <label>
+                  <input type="radio" name="events-data_input" value="manual">Import File/Manual Entry
+                </label>
+                <label>
+                  <input type="radio" name="events-data_input" value="feed">Feed
+                </label>
+                <div class="define_feed_location">
+                <label>
+                  Define Feed Location 
+                  <input type="text" class="form-control" id="events-data_feed_location">
+                </label>
+                </div>
+                <hr>
+              <p>Map data feed to pre-defined app fields</p> 
+              <label>
+                <div class="input-group">
+                <span class="input-group-addon">Headline</span><input type="text" class="form-control" id="events-data_map-headline">
+                </div>
+              </label>              
+              <label>
+                <div class="input-group">
+                <span class="input-group-addon">Start Date</span><input type="text" class="form-control" id="events-data_map-start_date">
+              </div>
+              </label>  
+              <label>
+                <div class="input-group">
+                <span class="input-group-addon">End Date</span><input type="text" class="form-control" id="events-data_map-end_date">
+              </div>
+              </label>
+              <label>
+                <div class="input-group">
+                <span class="input-group-addon">Publish Date</span><input type="text" class="form-control" id="events-data_map-publish_date">
+              </div>
+              </label>
+              <label>
+                <div class="input-group">
+                <span class="input-group-addon">Expire Date</span><input type="text" class="form-control" id="events-data_map-expire_date">
+              </div>
+              </label>                            
+              <label>
+                <div class="input-group">
+                <span class="input-group-addon">Venue Name</span><input type="text" class="form-control" id="events-data_map-venue_name">
+              </div>
+              </label>    
+              <label>
+                <div class="input-group">
+                <span class="input-group-addon">Street Address</span><input type="text" class="form-control" id="events-data_map-street_address">
+              </div>
+              </label>
+              <label>
+                <div class="input-group">
+                <span class="input-group-addon">City</span><input type="text" class="form-control" id="events-data_map-city">
+              </div>
+              </label>
+              <label>
+                <div class="input-group">
+                <span class="input-group-addon">Zip</span><input type="text" class="form-control" id="events-data_map-zip">
+              </div>
+              </label> 
+              <label>
+                <div class="input-group">
+                <span class="input-group-addon">Description</span><input type="text" class="form-control" id="events-data_map-description">
+              </div>
+              </label> 
+
+              <label>
+                <div class="input-group">
+                <span class="input-group-addon">More Info URL</span><input type="text" class="form-control" id="events-data_map-more_info_url">
+              </div>
+              </label> 
+            </fieldset>       
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-md-offset-4" style="clear:both;">
+          <button type="submit" class="btn btn-success btn-lg btn-block" id="submit">Create Project</button>
+        </div>  
+
+</form>  
+    </div>
+<footer>
+  <hr>
+  <p>powered by <a href="http://www.linkstechnology.com"><img src="img/LinksLogo.png" alt="Links Technology" /></a></p>
+</footer>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/project_setup.js"></script>
+        <script>
+/*    Add analytics when available
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+*/
+        </script>
+    </body>
+</html>

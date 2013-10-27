@@ -1,0 +1,29 @@
+##Notes##
+
+Data Management - Home
+	Add - Analytics
+
+Data Management - News 
+
+Data Management - News - Create-edit
+	Allow images, minor styling (italics, bold, images?)
+
+Data Management - Conditions 
+	Add Type
+	Close all 
+	Close all Url
+
+Settings 
+	 Top Bar Style - remove Black/Transparent, only allow solid colors
+
+
+Manging multiple clients
+
+
+Add Settings to data management bar
+	Manageable text
+	
+
+When the viewport width of data-management pages drops below 992px, the tabbed nav menu drops to the second line.
+- Figure out a way to either prevent this or deal with it.
+

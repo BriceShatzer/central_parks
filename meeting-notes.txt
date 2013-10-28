@@ -1,7 +1,7 @@
 ##Notes##
 
 Data Management - Home
-	Add - Analytics
+	Add - Analytics for your app 
 
 Data Management - News 
 
@@ -13,14 +13,15 @@ Data Management - Conditions
 	Close all 
 	Close all Url
 
-Settings 
+Settings (rename to "future builds" or some other thing)
 	 Top Bar Style - remove Black/Transparent, only allow solid colors
 
 
 Manging multiple clients
 
 
-Add Settings to data management bar
+
+Add Settings to data management bar 
 	Manageable text
 	
 

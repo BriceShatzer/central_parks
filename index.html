@@ -1,8 +1,46 @@
 <html>
+<style>
+ul,li{list-style: none;}
+li.folder{margin: 10px 0px;}
+li.folder ul{
+	border-left: solid 1px #ccc;
+	border-bottom: solid 1px #ccc;
+	width: 300px;
+	padding-bottom: 5px;
+}
+.flag{color:red;}
+</style>
 <body>
-	<h3>Repo Manifest</h3>
+<h1>Central Parks - Admin UI</h1>
+<h3>Page Structure</h3>
 	<ul>
-		<li>css
+		<li><a href="login.html">Login</a></li>
+		<li><a href="project_launcher.html">Project Launcher</a></li>
+		<li><a href="data_management-home.html">Data Management</a>
+			<ul>
+				<li><a href="data_management-news.html">News</a>
+					<ul><li><a href="create-edit_news.html">Create/Edit News</a></li></ul>
+				</li>
+				<li><a href="data_management-events.html">Events</a></li>
+				<li><a href="data_management-facilities_park.html">Facilities/Parks</a></li>
+				<li><a href="data_management-conditions.html">Conditions</a></li>
+				<li><a href="data_management-contacts.html">Contacts</a></li>
+				<li><a href="data_management-settings.html">Settings</a> <span class="flag">(needs to be renamed)</span></li>
+			</ul>
+		</li>
+		<li><a href="push_notifications.html">Push Notifications</a></li>
+		<li><a href="user_management.html">User Management</a>
+			<ul><li><a href="create-edit_user.html">Create/Edit User</a></li></ul>
+		</li>
+		<li><a href="settings.html">Settings</a></li>
+		<li><a href="404.html">404.html</a></li>
+	</ul>	
+		
+<h3>Full Repo Manifest</h3>
+	<ul>		
+		<li><a href="_meeting-notes.txt">_meeting-notes.txt</a></li>
+		<li><a href="input_controls.json">input_controls.json</a></li>
+		<li class="folder">css
 			<ul>
 				<li><a href="css/bootstrap-theme.css">bootstrap-theme.css</a></li>
 				<li><a href="css/bootstrap-theme.min.css">bootstrap-theme.min.css</a></li>
@@ -11,7 +49,7 @@
 				<li><a href="main.css">main.css</a></li>
 			</ul>
 		</li>
-		<li>fonts
+		<li class="folder">fonts
 			<ul>
 				<li><a href="fonts/glyphicons-halflings-regular.eot">glyphicons-halflings-regular.eot</a></li>
 				<li><a href="fonts/glyphicons-halflings-regular.svg">glyphicons-halflings-regular.svg</a></li>
@@ -19,12 +57,77 @@
 				<li><a href="fonts/glyphicons-halflings-regular.woff">glyphicons-halflings-regular.woff</a></li>
 			</ul>
 		</li>
-		<li>img
-			<ul><li><a href="img/LinksLogo.png">LinksLogo.png</a></li>
+		<li class="folder">img
+			<ul><li><a href="img/LinksLogo.png">LinksLogo.png</a></li></ul>
 		</li>
-		<li>js</li>
-		<li>_rought</li>
-		<li><a href="create-edit_news.html">creat-edit_news.html</a></li>
+		<li class="folder">js
+			<ul>
+				<li class="folder">plugins
+					<ul>
+						<li class="folder">jscolor
+							<ul>
+							<li><a href="js/plugins/jscolor/arrow.gif">arrow.gif</a><li>
+							<li><a href="js/plugins/jscolor/cross.gif">cross.gif</a><li>
+							<li><a href="js/plugins/jscolor/hs.png">hs.png</a><li>
+							<li><a href="js/plugins/jscolor/hv.png">hv.png</a><li>
+							<li><a href="js/plugins/jscolor/jscolor.js">jscolor.js</a><li>
+							</ul>
+						<li>
+						<li><a href="js/plugins/datepicker.js">datepicker.js</a></li>
+						<li><a href="js/plugins/fileupload.js">fileupload.js</a></li>
+					</ul>
+				</li>
+				<li class="folder">vendor
+					<ul>
+					<li><a href="js/vendor/bootstrap.js">bootstrap.js</a></li>
+					<li><a href="js/vendor/bootstrap.min.js">bootstrap.min.js</a></li>
+					<li><a href="js/vendor/html5.3.6-respond-1.1.0.min.js">html5.3.6-respond-1.1.0.min.js</a></li>
+					<li><a href="js/vendor/jquery-1.10.1.min.js">jquery-1.10.1.min.js</a></li>
+					</ul>
+				</li>
+				<li><a href="js/main.js">main.js</a></li>
+				<li><a href="js/plugins.js">plugins.js</a></li>
+				<li><a href="js/project_setup.js">project_setup.js</a></li>
+			</ul>
+		</li>		
+		
+		<li><a href="create-edit_news.html">create-edit_news.html</a></li>
+		<li><a href="create-edit_user.html">create-edit_user.html</a></li>
+		<li><a href="data_management-conditions.html">data_management-conditions.html</a></li>
+		<li><a href="data_management-contacts.html">data_management-contacts.html</a></li>
+		<li><a href="data_management-events.html">data_management-events.html</a></li>
+		<li><a href="data_management-facilities_park.html">data_management-facilities_park.html</a></li>
+		<li><a href="data_management-home.html">data_management-home.html</a></li>
+		<li><a href="data_management-news.html">data_management-news.html</a></li>
+		<li><a href="data_management-settings.html">data_management-settings.html</a></li>
+		<li><a href="index.html"><strong>index.html</strong></a></li>
+		<li><a href="login.html">login.html</a></li>
+		<li><a href="project_launcher.html">project_launcher.html</a></li>
+		<li><a href="push_notifications.html">push_notifications.html</a></li>
+		<li><a href="settings.html">settings.html</a></li>
+		<li><a href="user_management.html">user_management.html</a></li>
+		<li><a href="404.html">404.html</a></li>
+		<li>&nbsp;</li>
+		<li><a href="apple-touch-icon-144x144-precomposed.png">apple-touch-icon-144x144-precomposed.png</a></li>
+		<li><a href="apple-touch-icon-114x114-precomposed.png">apple-touch-icon-114x114-precomposed.png</a></li>
+		<li><a href="apple-touch-icon-72x72-precomposed.png">apple-touch-icon-72x72-precomposed.png</a></li>
+		<li><a href="apple-touch-icon-57x57-precomposed.png">apple-touch-icon-57x57-precomposed.png</a></li>
+		<li><a href="apple-touch-icon-precomposed.png">apple-touch-icon-precomposed.png</a></li>
+		<li><a href="apple-touch-icon.png">apple-touch-icon.png</a></li>
+		<li><a href="favicon.ico">favicon.ico</a></li>
+
+
+
+		<li class="folder">_rough
+			<ul>
+				<li><a href="_rough/client-project_setup.html">client-project_setup.html</a></li>
+				<li><a href="_rough/date_import.html">data_import.html</a></li>
+				<li><a href="_rough/data_management-start.html">data_management-start.html</a></li>
+				<li><a href="_rough/data_management.html">data_management.html</a></li>
+				<li><a href="_rough/index.html">index.html</a></li>
+				<li><a href="_rough/marketing-report.html">marketing-reporting.html</a></li>
+			</ul>
+		</li>
 	</ul>
 </body>
 </html>

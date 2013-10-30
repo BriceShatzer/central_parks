@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+            h1 {margin-bottom: 20px;}
+            .table tbody>tr>th,
+            .table tbody>tr>td {vertical-align: middle;
+            }
+            td>button{margin:0 5px;
+            }
+            #controlButtons div {margin-bottom: 10px;
+            }
+
+            #facility_status option[value="open"],
+            .open {
+background-color: #66AA00;
+color:#000;
+}
+            #facility_status option[value="closed"],
+            .closed{
+background-color: #b20000 !important;
+color:#000;
+}            
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <!--[if lt IE 9]>
+            <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <!--navbar-->
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data Management<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="data_management-home.html">Home</a></li>
+                <li><a href="data_management-news.html">News</a></li>
+                <li><a href="data_management-events.html">Events</a></li>
+                <li><a href="data_management-facilities_parks.html">Facilities/Parks</a></li>
+                <li><a href="data_management-conditions.html">Conditions</a></li>
+                <li><a href="data_management-contacts.html">Contacts</a></li>
+              </ul>
+            </li>
+            <li><a href="push_notifications.html">Push Notifications</a></li>
+            <li><a href="user_management.html">Users</a></li>
+            <li><a href="build_request.html">Build Request</a></li>
+          <li><a href="help.html">Help</a></li>
+          </ul>
+            <div class="navbar-right">
+              <button type="button" class="btn btn-default navbar-btn" id="logOut_btn"><span class="text">Log Out&nbsp;&nbsp;</span><span class="glyphicon glyphicon-log-out"></span></button>
+            </div>
+        </div>            
+        <!--/navbar-->
+      </div>
+    </div>
+
+    <div class="container">
+           <h1>Edit/Create Condition Listing</h1>
+
+
+<form id="form-edit-create_news">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h4>Listing Details</h4></div>
+            <div class="panel-body">
+            <fieldset id="edit-create_news">
+
+              <label class="col-xs-10">
+                <div class="input-group ">
+                <span class="input-group-addon">Name</span><input type="text" class="form-control" id="news-headline" name="news-headline">
+                </div>
+              </label>
+              <label class="col-xs-2" style="margin-top:5px;">
+                  <input type="checkbox" name="news-active" value="active">Active
+              </label>
+
+<div class="col-sm-6 col-xs-12">
+
+          
+             
+
+              <label style="margin-bottom:20px;margin-top:10px">
+              <div class="input-group">
+                <span class="input-group-addon">Current Status</span>
+                  <select class="form-control"  id="facility_status" name="facility_status">
+                    <option value="open">open</option>
+                    <option value="closed">closed</option>
+                  </select>
+              </div>
+              </label>   
+                                
+                <div class="panel panel-default">
+                  <div class="panel-heading">Location</div>
+                  <div class="panel-body">
+                  <label>
+                    <div class="input-group">
+                    <span class="input-group-addon">Street</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                    </div>
+                  </label>                                 
+                  <label>
+                    <div class="input-group">
+                    <span class="input-group-addon">City</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                    </div>
+                  </label>                                 
+                  <label>
+                    <div class="input-group">
+                    <span class="input-group-addon">Zip</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                    </div>
+                  </label>
+                  </div>
+                </div>
+                              
+
+           
+</div>                
+<div class="col-sm-6 col-xs-12">
+                <label style="margin-bottom:20px;margin-top:10px;">
+                <div class="input-group">
+                <span class="input-group-addon">Type</span>
+                <!--<input type="text" class="form-control" id="news-publish_date" name="news-publish_date">-->
+                  <select class="form-control">
+                    <option>Park</option>
+                    <option>Facility</option>
+                  </select>
+                </div>
+              </label>
+
+              <label style="margin-bottom:20px;">
+                <div class="input-group">
+                <span class="input-group-addon">Note</span><textarea rows="10" class="form-control" id="news-body_content" name="news-body_content"></textarea>
+              </div>
+              </label>
+</div>
+<!--              
+              <div class="col-sm-6 col-xs-12">
+                <div class="panel panel-default">
+                  <div class="panel-heading"><h4>Publishing Options</h4></div>
+                  <div class="panel-body">
+<div class="clearfix">
+                   <label class="col-xs-8">
+                     <div class="input-group">
+                     <span class="input-group-addon">Publish Date</span><input type="text" class="form-control" id="news-publish_date" name="news-publish_date">
+                     </div>
+                   </label>
+                     <label class="col-xs-4">
+                       <input type="checkbox" name="news-active" value="active">Active
+                   </label>                   
+
+                   <label class="col-xs-8" style="margin-bottom:10px;">
+                     <div class="input-group">
+                     <span class="input-group-addon">Expire Date</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                     </div>
+                   </label>
+                                          
+                   <label class="col-xs-4">
+                     <input type="checkbox" name="news-featured" value="featured">Featured Item
+                   </label>
+</div>    
+                    <div class="col-xs-12 clearfix" id="feature_image-widget">    
+                      <div class="panel panel-default">
+                        <div class="panel-heading"><p>Feature Image</p></div>
+                        <div class="panel-body">          
+                            <div class="fileupload fileupload-new" data-provides="      fileupload">
+                              <div class="fileupload-preview thumbnail"></div>
+                              <div>
+                                <span class="btn btn-default btn-file"><span class="      fileupload-new">Upload</span><span class="fileupload-     exists"> Change</span><input type="file" name="news-    feature_image" id="news-feature_image"></span>
+                                <a href="#" class="btn btn-default fileupload-exists" data      -dismiss="fileupload">Remove</a>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>      
+-->
+
+          
+            </fieldset>       
+            </div>
+          </div>
+          <div id="controlButtons">
+            <div class="col-md-1 col-xs-12"></div>
+            <div class="col-md-4 col-xs-12">
+              <input class="btn btn-success btn-block" type="submit" value="Save">
+            </div>
+            <div class="col-md-2 col-xs-12"></div>  
+            <div class="col-md-4 col-xs-12">
+              <button class="btn btn-danger btn-block"> Cancel</button>
+              </div>
+              <div class="col-md-1 col-xs-12"></div>
+          </div>
+        </div>
+
+
+</form>  
+    </div>
+<footer>
+  <hr>
+  <p>powered by <a href="http://www.linkstechnology.com"><img src="img/LinksLogo.png" alt="Links Technology" /></a></p>
+</footer>
+    
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/plugins/datepicker.js"></script>
+        <script src="js/plugins/ckeditor/ckeditor.js"></script>
+        <script src="js/plugins/fileupload.js"></script>
+        <script>
+
+$('#facility_status').change( function() {
+if($(this).val()==="closed"){
+  $(this)
+    .removeClass('open')
+    .addClass('closed')
+  }
+  else{
+    $(this)
+    .removeClass('closed')
+    .addClass('open')
+  }
+});
+
+
+/* intializes wysiwyg and set height to match Feature Image widget
+CKEDITOR.replace( 'news-body_content');
+CKEDITOR.on('instanceReady', function(event) {
+  $('#cke_1_contents').height( $('#feature_image-widget .panel').height() - $('#cke_1_top').outerHeight() );
+});
+*/
+        </script>
+
+    </body>
+</html>

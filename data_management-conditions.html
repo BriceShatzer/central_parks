@@ -111,14 +111,16 @@
               <tbody>
               <tr>
                 <th>Name</th>
+                <th>Type</th>
                 <th>Address</th>
                 <th>Status</th>
                 <th>Note</th>
                 <th>Active</th>
-                <th> <button type="submit" class="btn btn-success" id="submit">Create Condition Update</button></th>
+                <th> <button type="submit" class="btn btn-success" id="submit" onclick="window.location.href='create-edit_conditions.html'">Create New Listing</button></th>
               </tr>
               <tr>
-                <td>Olympic Fields</td>
+                <td>Olympic Fields - Field #1</td>
+                <td>Facility</td>
                 <td>1800 Gold Medal Lane</td>
                 <td>North end of field #3 closed for ground repair</td>
                 <td class="status">open</td>
@@ -126,7 +128,26 @@
                 <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>
               <tr>
+                <td>Olympic Fields - Field #2</td>
+                <td>Facility</td>
+                <td>1800 Gold Medal Lane</td>
+                <td>North end of field #3 closed for ground repair</td>
+                <td class="status">open</td>
+                <td><input type="checkbox" checked="checked" disabled="disabled"></td>
+                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+              </tr>
+              <tr>
+                <td>Olympic Fields - Field #3</td>
+                <td>Facility</td>
+                <td>1800 Gold Medal Lane</td>
+                <td>North end of field #3 closed for ground repair</td>
+                <td class="status">open</td>
+                <td><input type="checkbox" checked="checked" disabled="disabled"></td>
+                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+              </tr>                            
+              <tr>
                 <td>Jones Park</td>
+                <td>Park</td>
                 <td>123 Abc St.</td>
                 <td>Restrooms & drinking fountains have been closed for winter</td>
                 <td class="status">open</td>
@@ -135,6 +156,7 @@
               </tr>               
               <tr>
                 <td>Cardinal Park</td>
+                <td>Park</td>
                 <td>987 Willow dr.</td>
                 <td>Restrooms & drinking fountains have been closed for winter</td>
                 <td class="status">open</td>

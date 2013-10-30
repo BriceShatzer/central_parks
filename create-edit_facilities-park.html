@@ -74,73 +74,134 @@
     </div>
 
     <div class="container">
-           <h1>Edit/Create News</h1>
+           <h1>Edit/Create Facilities & Parks</h1>
 
 
 <form id="form-edit-create_news">
         <div class="col-md-10 col-md-offset-1">
           <div class="panel panel-default">
-            <div class="panel-heading"><h4>User Info</h4></div>
+            <div class="panel-heading"><h4>Event Info</h4></div>
             <div class="panel-body">
             <fieldset id="edit-create_news">
 
               <label class="col-xs-12">
                 <div class="input-group ">
-                <span class="input-group-addon">Headline</span><input type="text" class="form-control" id="news-headline" name="news-headline">
+                <span class="input-group-addon">Name</span><input type="text" class="form-control" id="news-headline" name="news-headline">
                 </div>
               </label>
 
+<div class="col-sm-6 col-xs-12">
 
-              <label class="col-xs-6 col-sm-4">
-                <div class="input-group">
-                <span class="input-group-addon">Publish Date</span><input type="text" class="form-control" id="news-publish_date" name="news-publish_date">
-                </div>
-              </label>
           
              
-              <label class="col-xs-6 col-sm-4" style="margin-bottom:10px;">
+              <label style="margin-bottom:20px;margin-top:10px;">
                 <div class="input-group">
-                <span class="input-group-addon">Expire Date</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                <span class="input-group-addon">Phone Number</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
                 </div>
               </label>
-              
-              <div class="col-sm-4">
-                <label class="col-md-5 col-sm-12">
-                  <input type="checkbox" name="news-active" value="active">Active
-                </label>
-                <label class="col-md-7 col-sm-12">
-                  <input type="checkbox" name="news-featured" value="featured">Featured Item
-                </label>
-              </div>                
 
-
-              <label class="col-md-6 col-xs-12">
+              <label style="margin-bottom:20px;">
                 <div class="input-group">
-                <span class="input-group-addon">Body <br>Content</span><textarea rows="20" class="form-control" id="news-body_content" name="news-body_content"></textarea>
-              </div>
+                <span class="input-group-addon">Hours</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                </div>
               </label> 
-
-              <div class="col-md-6 col-xs-12" id="feature_image-widget">    
+              <label style="margin-bottom:20px;">
+                <div class="input-group">
+                <span class="input-group-addon">Parking</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                </div>
+              </label>                                 
                 <div class="panel panel-default">
-                  <div class="panel-heading"><h4>Feature Image</h4></div>
-                  <div class="panel-body">          
-                      <div class="fileupload fileupload-new" data-provides="fileupload">
-                        <div class="fileupload-preview thumbnail"></div>
-                        <div>
-                          <span class="btn btn-default btn-file"><span class="fileupload-new">Upload</span><span class="fileupload-exists"> Change</span><input type="file" name="news-feature_image" id="news-feature_image"></span>
-                          <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
-                        </div>
-                      </div>
+                  <div class="panel-heading">Location</div>
+                  <div class="panel-body">
+                  <label>
+                    <div class="input-group">
+                    <span class="input-group-addon">Street</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                    </div>
+                  </label>                                 
+                  <label>
+                    <div class="input-group">
+                    <span class="input-group-addon">City</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                    </div>
+                  </label>                                 
+                  <label>
+                    <div class="input-group">
+                    <span class="input-group-addon">Zip</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                    </div>
+                  </label>
                   </div>
                 </div>
-              </div>
+                              
 
-              <label class="col-md-12">
+           
+</div>                
+<div class="col-sm-6 col-xs-12">
+                <label style="margin-bottom:20px;margin-top:10px;">
                 <div class="input-group">
-                <span class="input-group-addon">More Info URL</span><input type="text" class="form-control" id="news-more_info_url" name="news-more_info_url">
+                <span class="input-group-addon">Type</span>
+                <!--<input type="text" class="form-control" id="news-publish_date" name="news-publish_date">-->
+                  <select class="form-control">
+                    <option>Park</option>
+                    <option>Facility</option>
+                  </select>
                 </div>
-              </label>    
+              </label>
 
+              <label style="margin-bottom:20px;">
+                <div class="input-group">
+                <span class="input-group-addon">Description</span><textarea rows="12" class="form-control" id="news-body_content" name="news-body_content"></textarea>
+              </div>
+              </label>
+
+              <label style="margin-bottom:20px;">
+                <div class="input-group">
+                <span class="input-group-addon">URL</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                </div>
+              </label>         
+</div>
+<!--              
+              <div class="col-sm-6 col-xs-12">
+                <div class="panel panel-default">
+                  <div class="panel-heading"><h4>Publishing Options</h4></div>
+                  <div class="panel-body">
+<div class="clearfix">
+                   <label class="col-xs-8">
+                     <div class="input-group">
+                     <span class="input-group-addon">Publish Date</span><input type="text" class="form-control" id="news-publish_date" name="news-publish_date">
+                     </div>
+                   </label>
+                     <label class="col-xs-4">
+                       <input type="checkbox" name="news-active" value="active">Active
+                   </label>                   
+
+                   <label class="col-xs-8" style="margin-bottom:10px;">
+                     <div class="input-group">
+                     <span class="input-group-addon">Expire Date</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                     </div>
+                   </label>
+                                          
+                   <label class="col-xs-4">
+                     <input type="checkbox" name="news-featured" value="featured">Featured Item
+                   </label>
+</div>    
+                    <div class="col-xs-12 clearfix" id="feature_image-widget">    
+                      <div class="panel panel-default">
+                        <div class="panel-heading"><p>Feature Image</p></div>
+                        <div class="panel-body">          
+                            <div class="fileupload fileupload-new" data-provides="      fileupload">
+                              <div class="fileupload-preview thumbnail"></div>
+                              <div>
+                                <span class="btn btn-default btn-file"><span class="      fileupload-new">Upload</span><span class="fileupload-     exists"> Change</span><input type="file" name="news-    feature_image" id="news-feature_image"></span>
+                                <a href="#" class="btn btn-default fileupload-exists" data      -dismiss="fileupload">Remove</a>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>      
+-->
 
           
             </fieldset>       
@@ -188,11 +249,12 @@ var thumbnail_Y = thumbnail_X/16*9;
 $('.thumbnail').width(thumbnail_X);
 $('.thumbnail').height(thumbnail_Y.toFixed());
 
-// intializes wysiwyg and set height to match Feature Image widget
+/* intializes wysiwyg and set height to match Feature Image widget
 CKEDITOR.replace( 'news-body_content');
 CKEDITOR.on('instanceReady', function(event) {
   $('#cke_1_contents').height( $('#feature_image-widget .panel').height() - $('#cke_1_top').outerHeight() );
 });
+*/
         </script>
 
     </body>

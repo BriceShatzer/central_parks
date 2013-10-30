@@ -85,13 +85,13 @@ color:#000;
     </div>
 
     <div class="container">
-           <h1>Edit/Create Condition Listing</h1>
+           <h1>Edit/Create Contact</h1>
 
 
 <form id="form-edit-create_news">
         <div class="col-md-10 col-md-offset-1">
           <div class="panel panel-default">
-            <div class="panel-heading"><h4>Listing Details</h4></div>
+            <div class="panel-heading"><h4>Contact Details</h4></div>
             <div class="panel-body">
             <fieldset id="edit-create_news">
 
@@ -104,21 +104,7 @@ color:#000;
                   <input type="checkbox" name="news-active" value="active">Active
               </label>
 
-<div class="col-sm-6 col-xs-12">
-
-          
-             
-
-              <label style="margin-bottom:20px;margin-top:10px">
-              <div class="input-group">
-                <span class="input-group-addon">Current Status</span>
-                  <select class="form-control"  id="facility_status" name="facility_status">
-                    <option value="open">open</option>
-                    <option value="closed">closed</option>
-                  </select>
-              </div>
-              </label>   
-                                
+<div class="col-sm-6 col-xs-12" style="margin-top:10px;">
                 <div class="panel panel-default">
                   <div class="panel-heading"><span class="subsectionTitle">Location</span></div>
                   <div class="panel-body">
@@ -144,28 +130,18 @@ color:#000;
                   </label>
                   </div>
                 </div>
-                              
-
-           
 </div>                
 <div class="col-sm-6 col-xs-12">
                 <label style="margin-bottom:20px;margin-top:10px;">
                 <div class="input-group">
-                <span class="input-group-addon">Type</span>
-                <!--<input type="text" class="form-control" id="news-publish_date" name="news-publish_date">-->
-                  <select class="form-control">
-                    <option>Pool</option>
-                    <option>Ballfield</option>
-                    <option>Ice Rink</option>
-                  </select>
+                  <span class="input-group-addon">Email</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
                 </div>
-              </label>
-
-              <label style="margin-bottom:20px;">
+                </label>
+                <label style="margin-bottom:20px;margin-top:10px;">
                 <div class="input-group">
-                <span class="input-group-addon">Note</span><textarea rows="10" class="form-control" id="news-body_content" name="news-body_content"></textarea>
-              </div>
-              </label>
+                  <span class="input-group-addon">Phone Number</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                </div>
+                </label>                
 </div>
 <!--              
               <div class="col-sm-6 col-xs-12">
@@ -248,26 +224,6 @@ color:#000;
         <script src="js/plugins/ckeditor/ckeditor.js"></script>
         <script src="js/plugins/fileupload.js"></script>
         <script>
-var $status = $('#facility_status');
-function setStatus_color(){
-  if($status.val()==="closed"){
-  $status
-    .removeClass('open')
-    .addClass('closed')
-  }
-  else{
-    $status
-    .removeClass('closed')
-    .addClass('open')
-  }
-};
-setStatus_color();
-
-$('#facility_status').change( function() {setStatus_color()} );
-
-
-
-
 /* intializes wysiwyg and set height to match Feature Image widget
 CKEDITOR.replace( 'news-body_content');
 CKEDITOR.on('instanceReady', function(event) {

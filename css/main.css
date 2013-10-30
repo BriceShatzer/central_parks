@@ -100,6 +100,15 @@ body {
     margin-bottom: 5px;
 }
 
+span.subsectionTitle{
+    margin: 0;
+    font-size: 17px;
+}
+span.tertiaryTitle{
+    margin:0;
+    font-size: 14px;
+}
+
 label input[type="checkbox"],
 label input[type="radio"] { 
     margin-right: 5px;

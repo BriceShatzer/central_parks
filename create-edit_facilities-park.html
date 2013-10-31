@@ -22,8 +22,14 @@
             }
             td>button{margin:0 5px;
             }
+            #locationAttributes ul{list-style: none;padding:0px;}
+            .category{text-align: center;}
+
             #controlButtons div {margin-bottom: 10px;
             }
+            #toggle_Attributes,
+            #toggle_imageManagement{float:right;cursor:pointer;}
+
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
@@ -73,96 +79,93 @@
       </div>
     </div>
 
-    <div class="container">
+<div class="container">
            <h1>Edit/Create Facilities & Parks</h1>
 
 
 <form id="form-edit-create_news">
-        <div class="col-md-10 col-md-offset-1">
-          <div class="panel panel-default">
-            <div class="panel-heading"><h4>Event Info</h4></div>
-            <div class="panel-body">
-            <fieldset id="edit-create_news">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="panel panel-default">
+      <div class="panel-heading"><h4>Listing Info</h4></div>
+      <div class="panel-body">
+        <fieldset id="edit-create_news">
+          <div class="clearfix">
+            <label class="col-xs-12">
+  <div class="input-group ">
+    <span class="input-group-addon">Name</span>
+    <input type="text" class="form-control" id="news-headline" name="news-headline">
+  </div>
+            </label>
+            
+            <div class="col-sm-6 col-xs-12">
+  <label style="margin-bottom:20px;margin-top:10px;">
+    <div class="input-group">
+      <span class="input-group-addon">Phone Number</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+    </div>
+  </label>
 
-              <label class="col-xs-12">
-                <div class="input-group ">
-                <span class="input-group-addon">Name</span><input type="text" class="form-control" id="news-headline" name="news-headline">
-                </div>
-              </label>
+  <label style="margin-bottom:20px;">
+    <div class="input-group">
+      <span class="input-group-addon">Hours</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+    </div>
+  </label> 
 
-<div class="col-sm-6 col-xs-12">
-       
-             
-              <label style="margin-bottom:20px;margin-top:10px;">
-                <div class="input-group">
-                <span class="input-group-addon">Phone Number</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
-                </div>
-              </label>
+  <label style="margin-bottom:20px;">
+    <div class="input-group">
+      <span class="input-group-addon">Parking</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+    </div>
+  </label>                                 
+              
+  <div class="panel panel-default">
+    <div class="panel-heading">Location</div>
+    <div class="panel-body">
+      <label>
+        <div class="input-group">
+          <span class="input-group-addon">Street</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+        </div>
+      </label>                                 
+      <label>
+        <div class="input-group">
+          <span class="input-group-addon">City</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+        </div>
+      </label>                                 
+      <label>
+        <div class="input-group">
+          <span class="input-group-addon">Zip</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+        </div>
+      </label>
+      <label>
+        <div class="input-group">
+          <span class="input-group-addon">State</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+        </div>
+      </label>
+    </div>
+  </div>
+            </div>
+            
+            <div class="col-sm-6 col-xs-12 clearfix">
+  <label style="margin-bottom:20px;margin-top:10px;">
+    <div class="input-group">
+      <span class="input-group-addon">Type</span>
+      <select class="form-control">
+        <option>Park</option>
+        <option>Facility</option>
+      </select>
+    </div>
+  </label>
 
-              <label style="margin-bottom:20px;">
-                <div class="input-group">
-                <span class="input-group-addon">Hours</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
-                </div>
-              </label> 
-              <label style="margin-bottom:20px;">
-                <div class="input-group">
-                <span class="input-group-addon">Parking</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
-                </div>
-              </label>                                 
-                <div class="panel panel-default">
-                  <div class="panel-heading">Location</div>
-                  <div class="panel-body">
-                  <label>
-                    <div class="input-group">
-                    <span class="input-group-addon">Street</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
-                    </div>
-                  </label>                                 
-                  <label>
-                    <div class="input-group">
-                    <span class="input-group-addon">City</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
-                    </div>
-                  </label>                                 
-                  <label>
-                    <div class="input-group">
-                    <span class="input-group-addon">Zip</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
-                    </div>
-                  </label>
-                  <label>
-                    <div class="input-group">
-                    <span class="input-group-addon">State</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
-                    </div>
-                  </label>
-                  </div>
-                </div>
-                              
+  <label style="margin-bottom:20px;">
+    <div class="input-group">
+      <span class="input-group-addon">Description</span><textarea rows="14" class="form-control" id="news-body_content" name="news-body_content"></textarea>
+    </div>
+  </label>
 
-           
-</div>                
-<div class="col-sm-6 col-xs-12 clearfix">
-                <label style="margin-bottom:20px;margin-top:10px;">
-                <div class="input-group">
-                <span class="input-group-addon">Type</span>
-                <!--<input type="text" class="form-control" id="news-publish_date" name="news-publish_date">-->
-                  <select class="form-control">
-                    <option>Park</option>
-                    <option>Facility</option>
-                  </select>
-                </div>
-              </label>
-
-              <label style="margin-bottom:20px;">
-                <div class="input-group">
-                <span class="input-group-addon">Description</span><textarea rows="14" class="form-control" id="news-body_content" name="news-body_content"></textarea>
-              </div>
-              </label>
-
-              <label style="margin-bottom:20px;">
-                <div class="input-group">
-                <span class="input-group-addon">URL</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
-                </div>
-              </label>         
-</div>
-
+  <label style="margin-bottom:20px;">
+    <div class="input-group">
+      <span class="input-group-addon">URL</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+    </div>
+  </label>         
+            </div>
 
 <!--              
               <div class="col-sm-6 col-xs-12">
@@ -208,27 +211,160 @@
                 </div>
               </div>      
 -->
-
-          
-            </fieldset>       
-            </div>
           </div>
-          <div id="controlButtons">
-            <div class="col-md-1 col-xs-12"></div>
-            <div class="col-md-4 col-xs-12">
-              <input class="btn btn-success btn-block" type="submit" value="Save">
-            </div>
-            <div class="col-md-2 col-xs-12"></div>  
-            <div class="col-md-4 col-xs-12">
-              <button class="btn btn-danger btn-block"> Cancel</button>
+          <div class="col-xs-12">  
+            <div class="panel panel-default" id="locationAttributes">
+              <div class="panel-heading"><span id="toggle_Attributes" class="glyphicon glyphicon-minus-sign"></span><h3 class="panel-title">Location Attributes</h3></div>
+              <div class="panel-body">
+                <div class="col-sm-6 clearfix">
+                  <div class="category col-sm-12"><strong>Athletic</strong></div> 
+                  <div class="col-xs-6" style="clear:left">
+                    <ul>                
+                      <li><input type="checkbox"> Athletic Field</li>                
+                      <li><input type="checkbox"> Baseball Field</li>
+                      <li><input type="checkbox"> Baseball Field <br>(Backstop Only)</li>
+                      <li><input type="checkbox"> Basketball Court</li>
+                      <li><input type="checkbox"> Batting Tunnels</li>
+                      <li><input type="checkbox"> Bocce Ball</li>
+                      <li><input type="checkbox"> Golf</li>
+                      <li><input type="checkbox"> Gymnasium</li>
+                      <li><input type="checkbox"> Gymnastics</li>
+                      <li><input type="checkbox"> Horseshoe Pit</li>
+                      <li><input type="checkbox"> In-line Skate Rink</li>
+                      <li><input type="checkbox"> Indoor Tennis Court</li>
+                      <li><input type="checkbox"> Indoor Track</li>
+                    </ul>
+                  </div>
+                  <div class="col-xs-6">    
+                    <ul>  
+                      <li><input type="checkbox"> Pickleball</li>
+                      <li><input type="checkbox"> Racquetball Court</li>
+                      <li><input type="checkbox"> Sand Volleyball</li>
+                      <li><input type="checkbox"> Skate Park</li>
+                      <li><input type="checkbox"> Skate Spot</li>
+                      <li><input type="checkbox"> Soccer Field</li>
+                      <li><input type="checkbox"> Softball Field</li>
+                      <li><input type="checkbox"> Squash Court</li>
+                      <li><input type="checkbox"> T-ball</li>
+                      <li><input type="checkbox"> Tennis Courts (Lights)</li>
+                      <li><input type="checkbox"> Tennis Court (No Lights)</li>
+                      <li><input type="checkbox"> Volleyball Court</li>
+                      <li><input type="checkbox"> Volleyball Net</li>
+                    </ul>
+                  </div>
+                </div>  
+                <div class="col-sm-3 col-xs-6">
+                  <ul><li class="category"><strong>Trails</strong></li>
+                    <li><input type="checkbox"> Bicycle Trail</li>
+                    <li><input type="checkbox"> Walking Trail</li>
+                  </ul>
+                  <ul><li class="category"><strong>Amenities</strong></li>
+                    <li><input type="checkbox"> Concessions</li>
+                    <li><input type="checkbox"> Elevator</li>
+                    <li><input type="checkbox"> Fitness Equipment</li>
+                    <li><input type="checkbox"> Grill</li>
+                    <li><input type="checkbox"> Nursery</li>
+                    <li><input type="checkbox"> Restroom</li>
+                    <li><input type="checkbox"> Tribute Park</li>
+                  </ul>
+                  <ul><li class="category"><strong>Space</strong></li>
+                    <li><input type="checkbox"> Parties</li>
+                    <li><input type="checkbox"> RoomRental</li>
+                  </ul>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                  <ul><li class="category"><strong>Area</strong></li>
+                    <li><input type="checkbox"> Observation Deck</li>
+                    <li><input type="checkbox"> Conservation Area</li>
+                    <li><input type="checkbox"> Detention Area</li>
+                    <li><input type="checkbox"> Garden Area</li>
+                    <li><input type="checkbox"> Garden Plot</li>
+                    <li><input type="checkbox"> Handicap Accessible Playground</li>
+                    <li><input type="checkbox"> Ice Skating</li>
+                    <li><input type="checkbox"> Picnic Area</li>
+                    <li><input type="checkbox"> Picnic Shelter</li>
+                    <li><input type="checkbox"> Playground</li>
+                    <li><input type="checkbox"> Pond</li>
+                    <li><input type="checkbox"> Pool</li>
+                    <li><input type="checkbox"> Sled Hill</li>
+                  </ul>
+                </div>
+              </div><!--locationAttributes panel body end-->
+            </div><!--locationAttributes panel end-->
+          </div>
+
+        </fieldset>
+      </form>   
+      </div> <!--page panel body end-->
+    </div> <!--page panel end-->
+    
+      <div class="panel panel-default" id="imageManagement">
+        <div class="panel-heading"><h4 id="toggle_imageManagement" class="glyphicon glyphicon-minus-sign"></h4><h4>Image Management</h4></div>
+        <div class="panel-body">
+          <div class="col-sm-6">
+            <div class="panel panel-default" id="currentImages">
+              <div class="panel-heading"><span class="panel-title subsectionTitle">Current Images</span></div>
+              
+                <ul class="list-group">
+                  <li class="list-group-item"><img src=""/><span class="fileName"></span> <button type="button" class="btn btn-danger">delete</button></li>
+                  <li class="list-group-item"></li>
+                  <li class="list-group-item"></li>
+                  <li class="list-group-item"></li>
+                  <li class="list-group-item"></li>
+                </ul>
+               <!--currentImages panel body end-->
+            </div> <!--currentImages panel end-->
+          </div>
+              <div class="col-md-6 col-xs-12" id="feature_image-widget">    
+                <div class="panel panel-default">
+                  <div class="panel-heading"><span class="subsectionTitle">Feature Image</span></div>
+                  <div class="panel-body">          
+                      <div class="fileupload fileupload-new" data-provides="fileupload">
+                        <div class="fileupload-preview thumbnail"></div>
+                        <div>
+                          <span class="btn btn-default btn-file"><span class="fileupload-new">Upload</span><span class="fileupload-exists"> Change</span><input type="file" name="news-feature_image" id="news-feature_image"></span>
+                          <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+                        </div>
+                      </div>
+                  </div>
+                </div>
               </div>
-              <div class="col-md-1 col-xs-12"></div>
+            <!--
+              <div class="fileinput fileinput-new" data-provides="fileinput">
+                <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                  <img data-src="holder.js/100%x100%" alt="...">
+                </div>
+                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+                <div>
+                  <span class="btn btn-default btn-file">
+                    <span class="fileinput-new">Select image</span>
+                    <span class="fileinput-exists">Change</span>
+                    <input type="file" name="...">
+                  </span>
+                  <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                </div>-->
+
+
+
+        </div><!--imageManagement panel body end-->
+      </div> <!-- imageManagement panel end-->
+</div>
+    <div id="controlButtons">
+      <div class="col-md-1 col-xs-12"></div>
+          <div class="col-md-4 col-xs-12">
+            <input class="btn btn-success btn-block" type="submit" value="Save">
           </div>
-        </div>
-
-
-</form>  
+          <div class="col-md-2 col-xs-12"></div>  
+          <div class="col-md-4 col-xs-12">
+            <button class="btn btn-danger btn-block"> Cancel</button>
+            </div>
+          <div class="col-md-1 col-xs-12"></div>
     </div>
+  </div>
+
+
+</div>
+
 <footer>
   <hr>
   <p>powered by <a href="http://www.linkstechnology.com"><img src="img/LinksLogo.png" alt="Links Technology" /></a></p>
@@ -241,26 +377,42 @@
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <!--
         <script src="js/plugins/datepicker.js"></script>
         <script src="js/plugins/ckeditor/ckeditor.js"></script>
+      -->
         <script src="js/plugins/fileupload.js"></script>
         <script>
-// intializes datepicker on publish and expire dates
-$('#news-publish_date, #news-expire_date').datepicker({'format':'mm/dd/yyyy'})
-  .on('changeDate',function(){ $(this).datepicker('hide')} );
+$(document).ready(function() {
+//initialize collapse controls for Location Attributes and Image Management panels
+  $('#toggle_Attributes, #toggle_imageManagement').click(function(){
+    if( $(this).hasClass('glyphicon-minus-sign') ){
+      $(this)
+        .removeClass('glyphicon-minus-sign')
+        .addClass('glyphicon-plus-sign');
+      $(this).closest('.panel')
+        .find('.panel-body').slideUp();             
+    }
+    else if( $(this).hasClass('glyphicon-plus-sign') ){
+      $(this)
+        .removeClass('glyphicon-plus-sign')
+        .addClass('glyphicon-minus-sign');
+      $(this).closest('.panel')
+        .find('.panel-body').slideDown();   
+    }
+  })
 
 // set thumbnail preview size for Feature Image widget
-var thumbnail_X = $('#feature_image-widget .panel-heading').width();
-var thumbnail_Y = thumbnail_X/16*9;
+
+var thumbnail_X = $('.fileupload-new').width();
+var thumbnail_Y = thumbnail_X/3*2;
 $('.thumbnail').width(thumbnail_X);
 $('.thumbnail').height(thumbnail_Y.toFixed());
 
-/* intializes wysiwyg and set height to match Feature Image widget
-CKEDITOR.replace( 'news-body_content');
-CKEDITOR.on('instanceReady', function(event) {
-  $('#cke_1_contents').height( $('#feature_image-widget .panel').height() - $('#cke_1_top').outerHeight() );
 });
-*/
+
+       
+
         </script>
 
     </body>

@@ -29,6 +29,9 @@
             }
             #toggle_Attributes,
             #toggle_imageManagement{float:right;cursor:pointer;}
+            li.list-group-item {text-align: right;}
+            li.list-group-item img {max-width: 100%;margin-bottom: 5px;}
+            li.list-group-item button {margin-left:10px;}
 
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
@@ -83,36 +86,36 @@
            <h1>Edit/Create Facilities & Parks</h1>
 
 
-<form id="form-edit-create_news">
+<form id="form-edit-create_place">
   <div class="col-md-10 col-md-offset-1">
     <div class="panel panel-default">
       <div class="panel-heading"><h4>Listing Info</h4></div>
       <div class="panel-body">
-        <fieldset id="edit-create_news">
+        <fieldset id="edit-create_place">
           <div class="clearfix">
             <label class="col-xs-12">
   <div class="input-group ">
     <span class="input-group-addon">Name</span>
-    <input type="text" class="form-control" id="news-headline" name="news-headline">
+    <input type="text" class="form-control" id="place-name" name="place-name">
   </div>
             </label>
             
             <div class="col-sm-6 col-xs-12">
   <label style="margin-bottom:20px;margin-top:10px;">
     <div class="input-group">
-      <span class="input-group-addon">Phone Number</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+      <span class="input-group-addon">Phone Number</span><input type="text" class="form-control" id="place-phone" name="place-phone">
     </div>
   </label>
 
   <label style="margin-bottom:20px;">
     <div class="input-group">
-      <span class="input-group-addon">Hours</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+      <span class="input-group-addon">Hours</span><input type="text" class="form-control" id="place-hours" name="place-hours">
     </div>
   </label> 
 
   <label style="margin-bottom:20px;">
     <div class="input-group">
-      <span class="input-group-addon">Parking</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+      <span class="input-group-addon">Parking</span><input type="text" class="form-control" id="place-parking" name="place-parking">
     </div>
   </label>                                 
               
@@ -121,22 +124,22 @@
     <div class="panel-body">
       <label>
         <div class="input-group">
-          <span class="input-group-addon">Street</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+          <span class="input-group-addon">Street</span><input type="text" class="form-control" id="place-street" name="place-street">
         </div>
       </label>                                 
       <label>
         <div class="input-group">
-          <span class="input-group-addon">City</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+          <span class="input-group-addon">City</span><input type="text" class="form-control" id="place-city" name="place-city">
         </div>
       </label>                                 
       <label>
         <div class="input-group">
-          <span class="input-group-addon">Zip</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+          <span class="input-group-addon">Zip</span><input type="text" class="form-control" id="place-zip" name="place-zip">
         </div>
       </label>
       <label>
         <div class="input-group">
-          <span class="input-group-addon">State</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+          <span class="input-group-addon">State</span><input type="text" class="form-control" id="place-state" name="place-state">
         </div>
       </label>
     </div>
@@ -147,22 +150,22 @@
   <label style="margin-bottom:20px;margin-top:10px;">
     <div class="input-group">
       <span class="input-group-addon">Type</span>
-      <select class="form-control">
-        <option>Park</option>
-        <option>Facility</option>
+      <select class="form-control" id="place-type" name="place-type">
+        <option value="park">Park</option>
+        <option value="facility">Facility</option>
       </select>
     </div>
   </label>
 
   <label style="margin-bottom:20px;">
     <div class="input-group">
-      <span class="input-group-addon">Description</span><textarea rows="14" class="form-control" id="news-body_content" name="news-body_content"></textarea>
+      <span class="input-group-addon">Description</span><textarea rows="14" class="form-control" id="place-description" name="place-description"></textarea>
     </div>
   </label>
 
   <label style="margin-bottom:20px;">
     <div class="input-group">
-      <span class="input-group-addon">URL</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+      <span class="input-group-addon">URL</span><input type="text" class="form-control" id="place-url" name="place-url">
     </div>
   </label>         
             </div>
@@ -220,73 +223,73 @@
                   <div class="category col-sm-12"><strong>Athletic</strong></div> 
                   <div class="col-xs-6" style="clear:left">
                     <ul>                
-                      <li><input type="checkbox"> Athletic Field</li>                
-                      <li><input type="checkbox"> Baseball Field</li>
-                      <li><input type="checkbox"> Baseball Field <br>(Backstop Only)</li>
-                      <li><input type="checkbox"> Basketball Court</li>
-                      <li><input type="checkbox"> Batting Tunnels</li>
-                      <li><input type="checkbox"> Bocce Ball</li>
-                      <li><input type="checkbox"> Golf</li>
-                      <li><input type="checkbox"> Gymnasium</li>
-                      <li><input type="checkbox"> Gymnastics</li>
-                      <li><input type="checkbox"> Horseshoe Pit</li>
-                      <li><input type="checkbox"> In-line Skate Rink</li>
-                      <li><input type="checkbox"> Indoor Tennis Court</li>
-                      <li><input type="checkbox"> Indoor Track</li>
+                      <li><input type="checkbox" name="attributes" value="Athletic_Field"> Athletic Field</li>
+                      <li><input type="checkbox" name="attributes" value="Baseball_Field"> Baseball Field</li>
+                      <li><input type="checkbox" name="attributes" value="Baseball_Field(Backstop Only)"> Baseball Field <br>(Backstop Only)</li>
+                      <li><input type="checkbox" name="attributes" value="Basketball_Court"> Basketball Court</li>
+                      <li><input type="checkbox" name="attributes" value="Batting_Tunnels"> Batting Tunnels</li>
+                      <li><input type="checkbox" name="attributes" value="Bocce_Ball"> Bocce Ball</li>
+                      <li><input type="checkbox" name="attributes" value="Golf"> Golf</li>
+                      <li><input type="checkbox" name="attributes" value="Gymnasium"> Gymnasium</li>
+                      <li><input type="checkbox" name="attributes" value="Gymnastics"> Gymnastics</li>
+                      <li><input type="checkbox" name="attributes" value="Horseshoe_Pit"> Horseshoe Pit</li>
+                      <li><input type="checkbox" name="attributes" value="In-line_Skate_Rink"> In-line Skate Rink</li>
+                      <li><input type="checkbox" name="attributes" value="Indoor_Tennis_Court"> Indoor Tennis Court</li>
+                      <li><input type="checkbox" name="attributes" value="Indoor_Track"> Indoor Track</li>
                     </ul>
                   </div>
                   <div class="col-xs-6">    
                     <ul>  
-                      <li><input type="checkbox"> Pickleball</li>
-                      <li><input type="checkbox"> Racquetball Court</li>
-                      <li><input type="checkbox"> Sand Volleyball</li>
-                      <li><input type="checkbox"> Skate Park</li>
-                      <li><input type="checkbox"> Skate Spot</li>
-                      <li><input type="checkbox"> Soccer Field</li>
-                      <li><input type="checkbox"> Softball Field</li>
-                      <li><input type="checkbox"> Squash Court</li>
-                      <li><input type="checkbox"> T-ball</li>
-                      <li><input type="checkbox"> Tennis Courts (Lights)</li>
-                      <li><input type="checkbox"> Tennis Court (No Lights)</li>
-                      <li><input type="checkbox"> Volleyball Court</li>
-                      <li><input type="checkbox"> Volleyball Net</li>
-                    </ul>
+                      <li><input type="checkbox" name="attributes" value="Pickleball"> Pickleball</li>
+                      <li><input type="checkbox" name="attributes" value="Racquetball_Court"> Racquetball Court</li>
+                      <li><input type="checkbox" name="attributes" value="Sand_Volleyball"> Sand Volleyball</li>
+                      <li><input type="checkbox" name="attributes" value="Skate_Park"> Skate Park</li>
+                      <li><input type="checkbox" name="attributes" value="Skate_Spot"> Skate Spot</li>
+                      <li><input type="checkbox" name="attributes" value="Soccer_Field"> Soccer Field</li>
+                      <li><input type="checkbox" name="attributes" value="Softball_Field"> Softball Field</li>
+                      <li><input type="checkbox" name="attributes" value="Squash_Court"> Squash Court</li>
+                      <li><input type="checkbox" name="attributes" value="T-ball"> T-ball</li>
+                      <li><input type="checkbox" name="attributes" value="Tennis_Courts(Lights)"> Tennis Courts (Lights)</li>
+                      <li><input type="checkbox" name="attributes" value="Tennis_Court_(NoLights)"> Tennis Court <br>(No Lights)</li>
+                      <li><input type="checkbox" name="attributes" value="Volleyball_Court"> Volleyball Court</li>
+                      <li><input type="checkbox" name="attributes" value="Volleyball_Net"> Volleyball Net</li>
+                    </ul> 
                   </div>
                 </div>  
                 <div class="col-sm-3 col-xs-6">
                   <ul><li class="category"><strong>Trails</strong></li>
-                    <li><input type="checkbox"> Bicycle Trail</li>
-                    <li><input type="checkbox"> Walking Trail</li>
+                    <li><input type="checkbox" name="attributes" value="Bicycle_Trail"> Bicycle Trail</li>
+                    <li><input type="checkbox" value="Walking_Trail"> Walking Trail</li>
                   </ul>
                   <ul><li class="category"><strong>Amenities</strong></li>
-                    <li><input type="checkbox"> Concessions</li>
-                    <li><input type="checkbox"> Elevator</li>
-                    <li><input type="checkbox"> Fitness Equipment</li>
-                    <li><input type="checkbox"> Grill</li>
-                    <li><input type="checkbox"> Nursery</li>
-                    <li><input type="checkbox"> Restroom</li>
-                    <li><input type="checkbox"> Tribute Park</li>
+                    <li><input type="checkbox" name="attributes" value="Concessions"> Concessions</li>
+                    <li><input type="checkbox" name="attributes" value="Elevator"> Elevator</li>
+                    <li><input type="checkbox" name="attributes" value="Fitness_Equipment"> Fitness Equipment</li>
+                    <li><input type="checkbox" name="attributes" value="Grill"> Grill</li>
+                    <li><input type="checkbox" name="attributes" value="Nursery"> Nursery</li>
+                    <li><input type="checkbox" name="attributes" value="Restroom"> Restroom</li>
+                    <li><input type="checkbox" name="attributes" value="Tribute Park"> Tribute Park</li>
                   </ul>
                   <ul><li class="category"><strong>Space</strong></li>
-                    <li><input type="checkbox"> Parties</li>
-                    <li><input type="checkbox"> RoomRental</li>
+                    <li><input type="checkbox" name="attributes" value="Parties"> Parties</li>
+                    <li><input type="checkbox" name="attributes" value="RoomRental"> RoomRental</li>
                   </ul>
                 </div>
                 <div class="col-sm-3 col-xs-6">
                   <ul><li class="category"><strong>Area</strong></li>
-                    <li><input type="checkbox"> Observation Deck</li>
-                    <li><input type="checkbox"> Conservation Area</li>
-                    <li><input type="checkbox"> Detention Area</li>
-                    <li><input type="checkbox"> Garden Area</li>
-                    <li><input type="checkbox"> Garden Plot</li>
-                    <li><input type="checkbox"> Handicap Accessible Playground</li>
-                    <li><input type="checkbox"> Ice Skating</li>
-                    <li><input type="checkbox"> Picnic Area</li>
-                    <li><input type="checkbox"> Picnic Shelter</li>
-                    <li><input type="checkbox"> Playground</li>
-                    <li><input type="checkbox"> Pond</li>
-                    <li><input type="checkbox"> Pool</li>
-                    <li><input type="checkbox"> Sled Hill</li>
+                    <li><input type="checkbox" name="attributes" value="Observation_Deck"> Observation Deck</li>
+                    <li><input type="checkbox" name="attributes" value="Conservation_Area"> Conservation Area</li>
+                    <li><input type="checkbox" name="attributes" value="Detention_Area"> Detention Area</li>
+                    <li><input type="checkbox" name="attributes" value="Garden_Area"> Garden Area</li>
+                    <li><input type="checkbox" name="attributes" value="Garden_Plot"> Garden Plot</li>
+                    <li><input type="checkbox" name="attributes" value="Handicap_Accessible_Playground"> Handicap Accessible Playground</li>
+                    <li><input type="checkbox" name="attributes" value="Ice_Skating"> Ice Skating</li>
+                    <li><input type="checkbox" name="attributes" value="Picnic_Area"> Picnic Area</li>
+                    <li><input type="checkbox" name="attributes" value="Picnic_Shelter"> Picnic Shelter</li>
+                    <li><input type="checkbox" name="attributes" value="Playground"> Playground</li>
+                    <li><input type="checkbox" name="attributes" value="Pond"> Pond</li>
+                    <li><input type="checkbox" name="attributes" value="Pool"> Pool</li>
+                    <li><input type="checkbox" name="attributes" value="Sled_Hill"> Sled Hill</li>
                   </ul>
                 </div>
               </div><!--locationAttributes panel body end-->
@@ -306,11 +309,7 @@
               <div class="panel-heading"><span class="panel-title subsectionTitle">Current Images</span></div>
               
                 <ul class="list-group">
-                  <li class="list-group-item"><img src=""/><span class="fileName"></span> <button type="button" class="btn btn-danger">delete</button></li>
-                  <li class="list-group-item"></li>
-                  <li class="list-group-item"></li>
-                  <li class="list-group-item"></li>
-                  <li class="list-group-item"></li>
+
                 </ul>
                <!--currentImages panel body end-->
             </div> <!--currentImages panel end-->
@@ -382,6 +381,7 @@
         <script src="js/plugins/ckeditor/ckeditor.js"></script>
       -->
         <script src="js/plugins/fileupload.js"></script>
+        <script src="demodata.js"></script>
         <script>
 $(document).ready(function() {
 //initialize collapse controls for Location Attributes and Image Management panels
@@ -408,6 +408,18 @@ var thumbnail_X = $('.fileupload-new').width();
 var thumbnail_Y = thumbnail_X/3*2;
 $('.thumbnail').width(thumbnail_X);
 $('.thumbnail').height(thumbnail_Y.toFixed());
+
+
+
+
+
+
+
+
+
+
+
+
 
 });
 

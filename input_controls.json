@@ -60,6 +60,27 @@
 	}
 },
 
+{"page":"create-edit_facilities-park.html", "forms":{
+	"form-edit-create_place": {"type":"fieldset","id":"edit-create_place","fields":[
+		{"id":"place-name","name":"place-name","type":"text"},
+		{"id":"place-phone","name":"place-phone","type":"text"},
+		{"id":"place-hours","name":"place-hours","type":"text"},
+		{"id":"place-parking","name":"place-parking","type":"text"},
+		{"id":"place-street","name":"place-steet","type":"text"},
+		{"id":"place-city","name":"place-city","type":"text"},
+		{"id":"place-zip","name":"place-zip","type":"text"},
+		{"id":"place-state","name":"place-state","type":"text"},
+		{"id":"place-type","name":"place-type","type":"select","options":["park","facility"]},
+		{"id":"place-description","name":"place-description","type":"text"},
+		{"id":"place-url","name":"place-url","type":"text"},
+		{"name":"attribute","type":"checkbox", "value":["Athletic_Field", "Baseball_Field", "Baseball_Field(BackstopOnly)", "Basketball_Court", "Batting_Tunnels", "Bocce_Ball", "Golf", "Gymnasium", "Gymnastics", "Horseshoe_Pit", "In-line_Skate_Rink", "Indoor_Tennis_Court", "Indoor_Track", "Pickleball", "Racquetball_Court", "Sand_Volleyball", "Skate_Park", "Skate_Spot", "Soccer_Field", "Softball_Field", "Squash_Court", "T-ball", "Tennis_Courts(Lights)", "Tennis_Court_(NoLights)", "Volleyball_Court", "Volleyball_Net", "Bicycle_Trail", "Hiking_Trail", "Concessions", "Elevator", "Fitness_Equipment", "Grill", "Nursery", "Restroom", "TributePark", "Parties", "RoomRental", "Observation_Deck", "Conservation_Area", "Detention_Area", "Garden_Area", "Garden_Plot", "Handicap_Accessible_Playground", "Ice_Skating", "Picnic_Area", "Picnic_Shelter", "Playground", "Pond", "Pool", "Sled_Hill"]},
+		{"type":"submit","value":"save"}
+		]
+		}
+	}
+},
+
+
 {"page":"create-edit_news.html", "forms":{
 	"form-edit-create_news": {"type":"fieldset","id":"edit-create_news","fields":[
 		{"id":"news-headline","name":"news-headline","type":"text"},
@@ -72,7 +93,6 @@
 		}
 	}
 },
-
 
 
 ]

@@ -124,7 +124,7 @@
                 <td>123-456-7890</td>
                 <td>jonespark@parkdistrict.com</td>
                 <td>Park</td>
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td><button class="btn btn-default edit-facilities">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>
               <tr>
                 <td>Cardinal Park</td>
@@ -132,7 +132,7 @@
                 <td>456-789-0123</td>
                 <td>cardinalpark@parkdistrict.com</td>                
                 <td>Park</td>
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td><button class="btn btn-default edit-facilities">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>
               <tr>
                 <td>Olympic Fields</td>
@@ -140,7 +140,7 @@
                 <td>789-012-3456</td>
                 <td>olympic@parkdistrict.com</td>
                 <td>Sports Field</td>                            
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td><button class="btn btn-default edit-facilities">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>               
               <tr>
                 <td>O'Neal Sportsplex</td>
@@ -148,7 +148,7 @@
                 <td>789-012-3456</td>
                 <td>olympic@parkdistrict.com</td>        
                 <td>Rec Facility</td>
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td><button class="btn btn-default edit-facilities">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>
             </tbody>
           </table>       
@@ -173,6 +173,7 @@ $('#facility_closings select').change( function() {
 if($(this).val()==="closed"){$(this).addClass('closed')}
   else{$(this).removeClass('closed')}
 });
+$('button.edit-facilities').click(function() {window.location.href='create-edit_facilities-park.html?id=central_park'});
 
 /*    Add analytics when available
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

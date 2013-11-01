@@ -119,19 +119,19 @@
                 <td>O'Neal Sportsplex Front Desk</td>
                 <td>sportsplex@parkdistrict.com</td>
                 <td>123-456-7890</td>
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td><button class="btn btn-default edit-contact">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>
               <tr>
                 <td>Office of Park Services</td>
                 <td>parks@parkdistrict.com</td>
                 <td>456-789-0123</td>
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td><button class="btn btn-default edit-contact">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>               
               <tr>
                 <td>Olympic Park Groundskeeping & maintenance</td>
                 <td>olympicpark@parkdistrict.com</td>
                 <td>987-654-3210</td>
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td><button class="btn btn-default edit-contact">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>
             </tbody>
           </table>
@@ -156,6 +156,9 @@ $('#facility_closings select').change( function() {
 if($(this).val()==="closed"){$(this).addClass('closed')}
   else{$(this).removeClass('closed')}
 });
+
+$('button.edit-contact').click(function() {window.location.href='create-edit_contact.html?id=office_of_park_services'});
+
 
 /*    Add analytics when available
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

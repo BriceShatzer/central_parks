@@ -86,7 +86,11 @@
 		{"id":"news-headline","name":"news-headline","type":"text"},
 		{"id":"news-publish_date","name":"news-publish_date","type":"text"},
 		{"id":"news-expire_date","name":"news-expire_date","type":"text"},
+		{"id":"news-active","name":"news-active", "value":"active", "type":"checkbox"},
+		{"id":"news-featured","name":"news-active","value":"featured","type":"checkbox"},
+		{"id":"news-launch_browser","name":"news-launch_browser","value":"launch_browser","type":"checkbox"},
 		{"id":"news-body_content","name":"news-body_content","type":"text"},
+		{"id":"news-feature_image","name":"news-feature_image","type":"file"},
 		{"id":"news-more_info_url","name":"news-more_info_url","type":"text"},
 		{"type":"submit","value":"save"}
 		]

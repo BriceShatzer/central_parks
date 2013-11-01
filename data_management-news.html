@@ -123,7 +123,7 @@
                 <td>12-1-13</td>
                 <td><input type="checkbox" checked="checked" disabled="disabled"></td>
                 <td><input type="checkbox" checked="checked" disabled="disabled"></td>
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td><button class="btn btn-default edit-news">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>
               <tr>
                 <td>Winter Youth Sports Kickoff Soon</td>
@@ -131,7 +131,7 @@
                 <td>11-30-13</td>
                 <td><input type="checkbox" disabled="disabled"></td>
                 <td><input type="checkbox" checked="checked" disabled="disabled"></td>                
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td><button class="btn btn-default edit-news">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>
               <tr>
                 <td>Santa to Visit Rec Center</td>
@@ -139,7 +139,7 @@
                 <td>12-22-13</td>
                 <td><input type="checkbox"  disabled="disabled"></td>
                 <td><input type="checkbox" checked="checked" disabled="disabled"></td>                
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td><button class="btn btn-default edit-news">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>               
               <tr>
                 <td>Keep that New Years resolution, register for January fitness classes</td>
@@ -147,7 +147,7 @@
                 <td>1-15-14</td>
                 <td><input type="checkbox" disabled="disabled"></td>
                 <td><input type="checkbox" checked="checked" disabled="disabled"></td>                
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td><button class="btn btn-default edit-news">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>
             </tbody>
             </table>
@@ -173,6 +173,7 @@ $('#facility_closings select').change( function() {
 if($(this).val()==="closed"){$(this).addClass('closed')}
   else{$(this).removeClass('closed')}
 });
+$('button.edit-news').click(function() {window.location.href='create-edit_news.html?id=fall_food_drive_was_a_huge_success'});
 
 /*    Add analytics when available
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

@@ -78,7 +78,7 @@
 
 
 <form id="form-edit-create_news">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12">
           <div class="panel panel-default">
             <div class="panel-heading"><h4>User Info</h4></div>
             <div class="panel-body">
@@ -91,30 +91,33 @@
               </label>
 
 
-              <label class="col-xs-6 col-sm-4">
+              <label class="col-xs-6 col-sm-3">
                 <div class="input-group">
                 <span class="input-group-addon">Publish Date</span><input type="text" class="form-control" id="news-publish_date" name="news-publish_date">
                 </div>
               </label>
           
              
-              <label class="col-xs-6 col-sm-4" style="margin-bottom:10px;">
+              <label class="col-xs-6 col-sm-3" style="margin-bottom:10px;">
                 <div class="input-group">
                 <span class="input-group-addon">Expire Date</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
                 </div>
               </label>
               
-              <div class="col-sm-4">
-                <label class="col-md-5 col-sm-12" style="margin-top:5px;">
-                  <input type="checkbox" name="news-active" value="active">Active
+              <div class="col-sm-6">
+                <label class="col-md-4 col-sm-12" style="margin-top:8px;">
+                  <input type="checkbox" name="news-active" id="news-active" value="active">Active
                 </label>
-                <label class="col-md-7 col-sm-12" style="margin-top:5px;">
-                  <input type="checkbox" name="news-featured" value="featured">Featured Item
+                <label class="col-md-4 col-sm-12" style="margin-top:8px;">
+                  <input type="checkbox" name="news-featured" id="news-featured" value="featured">Featured Item
                 </label>
+                <label class="col-md-4 col-sm-12" style="margin-top:8px;">
+                  <input type="checkbox" name="news-launch_browser" id="news-launch_browser" value="launch_browser">Open in browser
+                </label>                
               </div>                
 
 
-              <label class="col-md-6 col-xs-12">
+              <label class="col-md-6 col-xs-12" style="clear:left;">
                 <div class="input-group">
                 <span class="input-group-addon">Body <br>Content</span><textarea rows="20" class="form-control" id="news-body_content" name="news-body_content"></textarea>
               </div>
@@ -177,6 +180,7 @@
         <script src="js/plugins/datepicker.js"></script>
         <script src="js/plugins/ckeditor/ckeditor.js"></script>
         <script src="js/plugins/fileupload.js"></script>
+        <script src="demodata.js"></script>
         <script>
 // intializes datepicker on publish and expire dates
 $('#news-publish_date, #news-expire_date').datepicker({'format':'mm/dd/yyyy'})

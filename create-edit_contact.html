@@ -88,20 +88,20 @@ color:#000;
            <h1>Edit/Create Contact</h1>
 
 
-<form id="form-edit-create_news">
+<form id="form-edit-create_contact">
         <div class="col-md-10 col-md-offset-1">
           <div class="panel panel-default">
             <div class="panel-heading"><h4>Contact Details</h4></div>
             <div class="panel-body">
-            <fieldset id="edit-create_news">
+            <fieldset id="edit-create_contact">
 
               <label class="col-xs-10">
                 <div class="input-group ">
-                <span class="input-group-addon">Name</span><input type="text" class="form-control" id="news-headline" name="news-headline">
+                <span class="input-group-addon">Name</span><input type="text" class="form-control" id="contact-name" name="contact-name">
                 </div>
               </label>
               <label class="col-xs-2" style="margin-top:5px;">
-                  <input type="checkbox" name="news-active" value="active">Active
+                  <input type="checkbox" name="contact-active" id="contact-active"value="active">Active
               </label>
 
 <div class="col-sm-6 col-xs-12" style="margin-top:10px;">
@@ -110,22 +110,22 @@ color:#000;
                   <div class="panel-body">
                   <label>
                     <div class="input-group">
-                    <span class="input-group-addon">Street</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                    <span class="input-group-addon">Street</span><input type="text" class="form-control" id="contact-street" name="contact-street">
                     </div>
                   </label>                                 
                   <label>
                     <div class="input-group">
-                    <span class="input-group-addon">City</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                    <span class="input-group-addon">City</span><input type="text" class="form-control" id="contact-city" name="contact-city">
                     </div>
                   </label>                                 
                   <label>
                     <div class="input-group">
-                    <span class="input-group-addon">Zip</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                    <span class="input-group-addon">Zip</span><input type="text" class="form-control" id="contact-zip" name="contact-zip">
                     </div>
                   </label>
                   <label>
                     <div class="input-group">
-                    <span class="input-group-addon">State</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                    <span class="input-group-addon">State</span><input type="text" class="form-control" id="contact-state" name="contact-state">
                     </div>
                   </label>
                   </div>
@@ -134,12 +134,12 @@ color:#000;
 <div class="col-sm-6 col-xs-12">
                 <label style="margin-bottom:20px;margin-top:10px;">
                 <div class="input-group">
-                  <span class="input-group-addon">Email</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                  <span class="input-group-addon">Email</span><input type="text" class="form-control" id="contact-email" name="contact-email">
                 </div>
                 </label>
                 <label style="margin-bottom:20px;margin-top:10px;">
                 <div class="input-group">
-                  <span class="input-group-addon">Phone Number</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                  <span class="input-group-addon">Phone Number</span><input type="text" class="form-control" id="contact-phone" name="contact-phone">
                 </div>
                 </label>                
 </div>
@@ -189,7 +189,7 @@ color:#000;
 -->
 
           
-            </fieldset>       
+     
             </div>
           </div>
           <div id="controlButtons">
@@ -202,6 +202,7 @@ color:#000;
               <button class="btn btn-danger btn-block"> Cancel</button>
               </div>
               <div class="col-md-1 col-xs-12"></div>
+</fieldset>  
           </div>
         </div>
 
@@ -220,9 +221,7 @@ color:#000;
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/plugins/datepicker.js"></script>
-        <script src="js/plugins/ckeditor/ckeditor.js"></script>
-        <script src="js/plugins/fileupload.js"></script>
+        <script src="demodata.js"></script>
         <script>
 /* intializes wysiwyg and set height to match Feature Image widget
 CKEDITOR.replace( 'news-body_content');

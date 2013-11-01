@@ -120,7 +120,22 @@
 		}
 	}
 },
+{"page":"create-edit_conditions.html", "forms":{
+	"form-edit-create_condition": {"type":"fieldset","id":"edit-create_condition","fields":[
+		{"id":"condition-headline","name":"condition-name","type":"text"},
 
+		{"id":"condition-status","name":"condition-status","type":"select","options":["open","closed"]},
+		{"id":"condition-street","name":"condition-street","type":"text"},
+		{"id":"condition-city","name":"condition-city","type":"text"},
+		{"id":"condition-zip","name":"condition-zip", "value":"active", "type":"checkbox"},
+		{"id":"condition-state","name":"condition-state","value":"featured","type":"checkbox"},
+		{"id":"condition-type","name":"condition-type","type":"select","options":["pool","ball_field","ice_rink"]},
+		{"id":"condition-note","name":"condition-note","type":"text"},
+		{"type":"submit","value":"save"}
+		]
+		}
+	}
+},
 
 
 ]

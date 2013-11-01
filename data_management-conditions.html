@@ -37,10 +37,81 @@
               background-color: #b20000 !important;
               color:#000;
             }
-            .status{color:green;}
+            .status-open{color:green;}
+            .status-closed{color:red;}
             #group-conditional-management{margin-top:20px;
             }
+            #group-conditional-management label{margin:10px;}
+            #group-conditional-management .panel,
+            #group-conditional-management button{margin-top: 10px;}
+            #group_status option[value="open"],
+            .open {
+              background-color: #66AA00;
+              color:#000;
+            }
+            #group_status option[value="closed"],
+            .closed{
+              background-color: #b20000 !important;
+              color:#000;
+            }
+    div.process-step{
+      position: relative;
+      /*background: #DDD;*/
+    }
+    div.process-step:after{
+      left: 100%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+    
+    div.process-step:after {
+      border-color: rgba(221, 221, 221, 0);
+      border-left-color: #DDD;
+      border-width: 25px;
+      top: 50px;
+      margin-top: -25px;
+    }
+    #group_submit{text-align:center;margin-top:20px;}
+    #group_submit button{font-size:35px}
+@media (max-width: 1200px){
+  #group_submit{margin-top:-25px;margin-bottom: 10px;}
+  #group_submit button{font-size:25px;margin-top:0px;}
+  div.process-step.group_notification:after{
+    left:0%;
+    top:100%;
+    border-left-color: transparent;
+    border-top-color: #DDD;
+    margin-top: 0px;
+    left: 50%;
+    margin-left: -25px;
+  }
+}
+@media (max-width: 992px){
+  div.process-step.group_status:after{
+    left:0%;
+    top:100%;
+    border-left-color: transparent;
+    border-top-color: #DDD;
+    margin-top: 0px;
+    left: 50%;
+    margin-left: -25px;
+  }
+  div.process-step.group_notification:after{
+    left:0%;
+    bottom:0%;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-right-color: #DDD;
+    margin-top: -55px;
+    margin-left:-50px;
+  }
+    #group_submit {margin-top:-75px;margin-bottom: 10px;}
 
+}
         </style>        
 
         <!--[if lt IE 9]>
@@ -115,16 +186,55 @@
       <div class="panel panel-default data-panels" id="group-conditional-management">
         <div class="panel-heading"><h4>Group Condition Management</h4></div>
         <div class="panel-body" >
-          <div class="col-xs-4">
-            <label><input type="checkbox"> Pools</label>
-            <label><input type="checkbox"> Ball Fields</label>
-            <label><input type="checkbox"> Ice Rinks</label>
-          </div>
-
-        </div>
-
+        <div class="col-sm-12">
+              <div class="col-lg-3 col-md-4 col-xs-6">              
+              <div class="panel panel-default col-xs-12 process-step">
+                <div class="panel-body">
+                  <p style="margin-top:8px;">Select one or more group types to manage</p>
+                  <label><input type="checkbox"> Pools</label><br>
+                  <label><input type="checkbox"> Ball Fields</label><br>
+                  <label><input type="checkbox"> Ice Rinks</label><br>
+                </div>
+              </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-xs-6">              
+              <div class="panel panel-default col-xs-12 process-step group_status">
+                <div class="panel-body">
+                  <p style="margin-top:8px;">Set status for selected group(s)</p>
+                  <label style="margin:10px 0px">
+                    <div class="input-group">
+                      <span class="input-group-addon">Current Status</span>
+                      <select class="form-control"  id="group_status_value" name="group_status">
+                        <option disabled="disabled" selected="selected" style="display:none;"> </option>
+                        <option value="open">open</option>
+                        <option value="closed">closed</option>
+                      </select>
+                    </div>
+                  </label>   
+                </div>
+              </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-xs-6">
+              <div class="panel panel-default col-xs-12 process-step group_notification">
+                <div class="panel-body">
+                  <p style="margin-top:8px;"><strong>Notifications</strong></p>
+                  <p>Would you like to notify your app user of this change?</p>
+                  <label><input type="radio" id="group_notification-yes" name="group_notification" value="yes"> Yes </label>
+                  <label><input type="radio" id="group_notification-no" name="group_notification" value="no"> No </label> 
+                </div>
+              </div>
+            </div>
+            <div class="clearfix visible-md"></div>
+              <div class="col-lg-3 col-md-6 col-lg-offset-0 col-md-offset-6 col-xs-6" id="group_submit" >
+             
+              <button class="btn btn-success col-xs-12">
+                <span class="glyphicon glyphicon-flag"></span> &nbsp;Submit
+              </button>
+              </div>                                          
       </div>
-    </div>
+      </div>
+    </div><!-- end of group-conditional-management pane-->
+  </div>
           <table class="table col-md-12">
               <tbody>
               <tr>
@@ -138,48 +248,48 @@
               </tr>
               <tr>
                 <td>Olympic Fields - Field #1</td>
-                <td>Facility</td>
+                <td>Ball Field</td>
                 <td>1800 Gold Medal Lane</td>
-                <td>North end of field #3 closed for ground repair</td>
-                <td class="status">open</td>
+                <td></td>
+                <td class="status-open">open</td>
                 <td><input type="checkbox" checked="checked" disabled="disabled"></td>
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td><button class="btn btn-default edit-condition">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>
               <tr>
                 <td>Olympic Fields - Field #2</td>
-                <td>Facility</td>
+                <td>Ball Field</td>
                 <td>1800 Gold Medal Lane</td>
-                <td>North end of field #3 closed for ground repair</td>
-                <td class="status">open</td>
+                <td></td>
+                <td class="status-open">open</td>
                 <td><input type="checkbox" checked="checked" disabled="disabled"></td>
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td><button class="btn btn-default edit-condition">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>
               <tr>
                 <td>Olympic Fields - Field #3</td>
-                <td>Facility</td>
+                <td>Ball Field</td>
                 <td>1800 Gold Medal Lane</td>
                 <td>North end of field #3 closed for ground repair</td>
-                <td class="status">open</td>
+                <td class="status-open">open</td>
                 <td><input type="checkbox" checked="checked" disabled="disabled"></td>
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td><button class="btn btn-default edit-condition">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>                            
               <tr>
-                <td>Jones Park</td>
-                <td>Park</td>
+                <td>Family Splash Center</td>
+                <td>Pool</td>
                 <td>123 Abc St.</td>
-                <td>Restrooms & drinking fountains have been closed for winter</td>
-                <td class="status">open</td>
+                <td>Closed for winter</td>
+                <td class="status-closed">closed</td>
                 <td><input type="checkbox" checked="checked" disabled="disabled"></td>               
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td><button class="btn btn-default edit-condition">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>               
               <tr>
-                <td>Cardinal Park</td>
-                <td>Park</td>
+                <td>Twin Lakes Ice Pavilion</td>
+                <td>Ice Rink</td>
                 <td>987 Willow dr.</td>
-                <td>Restrooms & drinking fountains have been closed for winter</td>
-                <td class="status">open</td>
+                <td>Free Skate from noon-4:30pm daily</td>
+                <td class="status-open">open</td>
                 <td><input type="checkbox" checked="checked" disabled="disabled"></td>               
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td><button class="btn btn-default edit-condition">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>
               </tbody>
             </table>
@@ -205,6 +315,30 @@ $('#facility_closings select').change( function() {
 if($(this).val()==="closed"){$(this).addClass('closed')}
   else{$(this).removeClass('closed')}
 });
+
+var $status = $('#group_status');
+function setStatus_color(){
+  if($status.val()==="closed"){
+  $status
+    .removeClass('open')
+    .addClass('closed')
+  }
+  else{
+    $status
+    .removeClass('closed')
+    .addClass('open')
+  }
+};
+
+$('#group_status').change( function() {setStatus_color()} );
+
+$('.group_notification input').click(function(){
+  if ( $('.group_notification input:checked').val() == "yes"){$('#group_submit .glyphicon').removeClass('glyphicon-flag').addClass('glyphicon-bullhorn')}
+  else{$('#group_submit .glyphicon').removeClass('glyphicon-bullhorn').addClass('glyphicon-flag')}
+});
+
+
+$('button.edit-condition').click(function() {window.location.href='create-edit_conditions.html?id=olympic_fields_field_3'});
 
 /*    Add analytics when available
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

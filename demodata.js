@@ -1,6 +1,36 @@
 var page = $(location).attr('href').slice(  $(location).attr('href').lastIndexOf('/')+1  );
 
-if( page==="create-edit_facilities-park.html?id=central_park"){
+
+
+
+if( page==="create-edit_news.html?id=fall_food_drive_was_a_huge_success"){
+	$('#news-headline').val("Fall Food Drive Was A Huge Success!");
+	$('#news-publish_date').val("9/12/2013");
+	$('#news-expire_date').val("12/1/2013");
+	$('#news-active').attr('checked', true);
+	$('#news-featured').attr('checked', true);
+	$('#news-body_content').val('<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse est tellus, tristique a enim nec, vestibulum accumsan libero. Etiam iaculis libero orci, vel malesuada magna luctus quis. Nam accumsan mauris eu nulla varius, nec elementum risus viverra. Curabitur non dictum ligula, ac convallis eros. Quisque eget velit sem. Maecenas non arcu magna. Sed gravida eleifend mi, quis placerat felis facilisis id. Quisque non mi sapien. Proin neque lacus, placerat vitae sem quis, pellentesque consectetur quam.</p><p>Proin faucibus adipiscing lorem, quis varius nibh viverra eu. Pellentesque consectetur congue tortor sed fermentum. Nulla vitae nisi a est facilisis mollis. Integer lacinia posuere elit, pulvinar consectetur ante tincidunt ac. Etiam semper est eu massa ornare dictum. Ut feugiat laoreet libero, quis faucibus tellus vehicula quis. Nam dictum tortor quis rhoncus tristique. Suspendisse potenti. Aenean a dolor lacinia, ornare augue eget, adipiscing orci. Nunc non convallis sapien. Praesent venenatis bibendum porttitor. Nullam in nisi cursus, rhoncus augue ut, suscipit ligula. Praesent tellus sem, consequat nec condimentum id, semper eu nisi. Vivamus tincidunt pharetra tellus, laoreet ultrices nibh bibendum nec.</p>')
+	$('#news-more_info_url').val("http://www.park.gov/news/fall_food_drive_was_a_huge_success");
+}
+
+else if( page==="create-edit_events.html?id=santa_to_visit_rec_center"){
+	$('#event-title').val("Santa to Visit Rec Center");
+	$('#event-publish_date').val("11/25/2013");
+	$('#event-expire_date').val("12/22/2013");
+	$('#event-active').attr('checked', true);
+	$('#event-featured').attr('checked', true);
+	$('#event-start_date').val("12/21/2013");
+	$('#event-end_date').val("12/21/2013");
+	$('#event-info').val("<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse est tellus, tristique a enim nec, vestibulum accumsan libero. Etiam iaculis libero orci, vel malesuada magna luctus quis. Nam accumsan mauris eu nulla varius, nec elementum risus viverra. Curabitur non dictum ligula, ac convallis eros. Quisque eget velit sem. Maecenas non arcu magna. Sed gravida eleifend mi, quis placerat felis facilisis id. Quisque non mi sapien. Proin neque lacus, placerat vitae sem quis, pellentesque consectetur quam.</p>");
+	$('#event-venue').val("Rec Center");
+	$('#event-street').val("678 North Street");
+	$('#event-city').val("Chicago");
+	$('#event-zip').val("60601");
+	$('#event-state').val("IL");
+	$('#event-more_info_url').val("http://www.park.gov/news/fall_food_drive_was_a_huge_success")
+}
+
+else if( page==="create-edit_facilities-park.html?id=central_park"){
 	
 	var attributes = ["Bocce_Ball", "Bicycle_Trail", "Hiking_trail", "Concessions", "Restroom", "Conservation_Area", "Picnic_Area"]
 	var imageList = ["img/central_park/fountain.jpg", "img/central_park/main_path.png", "img/central_park/skyline.jpg"]
@@ -29,7 +59,21 @@ if( page==="create-edit_facilities-park.html?id=central_park"){
 		var $image = $('<img />').attr('src', url);
 		$listItem.append([$image,$fileName,$deleteButton]).appendTo('ul.list-group');
 	});
-};
+}
+
+else if( page==="create-edit_conditions.html?id=olympic_fields_field_3"){
+	$('#condition-name').val("Olympic Fields - Field #3");
+	$('#condition-active').attr('checked', true);
+	$('#condition_status').val("open");
+	$('#condition-street').val("1800 Gold Medal Lane");
+	$('#condition-city').val("Chicago");
+	$('#condition-zip').val("60601");
+	$('#condition-state').val("IL");
+	$('#condition-type').val("ball_field");
+	$('#condition-note').val("North end of field #3 closed for ground repair");
+}
+
+
 
 else if( page==="create-edit_contact.html?id=office_of_park_services"){
 	$('#contact-name').val("Office of Park Services");
@@ -40,31 +84,4 @@ else if( page==="create-edit_contact.html?id=office_of_park_services"){
 	$('#contact-city').val("Chicago");
 	$('#contact-zip').val("60601");
 	$('#contact-state').val("IL");
-};
-
-else if( page==="create-edit_news.html?id=fall_food_drive_was_a_huge_success"){
-	$('#news-headline').val("Fall Food Drive Was A Huge Success!");
-	$('#news-publish_date').val("9/12/2013");
-	$('#news-expire_date').val("12/1/2013");
-	$('#news-active').attr('checked', true);
-	$('#news-featured').attr('checked', true);
-	$('#news-body_content').val('<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse est tellus, tristique a enim nec, vestibulum accumsan libero. Etiam iaculis libero orci, vel malesuada magna luctus quis. Nam accumsan mauris eu nulla varius, nec elementum risus viverra. Curabitur non dictum ligula, ac convallis eros. Quisque eget velit sem. Maecenas non arcu magna. Sed gravida eleifend mi, quis placerat felis facilisis id. Quisque non mi sapien. Proin neque lacus, placerat vitae sem quis, pellentesque consectetur quam.</p><p>Proin faucibus adipiscing lorem, quis varius nibh viverra eu. Pellentesque consectetur congue tortor sed fermentum. Nulla vitae nisi a est facilisis mollis. Integer lacinia posuere elit, pulvinar consectetur ante tincidunt ac. Etiam semper est eu massa ornare dictum. Ut feugiat laoreet libero, quis faucibus tellus vehicula quis. Nam dictum tortor quis rhoncus tristique. Suspendisse potenti. Aenean a dolor lacinia, ornare augue eget, adipiscing orci. Nunc non convallis sapien. Praesent venenatis bibendum porttitor. Nullam in nisi cursus, rhoncus augue ut, suscipit ligula. Praesent tellus sem, consequat nec condimentum id, semper eu nisi. Vivamus tincidunt pharetra tellus, laoreet ultrices nibh bibendum nec.</p>')
-	$('#news-more_info_url').val("http://www.park.gov/news/fall_food_drive_was_a_huge_success");
-};
-
-else if( page==="create-edit_events.html?id=santa_to_visit_rec_center"){
-	$('#event-title').val("Santa to Visit Rec Center");
-	$('#event-publish_date').val("11/25/2013");
-	$('#event-expire_date').val("12/22/2013");
-	$('#event-active').attr('checked', true);
-	$('#event-featured').attr('checked', true);
-	$('#event-start_date').val("12/21/2013");
-	$('#event-end_date').val("12/21/2013");
-	$('#event-info').val("<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse est tellus, tristique a enim nec, vestibulum accumsan libero. Etiam iaculis libero orci, vel malesuada magna luctus quis. Nam accumsan mauris eu nulla varius, nec elementum risus viverra. Curabitur non dictum ligula, ac convallis eros. Quisque eget velit sem. Maecenas non arcu magna. Sed gravida eleifend mi, quis placerat felis facilisis id. Quisque non mi sapien. Proin neque lacus, placerat vitae sem quis, pellentesque consectetur quam.</p>");
-	$('#event-venue').val("Rec Center");
-	$('#event-street').val("678 North Street");
-	$('#event-city').val("Chicago");
-	$('#event-zip').val("60601");
-	$('#event-state').val("IL");
-	$('#event-more_info_url').val("http://www.park.gov/news/fall_food_drive_was_a_huge_success")
 }

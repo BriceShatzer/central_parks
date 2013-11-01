@@ -151,6 +151,23 @@ footer p {
 .control-group.success .fileupload .uneditable-input{color:#468847;border-color:#468847;}
 .control-group.success .fileupload .fileupload-preview{color:#468847;}
 .control-group.success .fileupload .thumbnail{border-color:#468847;}
+
+/*
+* Draggable styles - Derived from jQuery UI default styles
+*/
+#featured-items {padding:0;}
+#featured-items li{
+cursor: pointer;
+list-style: none;
+border: 1px solid #DDD;
+background-color: #fff;
+margin:5px;
+font-weight: normal;
+color: #555;
+padding:8px;
+}
+#featured-items li.displayed-feature{border-color: #428BCA;background-color: #eee;}
+
 /*!
  * Datepicker for  Bootstrap *  Copyright 2012 Stefan Petre * Licensed under the Apache License v2.0 * http://www.apache.org/licenses/LICENSE-2.0 *
  */

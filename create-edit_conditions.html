@@ -88,20 +88,21 @@ color:#000;
            <h1>Edit/Create Condition Listing</h1>
 
 
-<form id="form-edit-create_news">
+<form id="form-edit-create_condition">
+        
         <div class="col-md-10 col-md-offset-1">
           <div class="panel panel-default">
             <div class="panel-heading"><h4>Listing Details</h4></div>
             <div class="panel-body">
-            <fieldset id="edit-create_news">
+            <fieldset id="edit-create_condition">
 
               <label class="col-xs-10">
-                <div class="input-group ">
-                <span class="input-group-addon">Name</span><input type="text" class="form-control" id="news-headline" name="news-headline">
+                <div class="input-group col-xs-12">
+                <span class="input-group-addon">Name</span><input type="text" class="form-control" id="condition-name" name="condition-name">
                 </div>
               </label>
               <label class="col-xs-2" style="margin-top:5px;">
-                  <input type="checkbox" name="news-active" value="active">Active
+                  <input type="checkbox" id="condition-active" name="condition-active" value="active">Active
               </label>
 
 <div class="col-sm-6 col-xs-12">
@@ -109,110 +110,64 @@ color:#000;
           
              
 
-              <label style="margin-bottom:20px;margin-top:10px">
+              <label  class="col-xs-12" style="margin-bottom:20px;margin-top:10px">
               <div class="input-group">
                 <span class="input-group-addon">Current Status</span>
-                  <select class="form-control"  id="facility_status" name="facility_status">
-                    <option value="open">open</option>
-                    <option value="closed">closed</option>
+                  <select class="form-control"  id="condition_status" name="condition_status">
+                    <option selected="selected" disabled="disabled" style="display:none"></option>
+                    <option class="open" value="open">open</option>
+                    <option class="closed" value="closed">closed</option>
                   </select>
               </div>
               </label>   
-                                
+              <div class="col-xs-12">           
                 <div class="panel panel-default">
                   <div class="panel-heading"><span class="subsectionTitle">Location</span></div>
                   <div class="panel-body">
-                  <label>
+                  <label class="col-xs-12">
                     <div class="input-group">
-                    <span class="input-group-addon">Street</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                    <span class="input-group-addon">Street</span><input type="text" class="form-control" id="condition-street" name="condition-street">
                     </div>
                   </label>                                 
-                  <label>
+                  <label class="col-xs-12">
                     <div class="input-group">
-                    <span class="input-group-addon">City</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                    <span class="input-group-addon">City</span><input type="text" class="form-control" id="condition-city" name="condition-city">
                     </div>
                   </label>                                 
-                  <label>
+                  <label class="col-xs-12">
                     <div class="input-group">
-                    <span class="input-group-addon">Zip</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                    <span class="input-group-addon">Zip</span><input type="text" class="form-control" id="condition-zip" name="condition-zip">
                     </div>
                   </label>
-                  <label>
+                  <label class="col-xs-12">
                     <div class="input-group">
-                    <span class="input-group-addon">State</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                    <span class="input-group-addon">State</span><input type="text" class="form-control" id="condition-state" name="condition-state">
                     </div>
                   </label>
                   </div>
                 </div>
-                              
+               </div>               
 
            
 </div>                
 <div class="col-sm-6 col-xs-12">
-                <label style="margin-bottom:20px;margin-top:10px;">
+                <label class="col-xs-12" style="margin-bottom:20px;margin-top:10px;">
                 <div class="input-group">
                 <span class="input-group-addon">Type</span>
-                <!--<input type="text" class="form-control" id="news-publish_date" name="news-publish_date">-->
-                  <select class="form-control">
-                    <option>Pool</option>
-                    <option>Ballfield</option>
-                    <option>Ice Rink</option>
+                  <select class="form-control" id="condition-type" name="condition-type">
+                    <option value="pool">Pool</option>
+                    <option value="ball_field">Ball Field</option>
+                    <option value="ice_rink">Ice Rink</option>
                   </select>
                 </div>
               </label>
 
-              <label style="margin-bottom:20px;">
+              <label class="col-xs-12" style="margin-bottom:20px;">
                 <div class="input-group">
-                <span class="input-group-addon">Note</span><textarea rows="10" class="form-control" id="news-body_content" name="news-body_content"></textarea>
+                <span class="input-group-addon">Note</span><textarea rows="10" class="form-control" id="condition-note" name="condition-note"></textarea>
               </div>
               </label>
 </div>
-<!--              
-              <div class="col-sm-6 col-xs-12">
-                <div class="panel panel-default">
-                  <div class="panel-heading"><h4>Publishing Options</h4></div>
-                  <div class="panel-body">
-<div class="clearfix">
-                   <label class="col-xs-8">
-                     <div class="input-group">
-                     <span class="input-group-addon">Publish Date</span><input type="text" class="form-control" id="news-publish_date" name="news-publish_date">
-                     </div>
-                   </label>
-                     <label class="col-xs-4">
-                       <input type="checkbox" name="news-active" value="active">Active
-                   </label>                   
-
-                   <label class="col-xs-8" style="margin-bottom:10px;">
-                     <div class="input-group">
-                     <span class="input-group-addon">Expire Date</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
-                     </div>
-                   </label>
-                                          
-                   <label class="col-xs-4">
-                     <input type="checkbox" name="news-featured" value="featured">Featured Item
-                   </label>
-</div>    
-                    <div class="col-xs-12 clearfix" id="feature_image-widget">    
-                      <div class="panel panel-default">
-                        <div class="panel-heading"><p>Feature Image</p></div>
-                        <div class="panel-body">          
-                            <div class="fileupload fileupload-new" data-provides="      fileupload">
-                              <div class="fileupload-preview thumbnail"></div>
-                              <div>
-                                <span class="btn btn-default btn-file"><span class="      fileupload-new">Upload</span><span class="fileupload-     exists"> Change</span><input type="file" name="news-    feature_image" id="news-feature_image"></span>
-                                <a href="#" class="btn btn-default fileupload-exists" data      -dismiss="fileupload">Remove</a>
-                              </div>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>      
--->
-
-          
             </fieldset>       
             </div>
           </div>
@@ -244,13 +199,14 @@ color:#000;
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/plugins/datepicker.js"></script>
-        <script src="js/plugins/ckeditor/ckeditor.js"></script>
-        <script src="js/plugins/fileupload.js"></script>
+        <script src="demodata.js"></script>
         <script>
-var $status = $('#facility_status');
+var $status = $('#condition_status');
 function setStatus_color(){
-  if($status.val()==="closed"){
+  if (!$status.val()){
+  }
+
+  else if($status.val()==="closed"){
   $status
     .removeClass('open')
     .addClass('closed')
@@ -261,15 +217,15 @@ function setStatus_color(){
     .addClass('open')
   }
 };
-setStatus_color();
+ setStatus_color();
 
-$('#facility_status').change( function() {setStatus_color()} );
+$('#condition_status').change( function() {setStatus_color()} );
 
 
 
 
 /* intializes wysiwyg and set height to match Feature Image widget
-CKEDITOR.replace( 'news-body_content');
+CKEDITOR.replace( 'condition-body_content');
 CKEDITOR.on('instanceReady', function(event) {
   $('#cke_1_contents').height( $('#feature_image-widget .panel').height() - $('#cke_1_top').outerHeight() );
 });

@@ -116,26 +116,19 @@ color:#000;
   <form id="form-data_import">
         <div class="col-md-6 col-sm-6">
           <div class="panel panel-default">
-            <div class="panel-heading"><h4>Import Data</h4></div>
+            <div class="panel-heading"><h4>Featured Items</h4></div>
             <div class="panel-body">
-            <fieldset id="data_import">
-              <label class="col-md-12">
-                <div class="input-group">
-                <span class="input-group-addon">File</span><input type="file" class="form-control" id="data_import-file" name="data_import-file">
-              </div>
-              </label>
-              <label class="col-md-8">
-                <div class="input-group">
-                <span class="input-group-addon">Area</span>
-                  <select class="form-control" id="data_import-area" name="data_import-area">
-                    <option value="news">News</option>
-                    <option value="events">Events</option>
-                    <option value="facilities_parks">Facilities/Parks</option>
-                    <option value="contacts">Contacts</option>
-                  </select>
-                </div>
-              </label>
-              <div class="col-md-4 "><input type="submit" value="Submit" class="btn btn-success btn-block"></div>  
+              <p class="col-xs-9">Select the order in which items should be displayed within in the featured section on the main page of the app. Please note that only the highlighted items will be shown.</p><input type="submit" value="Save" class="btn btn-lg btn-success col-xs-3">
+              <div class="clearfix"></div>
+
+              <ul id="featured-items">
+                <li data-storyID="10031">Fall Food Drive Was A Huge Success!</li>
+                <li data-storyID="10032">Winter Youth Sports Kickoff Soon</li>
+                <li data-storyID="10033">Santa to Visit Rec Center</li>
+                <li data-storyID="10034">Keep that New Years Resolution, Register for January fitness classes</li>
+                <li data-storyID="10035">Closed for Thanksgiving</li>
+                <li data-storyID="10036">Closed for Holidays</li>
+              </ul>
             </fieldset>       
             </div>
           </div>
@@ -217,8 +210,25 @@ color:#000;
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/plugins/drag.js"></script>
         <script>
+$(document).ready(function() {
+  $( "#featured-items" ).sortable();
+  $( "#featured-items" ).disableSelection();
+  
+  function setFeatured(){
+    var $li = $("#featured-items li");
+    $.each($li, function(i, val) {
+      $(val)
+        .attr('data-feature_story_order', i)
+        .removeClass();
+      if(i<3){$(val).addClass('displayed-feature')};
+    });
+  }
+setFeatured();  
+$( "#featured-items" ).on( "sortupdate", function(){ setFeatured(); });
 
+});
 /*    Add analytics when available
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];

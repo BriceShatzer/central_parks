@@ -86,19 +86,19 @@
 
               <label class="col-xs-12">
                 <div class="input-group ">
-                <span class="input-group-addon">Event Title</span><input type="text" class="form-control" id="news-headline" name="news-headline">
+                <span class="input-group-addon">Event Title</span><input type="text" class="form-control" id="event-title" name="event-title">
                 </div>
               </label>
               <label class="col-sm-6 col-xs-12" style="margin-bottom:20px;margin-top:10px;">
                 <div class="input-group">
-                <span class="input-group-addon">Event Start Date</span><input type="text" class="form-control" id="news-publish_date" name="news-publish_date">
+                <span class="input-group-addon">Event Start Date</span><input type="text" class="form-control" id="event-start_date" name="event-start_date">
                 </div>
               </label>
           
              
               <label class="col-sm-6 col-xs-12" style="margin-bottom:20px;margin-top:10px;">
                 <div class="input-group">
-                <span class="input-group-addon">Event End Date</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                <span class="input-group-addon">Event End Date</span><input type="text" class="form-control" id="event-end_date" name="event-end_date">
                 </div>
               </label>
 <div class="col-sm-6 col-xs-12">
@@ -109,7 +109,7 @@
 
               <label style="margin-bottom:20px;">
                 <div class="input-group">
-                <span class="input-group-addon">Event <br>Info</span><textarea rows="20" class="form-control" id="news-body_content" name="news-body_content"></textarea>
+                <span class="input-group-addon">Event <br>Info</span><textarea rows="20" class="form-control" id="event-info" name="event-info"></textarea>
               </div>
               </label>
 
@@ -118,27 +118,27 @@
                   <div class="panel-body">
                   <label>
                     <div class="input-group">
-                    <span class="input-group-addon">Venue Name</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                    <span class="input-group-addon">Venue Name</span><input type="text" class="form-control" id="event-venue" name="event-venue">
                     </div>
                   </label>                     
                   <label>
                     <div class="input-group">
-                    <span class="input-group-addon">Street</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                    <span class="input-group-addon">Street</span><input type="text" class="form-control" id="event-street" name="event-street">
                     </div>
                   </label>                                 
                   <label>
                     <div class="input-group">
-                    <span class="input-group-addon">City</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                    <span class="input-group-addon">City</span><input type="text" class="form-control" id="event-city" name="event-city">
                     </div>
                   </label>                                 
                   <label>
                     <div class="input-group">
-                    <span class="input-group-addon">Zip</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                    <span class="input-group-addon">Zip</span><input type="text" class="form-control" id="event-zip" name="event-zip">
                     </div>
                   </label>
                   <label>
                     <div class="input-group">
-                    <span class="input-group-addon">State</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                    <span class="input-group-addon">State</span><input type="text" class="form-control" id="event-state" name="event-state">
                     </div>
                   </label>
                   </div>
@@ -151,22 +151,22 @@
 <div class="clearfix">
                    <label class="col-xs-12">
                      <div class="input-group">
-                     <span class="input-group-addon">Publish Date</span><input type="text" class="form-control" id="news-publish_date" name="news-publish_date">
+                     <span class="input-group-addon">Publish Date</span><input type="text" class="form-control" id="event-publish_date" name="event-publish_date">
                      </div>
                    </label>
               
 
                    <label class="col-xs-12" style="margin-bottom:10px;">
                      <div class="input-group">
-                     <span class="input-group-addon">Expire Date</span><input type="text" class="form-control" id="news-expire_date" name="news-expire_date">
+                     <span class="input-group-addon">Expire Date</span><input type="text" class="form-control" id="event-expire_date" name="event-expire_date">
                      </div>
                    </label>
               <div class="col-xs-12" style="margin-bottom:10px; overflow:hidden">
                      <label class="col-xs-6">
-                       <input type="checkbox" name="news-active" value="active">Active
+                       <input type="checkbox" id="event-active" name="event-active" value="active">Active
                    </label>                                               
                    <label class="col-xs-6">
-                     <input type="checkbox" name="news-featured" value="featured">Featured Item
+                     <input type="checkbox" id="event-active" name="event-featured" value="featured">Featured Item
                    </label>
               </div>
 </div>    
@@ -177,7 +177,7 @@
                             <div class="fileupload fileupload-new" data-provides="fileupload">
                               <div class="fileupload-preview thumbnail"></div>
                               <div>
-                                <span class="btn btn-default btn-file"><span class="fileupload-new">Upload</span><span class="fileupload-exists"> Change</span><input type="file" name="news-    feature_image" id="news-feature_image"></span>
+                                <span class="btn btn-default btn-file"><span class="fileupload-new">Upload</span><span class="fileupload-exists"> Change</span><input type="file" name="event-feature_image" id="event-feature_image"></span>
                                 <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
                               </div>
                             </div>
@@ -189,7 +189,7 @@
                 </div>
                               <label>
                 <div class="input-group">
-                <span class="input-group-addon">More Info URL</span><input type="text" class="form-control" id="news-more_info_url" name="news-more_info_url">
+                <span class="input-group-addon">More Info URL</span><input type="text" class="form-control" id="event-more_info_url" name="event-more_info_url">
                 </div>
               </label>    
 
@@ -231,9 +231,10 @@
         <script src="js/plugins/datepicker.js"></script>
         <script src="js/plugins/ckeditor/ckeditor.js"></script>
         <script src="js/plugins/fileupload.js"></script>
+        <script src="demodata.js"></script>
         <script>
 // intializes datepicker on publish and expire dates
-$('#news-publish_date, #news-expire_date').datepicker({'format':'mm/dd/yyyy'})
+$('#event-publish_date, #event-expire_date, #event-start_date, #event-end_date').datepicker({'format':'mm/dd/yyyy'})
   .on('changeDate',function(){ $(this).datepicker('hide')} );
 
 // set thumbnail preview size for Feature Image widget
@@ -243,7 +244,7 @@ $('.thumbnail').width(thumbnail_X);
 $('.thumbnail').height(thumbnail_Y.toFixed());
 
 // intializes wysiwyg and set height to match Feature Image widget
-CKEDITOR.replace( 'news-body_content');
+CKEDITOR.replace( 'event-info');
 /*
 CKEDITOR.on('instanceReady', function(event) {
   $('#cke_1_contents').height( $('#feature_image-widget .panel').height() - $('#cke_1_top').outerHeight() );

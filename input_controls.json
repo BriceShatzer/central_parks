@@ -87,7 +87,7 @@
 		{"id":"news-publish_date","name":"news-publish_date","type":"text"},
 		{"id":"news-expire_date","name":"news-expire_date","type":"text"},
 		{"id":"news-active","name":"news-active", "value":"active", "type":"checkbox"},
-		{"id":"news-featured","name":"news-active","value":"featured","type":"checkbox"},
+		{"id":"news-featured","name":"news-featured","value":"featured","type":"checkbox"},
 		{"id":"news-launch_browser","name":"news-launch_browser","value":"launch_browser","type":"checkbox"},
 		{"id":"news-body_content","name":"news-body_content","type":"text"},
 		{"id":"news-feature_image","name":"news-feature_image","type":"file"},
@@ -97,6 +97,30 @@
 		}
 	}
 },
+
+{"page":"create-edit_events.html", "forms":{
+	"form-edit-create_event": {"type":"fieldset","id":"edit-create_event","fields":[
+		{"id":"event-title","name":"event-title","type":"text"},
+		{"id":"event-start_date","name":"event-start_date","type":"text"},
+		{"id":"event-end_date","name":"event-end_date","type":"text"},
+		{"id":"event-info","name":"event-info","type":"text"},		
+		{"id":"event-venue","name":"event-venue","type":"text"},
+		{"id":"event-street","name":"event-steet","type":"text"},
+		{"id":"event-city","name":"event-city","type":"text"},
+		{"id":"event-zip","name":"event-zip","type":"text"},
+		{"id":"event-state","name":"event-state","type":"text"},
+		{"id":"event-publish_date","name":"event-publish_date","type":"text"},
+		{"id":"event-expire_date","name":"event-expire_date","type":"text"},
+		{"id":"event-active","name":"event-active", "value":"active", "type":"checkbox"},
+		{"id":"event-featured","name":"event-featured","value":"featured","type":"checkbox"},
+		{"id":"event-feature_image","name":"event-feature_image","type":"file"},
+		{"id":"event-more_info_url","name":"event-more_info_url","type":"text"},
+		{"type":"submit","value":"save"}
+		]
+		}
+	}
+},
+
 
 
 ]

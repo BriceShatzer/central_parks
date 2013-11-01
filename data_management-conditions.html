@@ -25,6 +25,7 @@
             }
             td>button{margin:0 5px;
             }
+            #data-management-pane table{border-top: 1px solid #DDD;}
             #controlButtons div {margin-bottom: 10px;
             }
             #facility_closings option[value="open"] {
@@ -36,7 +37,10 @@
               background-color: #b20000 !important;
               color:#000;
             }
-            .status{color:green;}            
+            .status{color:green;}
+            #group-conditional-management{margin-top:20px;
+            }
+
         </style>        
 
         <!--[if lt IE 9]>
@@ -106,7 +110,21 @@
   <li><a href="data_management-settings.html">Settings</a></li>
 </ul>
 <div class="panel panel-default data-panels" id="data-management-pane">
-  <div class="panel-body" >   
+  <div class="panel-body" >
+    <div class="col-sm-12">
+      <div class="panel panel-default data-panels" id="group-conditional-management">
+        <div class="panel-heading"><h4>Group Condition Management</h4></div>
+        <div class="panel-body" >
+          <div class="col-xs-4">
+            <label><input type="checkbox"> Pools</label>
+            <label><input type="checkbox"> Ball Fields</label>
+            <label><input type="checkbox"> Ice Rinks</label>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
           <table class="table col-md-12">
               <tbody>
               <tr>

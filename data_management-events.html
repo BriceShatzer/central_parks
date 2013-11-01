@@ -115,16 +115,10 @@
                 <th>End Date</th>
                 <th>Publish Date</th>
                 <th>Expire Date</th>
+                <th>Active</th>
+                <th>Featured</th>
                 <th> <button type="submit" class="btn btn-success" id="submit" onclick="window.location.href='create-edit_events.html'">Create an Event</button></th>
 
-              </tr>
-              <tr>
-                <td>Fall Food Drive Was A Huge Success!</td>
-                <td>9-12-13</td>
-                <td>12-1-13</td>
-                <td></td>
-                <td></td>
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>
               <tr>
                 <td>Closed for Thanksgiving</td>
@@ -132,7 +126,9 @@
                 <td>11-30-13</td>
                 <td>11-1-13</td>
                 <td>11-30-13</td>
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td><input type="checkbox" checked="checked" disabled="disabled"></td>   
+                <td><input type="checkbox" checked="checked" disabled="disabled"></td>   
+                <td><button class="btn btn-default edit-event">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>
               <tr>
                 <td>Santa to Visit Rec Center</td>
@@ -140,7 +136,9 @@
                 <td>12-21-13</td>
                 <td>11-25-13</td>
                 <td>12-22-13</td>
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td><input type="checkbox" disabled="disabled"></td>   
+                <td><input type="checkbox" disabled="disabled"></td>   
+                <td><button class="btn btn-default edit-event">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>               
               <tr>
                 <td>Closed for Holidays</td>
@@ -148,7 +146,9 @@
                 <td>12-27-13</td>
                 <td>12-1-13</td>
                 <td>12-28-13</td>
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td><input type="checkbox" disabled="disabled"></td>   
+                <td><input type="checkbox" checked="checked" disabled="disabled"></td>                   
+                <td><button class="btn btn-default edit-event">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>
             </tbody>
           </table>       
@@ -173,7 +173,7 @@ $('#facility_closings select').change( function() {
 if($(this).val()==="closed"){$(this).addClass('closed')}
   else{$(this).removeClass('closed')}
 });
-
+$('button.edit-event').click(function() {window.location.href='create-edit_events.html?id=santa_to_visit_rec_center'});
 /*    Add analytics when available
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];

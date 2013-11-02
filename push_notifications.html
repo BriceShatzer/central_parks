@@ -24,6 +24,7 @@
             .target_devices label{padding:6px 0px;}
             td>button{margin:0 5px;
             }
+            .action-details div,
             #controlButtons div {margin-top: 10px;
             }
         </style>
@@ -82,6 +83,7 @@
           <div class="panel panel-default">
             <div class="panel-heading"><h4>Create Push Notification</h4></div>
             <div class="panel-body">
+
             <fieldset id="create_push">
               <label class="col-md-8">
                 <div class="input-group">
@@ -89,47 +91,85 @@
                 </div>
               </label>
 
-              <div class="col-md-4 target_devices">              
+              <label class="col-md-4" id="actions">
+                <div class="input-group">
+                <span class="input-group-addon">Type</span>
+                 <select class="form-control" name="create_push-action" id="create_push-action">
+                    <option disabled="disabled" selected="selected" style="display:none;"></option>
+                    <option value="appNews">Launch News Story</option>
+                    <option value="appEvents">Lauch Event </option>
+                    <option value="appConditions">Launch Conditions Notification</option>
+                    <option value="browser">Launch Website in browser</option>
+                  </select>
+                </div>
+              </label>
+<!--
+              <div class="col-md-4 target_devices"> 
                 <p class="col-md-5">Target Devices</p>
                 <label class="col-md-3"><input type="checkbox" id="create_push-target_ios" value="iOS">iOS</label>
                 <label class="col-md-4"><input type="checkbox" id="create_push-target_android" value="android">android</label>
               </div> 
 
-              <label class="col-md-6" id="iOS_actions">
+<div class="col-md-12"> -->
+              <label class="col-md-6 action-details" id="news-actions">
                 <div class="input-group">
-                <span class="input-group-addon">iOS Push Actions</span>
-                 <select class="form-control" name="create_push-ios_actions" id="create_push-ios_actions">
-                    <option value="appNews">Launch App > News tab</option>
-                    <option value="appEvents">Launch App > Events tab</option>
-                    <option value="appConditions">Launch App > Conditions tab</option>
-                    <option value="appUpdate">Update App via iTunes App Store</option>
-                    <option value="browser">Launch Website in browser</option>
+                <span class="input-group-addon">News to Open</span>
+                 <select class="form-control" name="news-actions" id="news-actions">
+                    <option disabled="disabled" selected="selected" style="display:none;"></option>
+                    <option value="news_section">--Open news section</option>                  
+                    <option value="fall_food_drive_was_a_huge_success">Fall Food Drive Was A Huge Success!</option>
+                    <option value="winter_youth_sports_kickoff_soon">Winter Youth Sports Kickoff Soon</option>
+                    <option value="santa_to_visit_rec_center">Santa to Visit Rec Center</option>
+                    <option value="keep_that_new-years-resolution">Keep that New Years resolution, register for January fitness classes</option>
                   </select>
                 </div>
               </label>
-              <label class="col-md-6" id="android_actions">
+
+              <label class="col-md-6 action-details" id="event-actions">
                 <div class="input-group">
-                <span class="input-group-addon">android Push Actions</span>
-                 <select class="form-control" name="create_push-android_actions" id="create_push-android_actions">
-                    <option value="appNews">Launch App > News tab</option>
-                    <option value="appEvents">Launch App > Events tab</option>
-                    <option value="appConditions">Launch App > Conditions tab</option>
-                    <option value="appUpdate">Update App via Google Play</option>
-                    <option value="browser">Launch Website in browser</option>
+                <span class="input-group-addon">Event to Open</span>
+                 <select class="form-control" name="event-actions" id="event-actions">
+                    <option disabled="disabled" selected="selected" style="display:none;"></option>
+                    <option value="events_section">--Open events section</option>                  
+                    <option value="closed_for_thanksgiving">Closed for Thanksgiving</option>
+                    <option value="santa_to_visit_rec_center">Santa to Visit Rec Center</option>
+                    <option value="closed_for_holidays">Closed for Holidays</option>
                   </select>
                 </div>
               </label>
-            </fieldset>  
+
+              <label class="col-md-6 action-details" id="conditions-actions">
+                <div class="input-group">
+                <span class="input-group-addon">Condition to Open</span>
+                 <select class="form-control" name="conditions-actions" id="conditions-actions">
+                    <option disabled="disabled" selected="selected" style="display:none;"></option>
+                    <option value="conditions_section">--Open conditions section</option>                  
+                    <option value="olympic_fields_field_1">Olympic Fields - Field #1</option>
+                    <option value="olympic_fields_field_2">Olympic Fields - Field #1</option>
+                    <option value="olympic_fields_field_3">Olympic Fields - Field #3</option>
+                    <option value="family_splash_center">Family Splash Center</option>
+                    <option value="twin_lakes_ice_pavilion">Twin Lakes Ice Pavilion</option>
+                  </select>
+                </div>
+              </label>                               
+              <label class="col-md-6 action-details" id="launch_url-actions">
+                <div class="input-group">
+                <span class="input-group-addon">URL to Open </span>
+                <input type="text" class="form-control" id="launch_url-actions" name="launch_url-actions">
+              </div>
+            </label>
+  
             <div id="controlButtons">
-              <div class="col-md-4 col-xs-12 col-md-offset-4">
+              <div class="col-md-4 col-xs-12">
                 <input class="btn btn-success btn-block" type="submit" value="Send">
               </div>
             </div>              
-     
+                </fieldset> 
+     </div>      
             </div>
           </div>
 
-        </div>
+      
 </form>
 
         <div class="col-md-12">
@@ -141,49 +181,39 @@
               <tr>
                 <th>Date</th>
                 <th>Message Content</th>
-                <th>Target Devices</th>
-                <th>iOS <br>Push Action</th>
-                <th>android <br>Push Action</th>
+                <th>Type</th>
+                <th>Action</th>
               </tr>
               <tr>
                 <td>10-14-13</td>
                 <td>Parks closed due to weather</td>
-                <td>iOS android</td>
-                <td>Launch App > Conditions tab</td>
-                <td>Launch App > Conditions tab</td>              
-              </tr>
-              <tr>
-                <td>9-30-13</td>
-                <td>New version available!</td>
-                <td>android</td>
-                <td></td>
-                <td>Update App via Google Play</td>
+                <td>Condition</td>
+                <td>Open conditions section</td>              
               </tr>
               <tr>
                 <td>9-26-13</td>
-                <td>New version available!</td>
-                <td>iOS</td>
-                <td>Update App via iTunes</td>
+                <td>Fall Food Drive Was A Huge Success!</td>
+                <td>News</td>
+                <td>Fall Food Drive Was A Huge Success!</td>
                 <td></td>              
               </tr>
               <tr>
-                <td>9-20-13</td>
-                <td>Parks closed due to weather</td>
-                <td>iOS android</td>
-                <td>Launch App > Conditions tab</td>
-                <td>Launch App > Conditions tab</td>              
+                <td>9-12-13</td>
+                <td>Winter Sports Signups Now Open</td>
+                <td>Launch Website</td>
+                <td>http://www.parks.gov/wintersports/signup</td>
               </tr>
               <tr>
-                <td>9-12-13</td>
-                <td>Fall Food Drive Was A Huge Success!</td>
-                <td>iOS android</td>
-                <td>Launch App > News tab</td>
-                <td>Launch App > News tab</td>
-              </tr>              
+                <td>9-2-13</td>
+                <td>Family Splash Center Closed for Winter</td>
+                <td>Condition</td>
+                <td>Family Splash Center</td>              
+              </tr> 
+                           
             </tbody>
             </table>
             
-     
+       </div>
             </div>
           </div>
 
@@ -205,7 +235,15 @@
         <script>
 $(document).ready(function() {
   
-$('#iOS_actions, #android_actions').hide();
+$('.action-details').hide();
+$('#create_push-action').change(function() {
+  $('.action-details').hide();
+  var act = $(this).val();
+  if(act === "appNews"){ $('#news-actions').fadeIn();}
+  else if (act === "appEvents"){ $('#event-actions').fadeIn();}
+  else if (act === "appConditions"){ $('#conditions-actions').fadeIn();}
+  else if (act === "browser"){ $('#launch_url-actions').fadeIn();}
+});
 $('div.target_devices input[type="checkbox"').click( function(){
   if($(this).val()==="iOS") {
     if($(this).is(':checked')){$('#iOS_actions').slideDown();}

@@ -118,7 +118,7 @@ color:#000;
           <div class="panel panel-default">
             <div class="panel-heading"><h4>Featured Items</h4></div>
             <div class="panel-body">
-              <p class="col-xs-9">Select the order in which items should be displayed within in the featured section on the main page of the app. Please note that only the highlighted items will be shown.</p><input type="submit" value="Save" class="btn btn-lg btn-success col-xs-3">
+              <p class="col-xs-9">Select the order in which items should be displayed within in the featured section on the main page of the app. Please note that only the highlighted items will be shown.</p><input type="button" value="Save" class="btn btn-lg btn-success col-xs-3" id="save_featured">
               <div class="clearfix"></div>
 
               <ul id="featured-items">
@@ -226,8 +226,21 @@ $(document).ready(function() {
     });
   }
 setFeatured();  
-$( "#featured-items" ).on( "sortupdate", function(){ setFeatured(); });
 
+$( "#featured-items" ).on( "sortupdate", function(){ setFeatured(); });
+/* early attempt and rendering out some sort of interaction obj
+$('#save_featured').click(function() {
+  var obj = {"saving":"featured_items"};
+  var $li_saving = $("#featured-items li");
+    $.each($li_saving, function(i, val) {
+      var id = $(val).attr('data-storyid');
+      var order = $(val).attr('data-feature_story_order');
+      obj.push({ id : order });
+    })
+
+alert(obj);
+});
+*/
 });
 /*    Add analytics when available
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

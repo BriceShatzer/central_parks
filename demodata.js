@@ -85,3 +85,12 @@ else if( page==="create-edit_contact.html?id=office_of_park_services"){
 	$('#contact-zip').val("60601");
 	$('#contact-state').val("IL");
 }
+
+else if( page==="create-edit_user.html?id=john_doe"){
+		$('#user-first_name').val("John");
+		$('#user-last_name').val("Doe");
+		$('#user-phone').val("1234567890");
+		$('#user-email').val("jdoe@email.com");
+		$('#user-password').val("12345");
+		$('#user-role_2').attr('checked', true);
+	}

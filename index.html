@@ -9,15 +9,17 @@ li.folder ul{
 	padding-bottom: 5px;
 }
 li.folder ul ul{width:200px;}
-.flag{color:red;}
+.flag-done{background-color:yellow;}
 </style>
 <body>
 <h1>Central Parks - Admin UI</h1>
 <h3>Page Structure</h3>
+<p class="flag-done">Yellow background indicates completed sections</p>
 	<ul>
 		<li><a href="login.html">Login</a></li>
 		<li><a href="project_launcher.html">Project Launcher</a></li>
-		<li><a href="data_management-home.html">Data Management</a>
+		<br>
+		<li class="flag-done"><a href="data_management-home.html">Data Management</a>
 			<ul>
 				<li><a href="data_management-news.html">News</a>
 					<ul><li><a href="create-edit_news.html">Create</a> / <a href="create-edit_news.html?id=fall_food_drive_was_a_huge_success">Edit</a></li></ul>
@@ -36,15 +38,21 @@ li.folder ul ul{width:200px;}
 				<li><a href="data_management-settings.html">Settings</a></li>
 			</ul>
 		</li>
+		<br>
 		<li><a href="push_notifications.html">Push Notifications</a></li>
-		<li><a href="user_management.html">User Management</a>
-			<ul><li><a href="create-edit_user.html">Create/Edit User</a></li></ul>
+		<br>
+		<li class="flag-done"><a href="user_management.html">User Management</a>
+			<ul><li><a href="create-edit_user.html">Create</a> / <a href="create-edit_user.html?id=john_doe">Edit User</a></li></ul>
 		</li>
+		<br>
 		<li><a href="build_request.html">Build Request</a></li>
+		<br>
 		<li><a href="404.html">404.html</a></li>
 	</ul>	
 		
 <h3>Full Repo Manifest</h3>
+<p><a href="https://github.com/BriceShatzer/central_parks-Admin_UI/archive/master.zip">zip file available here</a></p> 
+<!-- not currently up to date. user provided link 
 	<ul>		
 		<li><a href="meeting-notes.txt">meeting-notes.txt</a></li>
 		<li><a href="input_controls.json">input_controls.json</a></li>
@@ -144,5 +152,6 @@ li.folder ul ul{width:200px;}
 			</ul>
 		</li>
 	</ul>
+-->
 </body>
 </html>

@@ -91,7 +91,7 @@
                 <td>jdoe@email.com</td>
                 <td>1234567890</td>
                 <td>Content Editor</td>
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td><button class="btn btn-default edit-user">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>
               <tr>
                 <td>Jane</td>
@@ -99,7 +99,7 @@
                 <td>jsmith@email.com</td>
                 <td>1234567890</td>
                 <td>Content Editor</td>
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td><button class="btn btn-default edit-user">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>
               <tr>
                 <td>Tom</td>
@@ -107,7 +107,7 @@
                 <td>tjones@email.com</td>
                 <td>1234567890</td>
                 <td>Admin</td>
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td><button class="btn btn-default edit-user">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>
               <tr>
                 <td>Jack</td>
@@ -115,7 +115,7 @@
                 <td>jjohnson@email.com</td>
                 <td>1234567890</td>
                 <td></td>
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td><button class="btn btn-default edit-user">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>
             </tbody>              
             </table>
@@ -153,6 +153,8 @@
         <script src="js/main.js"></script>
         <script src="js/project_setup.js"></script>
         <script>
+$('button.edit-user').click(function() {window.location.href='create-edit_user.html?id=john_doe'});
+
 /*    Add analytics when available
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];

@@ -155,7 +155,9 @@ footer p {
 /*
 * Draggable styles - Derived from jQuery UI default styles
 */
+#menuBar-items,
 #featured-items {padding:0;}
+#menuBar-items li,
 #featured-items li{
 cursor: pointer;
 list-style: none;

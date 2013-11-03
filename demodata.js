@@ -92,5 +92,6 @@ else if( page==="create-edit_user.html?id=john_doe"){
 		$('#user-phone').val("1234567890");
 		$('#user-email').val("jdoe@email.com");
 		$('#user-password').val("12345");
+		$('#user-active').attr('checked', true);
 		$('#user-role_2').attr('checked', true);
 	}

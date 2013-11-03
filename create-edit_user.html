@@ -104,7 +104,9 @@
 
               <label>
                 <div class="input-group">
-                <span class="input-group-addon">Password</span><input type="password" class="form-control" id="user-password" name="user-password">
+                  <span class="input-group-btn"><button class="btn btn-default" type="button" id="password_mode">Password <span>(view)</span></button>
+                  </span><!--<span class="input-group-addon">Password</span>-->
+                  <input type="password" class="form-control" id="user-password" name="user-password">
               </div>
               </label>
 
@@ -160,6 +162,21 @@
         <script src="js/main.js"></script>
         <script src="demodata.js"></script>
         <script>
+$('#password_mode').click(function() {
+  if( $('#user-password').attr('type') === "password" ){ 
+  $('#password_mode span').text('(hide)');
+  $('#user-password').attr('type', 'text');
+
+  }
+ else if( $('#user-password').attr('type') === "text" ){ 
+  $('#password_mode span').text('(show)');
+  $('#user-password').attr('type', 'password');
+  }
+
+
+  
+});
+
 /*    Add analytics when available
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];

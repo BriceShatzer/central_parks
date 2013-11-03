@@ -25,14 +25,28 @@
             }
             td>button{margin:0 5px;
             }
+            .fileupload-preview.thumbnail{
+            background-repeat: no-repeat;
+            background-position: center center;
+            -webkit-background-size: cover !important;
+            -moz-background-size: cover !important;  
+            -o-background-size: cover !important;
+            background-size: cover !important;
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.myBackground.jpg', sizingMethod='scale');
+            -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";
+            }
+            #splash_background {padding:0px;}
             .sampleBackgrounds{
+              position: relative;
               margin-top: 10px;
-              padding:0;
+             
               text-align: center;
             }
+            
+            .sampleBackgrounds .thumbnail {width: 100%;}
             #controlButtons {
               clear:left;
-            }
+            }*/
             #controlButtons div {margin-bottom: 10px;margin-top: 15px; 
             }
             .testGradient {
@@ -52,14 +66,21 @@
               background-image: linear-gradient(top, #008000, #ffffff);
             }
             .custom_menu_item{display: none;}
-            #menuBar-items li {background-color:#fff;}
-            #menuBar-items li.active{background-color: #ddd}
-            #menuBar-items li.active.inMenuBar {background-color: #bbb}
+            #menuBar-items li {background-color:#fff; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
+            #menuBar-items li img{display: none;}
+            #menuBar-items li.active{background-color: #ccc; color:#fff;}
+            #menuBar-items li.active img {display:inline;}
+            #menuBar-items li.active.inMenuBar {background-color: #999}
+
 
             .icons {background-color:#ccc;overflow:hidden}
             .icons input[type="radio"]{margin-right: 0px;}
-
-
+/*
+@media (max-width: 992px){
+       .sampleBackgrounds .thumbnail {margin-left:0;}
+            .sampleBackgrounds input {
+              float:none; position:static; margin-top: 5px; }
+}*/
 
         </style>
 
@@ -118,16 +139,54 @@
             <div class="panel-heading"><h4>Organization Info</h4></div>
             <div class="panel-body">
               <fieldset id="org_info">
-                <label>
+                <label class="col-xs-12">
                   <div class="input-group">
                     <span class="input-group-addon">App Name</span><input type="text" class="form-control" id="org_info-name" name="org_info-name">
                   </div>
-                </label>              
-                <label>
+                </label>
+                <div class="col-md-7 col-sm-12 col-xs-7" >
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                      <div class="fileupload-preview thumbnail" style="width: 250px; height: 250px;"></div>
+                      <div>
+                        <span class="btn btn-default btn-file"><span class="fileupload-new">Upload</span><span class="fileupload-exists">Change</span><input type="file" /></span>
+                        <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+                      </div>
+                    </div>
+                </div>    
+                <div class="col-md-5 col-sm-12 col-xs-5" id="splash_background">
+                  <div class="sampleBackgrounds col-xs-6">
+                    <label>
+                    <input type="radio" id="app_style-background_1" name="app_style-background" value="park_summer">                      
+                    <img src="img/backgrounds/park_summer.jpg" alt="img" class="thumbnail">
+                    </label>
+                  </div>
+                  <div class="sampleBackgrounds col-xs-6">
+                    <label>
+                    <input type="radio" id="app_style-background_2" name="app_style-background" value="fall_leaves">                      
+                    <img src="img/backgrounds/fall_leaves.jpg" alt="img" class="thumbnail">
+                    </label>
+                  </div>        
+                  <div class="sampleBackgrounds col-xs-6">
+                    <label>
+                    <input type="radio" id="app_style-background_3" name="app_style-background" value="snowman">                      
+                    <img src="img/backgrounds/snowman.jpg" alt="img" class="thumbnail">
+                    </label>
+                  </div>
+                  <div class="sampleBackgrounds col-xs-6">
+                    <label>
+                    <input type="radio" id="app_style-background_4" name="app_style-background" value="grass">                      
+                    <img src="img/backgrounds/grass.jpg" alt="img" class="thumbnail">
+                    </label>
+                  </div>                  
+                            
+
+                </div> 
+
+                <!--<label>
                   <div class="input-group">
                     <span class="input-group-addon">Logo</span><input type="file" class="form-control" id="org_info-logo" name="org_info-logo">
                   </div>
-                </label>
+                </label>-->
 
               </fieldset>
             </div>
@@ -135,25 +194,20 @@
         </div>
         <div class="col-xs-12">
           <div class="panel panel-default">
-            <div class="panel-heading"><h4>Application Style</h4></div>
+            <div class="panel-heading"><h4>Application Colors</h4></div>
             <div class="panel-body">
               <fieldset id="app_style">
-
+<div class="col-xs-7">
                 <label>
                   <div class="input-group" id="TopBarColor">
-                    <span class="input-group-addon">Top Bar Color</span><input type="text" class="form-control color" id="app_style-top_bar_color">
+                    <span class="input-group-addon">Top Bar</span><input type="text" class="form-control color" id="app_style-top_bar_color">
                   </div>
                 </label>              
+                <!--
                 <P>App Background</p>
                   <div class="col-md-3 sampleBackgrounds">
                      <input type="radio" style="" id="app_style-background_1" name="app_style-background" value="x">
-                    <div class="fileupload fileupload-new" data-provides="fileupload">
-                      <div class="fileupload-preview thumbnail" style="width: 80px; height: 120px;"></div>
-                      <div>
-                        <span class="btn btn-default btn-file"><span class="fileupload-new">Upload</span><span class="fileupload-exists">Change</span><input type="file" /></span>
-                        <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
-                      </div>
-                    </div>
+
                       
                   </div>
 
@@ -166,7 +220,7 @@
                   <div class="sampleBackgrounds col-md-3 col-xs-4" style="text-align:center;">
                     <label>
                     <input type="radio" id="app_style-background_3" name="app_style-background" value="nature">                      
-                    <img src="http://images6.fanpop.com/image/photos/35100000/Forest-mother-nature-35156625-80-120.jpg" alt="img" class="thumbnail">
+                    <img src="" alt="img" class="thumbnail">
 
                     </label>
                   </div>
@@ -177,11 +231,14 @@
                     
                     </label>
                   </div>
+                -->
                   <label>
                   <div class="input-group" id="TopBarColor">
-                    <span class="input-group-addon">Button Menu Bar Color</span><input type="text" class="form-control color" id="app_style-menu_bar_color">
+                    <span class="input-group-addon">Button Menu Bar</span><input type="text" class="form-control color" id="app_style-menu_bar_color" value="999999">
                   </div>
-                </label>   
+                </label>
+</div>
+<div class="col-xs-5" style="padding:0px"><img src="img/build_request-style_info.png" /> </div>                   
               </fieldset>
             </div>
           </div>
@@ -204,6 +261,7 @@
                 <li id="menu_custom3"><input type="checkbox">&nbsp;<img /> &nbsp;<span>custom menu item 3</span> </li>
                 <li id="menu_custom4"><input type="checkbox">&nbsp;<img /> &nbsp;<span>custom menu item 4</span> </li>
                 <li id="menu_custom5"><input type="checkbox">&nbsp;<img /> &nbsp;<span>custom menu item 5</span> </li>
+                <li id="menu_custom6"><input type="checkbox">&nbsp;<img /> &nbsp;<span>custom menu item 6</span> </li>                
               </ul>
             </fieldset>        
             </div>
@@ -251,6 +309,10 @@
                     <label style="text-align:center"> 
                       <input type="radio" id="custom_nav1-icon_flag" name="custom_nav1" value="flag_icon"> <br>
                       <img src="img/icons/flag_icon.png" alt="flag icon" /> 
+                    </label>
+                    <label style="text-align:center">
+                       <input type="radio" id="custom_nav1-icon_keys" name="custom_nav1" value="key_icon"><br>
+                       <img src="img/icons/key_icon.png" alt="key icon" />
                     </label>
                     <label style="text-align:center"> 
                       <input type="radio" id="custom_nav1-icon_kids" name="custom_nav1" value="kids_icon"> <br>
@@ -333,6 +395,10 @@
                       <input type="radio" id="custom_nav2-icon_flag" name="custom_nav2" value="flag_icon"> <br>
                       <img src="img/icons/flag_icon.png" alt="flag icon" /> 
                     </label>
+                    <label style="text-align:center">
+                       <input type="radio" id="custom_nav2-icon_keys" name="custom_nav2" value="key_icon"> <br>
+                       <img src="img/icons/key_icon.png" alt="key icon" />
+                    </label>
                     <label style="text-align:center"> 
                       <input type="radio" id="custom_nav2-icon_kids" name="custom_nav2" value="kids_icon"> <br>
                       <img src="img/icons/kids_icon.png" alt="kids icon" /> 
@@ -387,59 +453,63 @@
                   <div class="panel panel-default col-xs-12 icons" style="">
                     <!--<span class="">Icon</span><br>-->
                      <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_award" name="custom_nav3" value="award_icon"> <br>
+                      <input type="radio" id="custom_nav3-icon_award" name="custom_nav3" value="award_icon"> <br>
                       <img src="img/icons/award_icon.png" alt="award icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_book" name="custom_nav3" value="book_icon"> <br>
+                      <input type="radio" id="custom_nav3-icon_book" name="custom_nav3" value="book_icon"> <br>
                       <img src="img/icons/book_icon.png" alt="book icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_buildings" name="custom_nav3" value="buildings_icon"> <br>
+                      <input type="radio" id="custom_nav3-icon_buildings" name="custom_nav3" value="buildings_icon"> <br>
                       <img src="img/icons/buildings_icon.png" alt="buildings icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_computer" name="custom_nav3" value="computer_icon"> <br>
+                      <input type="radio" id="custom_nav3-icon_computer" name="custom_nav3" value="computer_icon"> <br>
                       <img src="img/icons/computer_icon.png" alt="computer icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_donate" name="custom_nav3" value="donate_icon"> <br>
+                      <input type="radio" id="custom_nav3-icon_donate" name="custom_nav3" value="donate_icon"> <br>
                       <img src="img/icons/donate_icon.png" alt="donate icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_facebook" name="custom_nav3" value="facebook_icon"> <br>
+                      <input type="radio" id="custom_nav3-icon_facebook" name="custom_nav3" value="facebook_icon"> <br>
                       <img src="img/icons/facebook_icon.png" alt="facebook icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_flag" name="custom_nav3" value="flag_icon"> <br>
+                      <input type="radio" id="custom_nav3-icon_flag" name="custom_nav3" value="flag_icon"> <br>
                       <img src="img/icons/flag_icon.png" alt="flag icon" /> 
                     </label>
+                    <label style="text-align:center">
+                       <input type="radio" id="custom_nav3-icon_keys" name="custom_nav3" value="key_icon"> <br>
+                       <img src="img/icons/key_icon.png" alt="key icon" />
+                    </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_kids" name="custom_nav3" value="kids_icon"> <br>
+                      <input type="radio" id="custom_nav3-icon_kids" name="custom_nav3" value="kids_icon"> <br>
                       <img src="img/icons/kids_icon.png" alt="kids icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_map" name="custom_nav3" value="map_icon"> <br>
+                      <input type="radio" id="custom_nav3-icon_map" name="custom_nav3" value="map_icon"> <br>
                       <img src="img/icons/map_icon.png" alt="map icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_podium" name="custom_nav3" value="podium_icon"> <br>
+                      <input type="radio" id="custom_nav3-icon_podium" name="custom_nav3" value="podium_icon"> <br>
                       <img src="img/icons/podium_icon.png" alt="podium icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_shoe" name="custom_nav3" value="shoe_icon"> <br>
+                      <input type="radio" id="custom_nav3-icon_shoe" name="custom_nav3" value="shoe_icon"> <br>
                       <img src="img/icons/shoe_icon.png" alt="shoe icon" /> 
                     </label>  
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_squirrel" name="custom_nav3" value="squirrel_icon"> <br>
+                      <input type="radio" id="custom_nav3-icon_squirrel" name="custom_nav3" value="squirrel_icon"> <br>
                       <img src="img/icons/squirrel_icon.png" alt="squirrel icon" /> 
                     </label>  
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_swim" name="custom_nav3" value="swim_icon"> <br>
+                      <input type="radio" id="custom_nav3-icon_swim" name="custom_nav3" value="swim_icon"> <br>
                       <img src="img/icons/swim_icon.png" alt="swim icon" /> 
                     </label>  
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_twitter" name="custom_nav3" value="twitter_icon"> <br>
+                      <input type="radio" id="custom_nav3-icon_twitter" name="custom_nav3" value="twitter_icon"> <br>
                       <img src="img/icons/twitter_icon.png" alt="twitter icon" /> 
                     </label>
                   </div>
@@ -468,59 +538,63 @@
                   <div class="panel panel-default col-xs-12 icons" style="">
                     <!--<span class="">Icon</span><br>-->
                      <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_award" name="custom_nav4" value="award_icon"> <br>
+                      <input type="radio" id="custom_nav4-icon_award" name="custom_nav4" value="award_icon"> <br>
                       <img src="img/icons/award_icon.png" alt="award icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_book" name="custom_nav4" value="book_icon"> <br>
+                      <input type="radio" id="custom_nav4-icon_book" name="custom_nav4" value="book_icon"> <br>
                       <img src="img/icons/book_icon.png" alt="book icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_buildings" name="custom_nav4" value="buildings_icon"> <br>
+                      <input type="radio" id="custom_nav4-icon_buildings" name="custom_nav4" value="buildings_icon"> <br>
                       <img src="img/icons/buildings_icon.png" alt="buildings icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_computer" name="custom_nav4" value="computer_icon"> <br>
+                      <input type="radio" id="custom_nav4-icon_computer" name="custom_nav4" value="computer_icon"> <br>
                       <img src="img/icons/computer_icon.png" alt="computer icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_donate" name="custom_nav4" value="donate_icon"> <br>
+                      <input type="radio" id="custom_nav4-icon_donate" name="custom_nav4" value="donate_icon"> <br>
                       <img src="img/icons/donate_icon.png" alt="donate icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_facebook" name="custom_nav4" value="facebook_icon"> <br>
+                      <input type="radio" id="custom_nav4-icon_facebook" name="custom_nav4" value="facebook_icon"> <br>
                       <img src="img/icons/facebook_icon.png" alt="facebook icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_flag" name="custom_nav4" value="flag_icon"> <br>
+                      <input type="radio" id="custom_nav4-icon_flag" name="custom_nav4" value="flag_icon"> <br>
                       <img src="img/icons/flag_icon.png" alt="flag icon" /> 
                     </label>
+                    <label style="text-align:center">
+                       <input type="radio" id="custom_nav4-icon_keys" name="custom_nav4" value="key_icon"> <br>
+                       <img src="img/icons/key_icon.png" alt="key icon" />
+                    </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_kids" name="custom_nav4" value="kids_icon"> <br>
+                      <input type="radio" id="custom_nav4-icon_kids" name="custom_nav4" value="kids_icon"> <br>
                       <img src="img/icons/kids_icon.png" alt="kids icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_map" name="custom_nav4" value="map_icon"> <br>
+                      <input type="radio" id="custom_nav4-icon_map" name="custom_nav4" value="map_icon"> <br>
                       <img src="img/icons/map_icon.png" alt="map icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_podium" name="custom_nav4" value="podium_icon"> <br>
+                      <input type="radio" id="custom_nav4-icon_podium" name="custom_nav4" value="podium_icon"> <br>
                       <img src="img/icons/podium_icon.png" alt="podium icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_shoe" name="custom_nav4" value="shoe_icon"> <br>
+                      <input type="radio" id="custom_nav4-icon_shoe" name="custom_nav4" value="shoe_icon"> <br>
                       <img src="img/icons/shoe_icon.png" alt="shoe icon" /> 
                     </label>  
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_squirrel" name="custom_nav4" value="squirrel_icon"> <br>
+                      <input type="radio" id="custom_nav4-icon_squirrel" name="custom_nav4" value="squirrel_icon"> <br>
                       <img src="img/icons/squirrel_icon.png" alt="squirrel icon" /> 
                     </label>  
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_swim" name="custom_nav4" value="swim_icon"> <br>
+                      <input type="radio" id="custom_nav4-icon_swim" name="custom_nav4" value="swim_icon"> <br>
                       <img src="img/icons/swim_icon.png" alt="swim icon" /> 
                     </label>  
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_twitter" name="custom_nav4" value="twitter_icon"> <br>
+                      <input type="radio" id="custom_nav4-icon_twitter" name="custom_nav4" value="twitter_icon"> <br>
                       <img src="img/icons/twitter_icon.png" alt="twitter icon" /> 
                     </label>
                   </div>
@@ -549,59 +623,63 @@
                   <div class="panel panel-default col-xs-12 icons" style="">
                     <!--<span class="">Icon</span><br>-->
                      <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_award" name="custom_nav5" value="award_icon"> <br>
+                      <input type="radio" id="custom_nav5-icon_award" name="custom_nav5" value="award_icon"> <br>
                       <img src="img/icons/award_icon.png" alt="award icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_book" name="custom_nav5" value="book_icon"> <br>
+                      <input type="radio" id="custom_nav5-icon_book" name="custom_nav5" value="book_icon"> <br>
                       <img src="img/icons/book_icon.png" alt="book icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_buildings" name="custom_nav5" value="buildings_icon"> <br>
+                      <input type="radio" id="custom_nav5-icon_buildings" name="custom_nav5" value="buildings_icon"> <br>
                       <img src="img/icons/buildings_icon.png" alt="buildings icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_computer" name="custom_nav5" value="computer_icon"> <br>
+                      <input type="radio" id="custom_nav5-icon_computer" name="custom_nav5" value="computer_icon"> <br>
                       <img src="img/icons/computer_icon.png" alt="computer icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_donate" name="custom_nav5" value="donate_icon"> <br>
+                      <input type="radio" id="custom_nav5-icon_donate" name="custom_nav5" value="donate_icon"> <br>
                       <img src="img/icons/donate_icon.png" alt="donate icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_facebook" name="custom_nav5" value="facebook_icon"> <br>
+                      <input type="radio" id="custom_nav5-icon_facebook" name="custom_nav5" value="facebook_icon"> <br>
                       <img src="img/icons/facebook_icon.png" alt="facebook icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_flag" name="custom_nav5" value="flag_icon"> <br>
+                      <input type="radio" id="custom_nav5-icon_flag" name="custom_nav5" value="flag_icon"> <br>
                       <img src="img/icons/flag_icon.png" alt="flag icon" /> 
                     </label>
+                    <label style="text-align:center">
+                       <input type="radio" id="custom_nav5-icon_keys" name="custom_nav5" value="key_icon"> <br>
+                       <img src="img/icons/key_icon.png" alt="key icon" />
+                    </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_kids" name="custom_nav5" value="kids_icon"> <br>
+                      <input type="radio" id="custom_nav5-icon_kids" name="custom_nav5" value="kids_icon"> <br>
                       <img src="img/icons/kids_icon.png" alt="kids icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_map" name="custom_nav5" value="map_icon"> <br>
+                      <input type="radio" id="custom_nav5-icon_map" name="custom_nav5" value="map_icon"> <br>
                       <img src="img/icons/map_icon.png" alt="map icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_podium" name="custom_nav5" value="podium_icon"> <br>
+                      <input type="radio" id="custom_nav5-icon_podium" name="custom_nav5" value="podium_icon"> <br>
                       <img src="img/icons/podium_icon.png" alt="podium icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_shoe" name="custom_nav5" value="shoe_icon"> <br>
+                      <input type="radio" id="custom_nav5-icon_shoe" name="custom_nav5" value="shoe_icon"> <br>
                       <img src="img/icons/shoe_icon.png" alt="shoe icon" /> 
                     </label>  
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_squirrel" name="custom_nav5" value="squirrel_icon"> <br>
+                      <input type="radio" id="custom_nav5-icon_squirrel" name="custom_nav5" value="squirrel_icon"> <br>
                       <img src="img/icons/squirrel_icon.png" alt="squirrel icon" /> 
                     </label>  
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_swim" name="custom_nav5" value="swim_icon"> <br>
+                      <input type="radio" id="custom_nav5-icon_swim" name="custom_nav5" value="swim_icon"> <br>
                       <img src="img/icons/swim_icon.png" alt="swim icon" /> 
                     </label>  
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_twitter" name="custom_nav5" value="twitter_icon"> <br>
+                      <input type="radio" id="custom_nav5-icon_twitter" name="custom_nav5" value="twitter_icon"> <br>
                       <img src="img/icons/twitter_icon.png" alt="twitter icon" /> 
                     </label>
                   </div>
@@ -614,7 +692,92 @@
               </fieldset>
             </div>
           </div>
+        </div>
+<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 custom_menu_item" id="custom_menu_item6">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h4>Additional Menu Item 6 </h4></div>
+            <div class="panel-body">
+              <fieldset id="add_url">
+                <label>
+                  <div class="input-group">
+                    <span class="input-group-addon">Display Name</span><input type="text" class="form-control" id="custom_nav6-display-name" name="custom_nav6-display-name" value="custom menu item 6">
+                  </div>
+                </label>              
+
+                  <div class="panel panel-default col-xs-12 icons" style="">
+                    <!--<span class="">Icon</span><br>-->
+                     <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav6-icon_award" name="custom_nav6" value="award_icon"> <br>
+                      <img src="img/icons/award_icon.png" alt="award icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav6-icon_book" name="custom_nav6" value="book_icon"> <br>
+                      <img src="img/icons/book_icon.png" alt="book icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav6-icon_buildings" name="custom_nav6" value="buildings_icon"> <br>
+                      <img src="img/icons/buildings_icon.png" alt="buildings icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav6-icon_computer" name="custom_nav6" value="computer_icon"> <br>
+                      <img src="img/icons/computer_icon.png" alt="computer icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav6-icon_donate" name="custom_nav6" value="donate_icon"> <br>
+                      <img src="img/icons/donate_icon.png" alt="donate icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav6-icon_facebook" name="custom_nav6" value="facebook_icon"> <br>
+                      <img src="img/icons/facebook_icon.png" alt="facebook icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav6-icon_flag" name="custom_nav6" value="flag_icon"> <br>
+                      <img src="img/icons/flag_icon.png" alt="flag icon" /> 
+                    </label>
+                    <label style="text-align:center">
+                       <input type="radio" id="custom_nav6-icon_keys" name="custom_nav6" value="key_icon"> <br>
+                       <img src="img/icons/key_icon.png" alt="key icon" />
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav6-icon_kids" name="custom_nav6" value="kids_icon"> <br>
+                      <img src="img/icons/kids_icon.png" alt="kids icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav6-icon_map" name="custom_nav6" value="map_icon"> <br>
+                      <img src="img/icons/map_icon.png" alt="map icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav6-icon_podium" name="custom_nav6" value="podium_icon"> <br>
+                      <img src="img/icons/podium_icon.png" alt="podium icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav6-icon_shoe" name="custom_nav6" value="shoe_icon"> <br>
+                      <img src="img/icons/shoe_icon.png" alt="shoe icon" /> 
+                    </label>  
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav6-icon_squirrel" name="custom_nav6" value="squirrel_icon"> <br>
+                      <img src="img/icons/squirrel_icon.png" alt="squirrel icon" /> 
+                    </label>  
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav6-icon_swim" name="custom_nav6" value="swim_icon"> <br>
+                      <img src="img/icons/swim_icon.png" alt="swim icon" /> 
+                    </label>  
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav6-icon_twitter" name="custom_nav6" value="twitter_icon"> <br>
+                      <img src="img/icons/twitter_icon.png" alt="twitter icon" /> 
+                    </label>
+                  </div>
+                  
+                <label>
+                  <div class="input-group">
+                    <span class="input-group-addon">URL</span><input type="text" class="form-control" id="custom_nav6-url" name="custom_nav6-url">
+                  </div>
+                </label>                
+              </fieldset>
+            </div>
+          </div>
         </div>        
+
 
 
 
@@ -654,9 +817,18 @@
         <script src="js/plugins/drag.js"></script>
         <script>
 $(document).ready(function() {
+  //var $menuBarItems = "#menuBar-items li"
   $( "#menuBar-items" ).sortable();
   $( "#menuBar-items" ).disableSelection();
   
+  function setButtonBarColor(){
+    var color = $("#app_style-menu_bar_color").val();
+    $('#menuBar-items li').css('background-color', '#fff')
+    $('#menuBar-items li.active').css('background-color', '#ccc')
+    $('#menuBar-items li.active.inMenuBar').css('background-color', color);
+    $('div.icons').css('background-color', color);
+  } 
+
   function setFeatured(){
     var $li = $("#menuBar-items li");
     var activeCount = 0;
@@ -666,16 +838,19 @@ $(document).ready(function() {
         .removeClass('inMenuBar');
       if(activeCount<4 && $(val).hasClass('active')){$(val).addClass('inMenuBar'); activeCount++};
       //if(i<4 && $(val).hasClass('active')){$(val).addClass('inMenuBar')};
+     
     });
+  //setButtonBarColor();
   }
 
-  function setButtonBarColor(){
-    var color = $("#app_style-menu_bar_color").css('background-color');
-    console.log(color);
-  } 
-setFeatured();  
+ 
+setFeatured();
 
-$( "#menuBar-items" ).on( "sortupdate", function(){ setFeatured(); });
+
+$( "#menuBar-items" ).on( "sortupdate", function(){ 
+  setFeatured();
+  setButtonBarColor(); 
+});
 
 
 $("#menuBar-items li input").click(function() {
@@ -683,10 +858,10 @@ $("#menuBar-items li input").click(function() {
     $(this).parent().addClass('active');
   }
   else {$(this).parent().removeClass('active');}
-setFeatured();
+setFeatured();setButtonBarColor();  
 });
 
-$("#app_style-bar_color").change(function() {
+$("#app_style-menu_bar_color").change(function() {
 setButtonBarColor()
 });
 /* custom item one */
@@ -757,6 +932,7 @@ $("#menu_custom4 input").click(function() {
     $("#custom_menu_item4").fadeOut();
   } 
 });
+
 $("#custom_nav4-display-name").change(function() {
   $("#menu_custom4 span").text( $(this).val() );
 });
@@ -774,6 +950,8 @@ $("#menu_custom5 input").click(function() {
     $("#menu_custom5").removeClass('active');
     $("#custom_menu_item5").fadeOut();
   }
+});
+
 $("#custom_nav5-display-name").change(function() {
   $("#menu_custom5 span").text( $(this).val() );
 });
@@ -781,13 +959,34 @@ $('input[name="custom_nav5"]').change(function() {
 $('#menu_custom5 img').attr('src', "img/icons/"+$(this).val()+".png");   
 });
 
-})
-/*
-/*
-/*
+/*custom item six */
+$("#menu_custom6 input").click(function() {
+  if( $(this).prop('checked') ) { 
+    $("#menu_custom6").addClass('active');
+    $("#custom_menu_item6").fadeIn();
+  } 
+  else {
+    $("#menu_custom6").removeClass('active');
+    $("#custom_menu_item6").fadeOut();
+  }
+});
 
-/*
-/*
+$("#custom_nav6-display-name").change(function() {
+  $("#menu_custom6 span").text( $(this).val() );
+});
+$('input[name="custom_nav6"]').change(function() {
+$('#menu_custom6 img').attr('src', "img/icons/"+$(this).val()+".png");   
+});
+
+
+
+$('#splash_background input[name="app_style-background"]').click(function(){
+  var backgroundImage = "url(img/backgrounds/"+$(this).val()+".jpg)";
+ $('.fileupload-preview').css('background', backgroundImage);   
+});
+
+/*})
+
 
 ; type="checkbox"><img /> <span></span> </li>
 "menu_custom2"><input type="checkbox"><img /> <span></span> </li>

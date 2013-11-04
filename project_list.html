@@ -11,6 +11,8 @@
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
         <style>
             body {
                 padding-top: 50px;
@@ -24,11 +26,29 @@
             .target_devices label{padding:6px 0px;}
             td>button{margin:0 5px;
             }
+            .navbar-inverse {
+            background-image: -webkit-gradient(linear,left 0,left 100%,from(#5bc0de),to(#31b0d5));
+            background-image: -webkit-linear-gradient(top,#5bc0de,0%,#31b0d5,100%);
+            background-image: -moz-linear-gradient(top,#5bc0de 0,#31b0d5 100%);
+            background-image: linear-gradient(to bottom,#5bc0de 0,#31b0d5 100%);
+            background-repeat: repeat-x;
+            border-color: #2aabd2;
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de',endColorstr='#ff31b0d5',GradientType=0);
+            
+            }
+            .navbar-inverse .navbar-brand{color:#3276b1; text-shadow:none;}
+            .navbar-inverse .navbar-nav>li>a{color:#3276b1;font-size: 16px}
+            .navbar-inverse .navbar-brand:hover,
+            .navbar-inverse .navbar-nav>li>a:hover{color:#fff; text-shadow:none;}
+            .navbar-inverse .navbar-nav>.active>a {background-color:#428bca}
+            /*.navbar-inverse .navbar-nav>.active>a {background-color: #0088cc}*/
+            .navbar-inverse .navbar-nav>.active>a:hover{background-color:#3276b1}
+            /*.navbar-inverse .navbar-nav>.active>a:hover{background-color:#0055cc}*/
+/*background-color: #5bc0de; border-color:#46b8da;*/            
+            .center{text-align:center}
             #controlButtons div {margin-top: 10px;
             }
         </style>
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/main.css">
 
         <!--[if lt IE 9]>
             <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
@@ -46,11 +66,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">Central Parks Admin Section</a>
         </div>
         <!--navbar-->
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
+          <!--
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data Management<b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -62,10 +83,12 @@
                 <li><a href="data_management-contacts.html">Contacts</a></li>
               </ul>
             </li>
-            <li class="active"><a href="push_notifications.html">Push Notifications</a></li>
-            <li><a href="user_management.html">Users</a></li>
+            -->
+            <li class="active"><a href="project_list.html">View All Projects</a></li>
+            <li><a href="project_launcher.html">New Project</a></li>
+            <li><a href="#">Analytics</a></li>
             <li><a href="build_request.html">Build Request</a></li>
-          <li><a href="help.html">Help</a></li>
+          
           </ul>
             <div class="navbar-right">
               <button type="button" class="btn btn-default navbar-btn" id="logOut_btn"><span class="text">Log Out&nbsp;&nbsp;</span><span class="glyphicon glyphicon-log-out"></span></button>
@@ -76,12 +99,12 @@
     </div>
 
     <div class="container">
-           <h1>Project List</h1>
+           <h1>All Projects</h1>
 
 
         <div class="col-md-12">
           <div class="panel panel-default data-panels">
-            <div class="panel-heading"><h4>Current Projects</h4></div>
+            <div class="panel-heading"><h4>Live Projects</h4></div>
             <div class="panel-body">
              <table class="table col-md-12">
               <tbody>
@@ -89,29 +112,67 @@
                 <th>Project Name</th>
                 <th>Primary Contact</th>
                 <th>Notes</th>
-                <th>Pending Build Requests</th>
-                <th> <button type="submit" class="btn btn-success" id="submit" onclick="window.location.href='project_launcher.html'">Launch New Project</button></th>
+                <th class="center">Pending Build<br> Requests</th>
+                <th class="center">Active</th>
+                <th class="center">Manage
+                <!-- <button type="submit" class="btn btn-success" id="submit" onclick="window.location.href='project_launcher.html'">Launch New Project</button>
+              --></th>
               </tr>
               <tr>
                 <td>Links Park District</td>
                 <td>John Smith</td>
                 <td></td>
-                <td>0</td>
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>           
+                <td class="center">0</td>
+                <td class="center"><input type="checkbox" checked="checked" disabled="disabled"></td>
+                <td class="center"><button class="btn btn-default client_admin">Client Admin</button><button class="btn btn-info manage_project">Manage Project</button></td>           
               </tr>
               <tr>
-                <td>Southern Parks</td>
+                <td>Ogdenville</td>
                 <td>Jane Doe</td>
                 <td>Interested in logo update</td>
-                <td>1</td>
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>
+                <td class="center">1</td>
+                <td class="center"><input type="checkbox" checked="checked" disabled="disabled"></td>
+                <td class="center"><button class="btn btn-default client_admin">Client Admin</button><button class="btn btn-info manage_project">Manage Project</button></td>
               </tr>
               <tr>
-                <td>Western Parks and Rec </td>
+                <td>North Haverbrook </td>
                 <td>---</td>
                 <td>app still in development</td>
-                <td>0</td>
-                <td><button class="btn btn-default">Edit</button><button class="btn btn-danger">Delete</button></td>           
+                <td class="center">0</td>
+                <td class="center"><input type="checkbox" checked="checked" disabled="disabled"></td>
+                <td class="center"><button class="btn btn-default client_admin">Client Admin</button><button class="btn btn-info manage_project">Manage Project</button></td>           
+              </tr>          
+            </tbody>
+            </table>
+            
+     
+            </div>
+          </div>
+
+        </div>
+        
+        <div class="col-md-12">
+          <div class="panel panel-default data-panels">
+            <div class="panel-heading"><h4>Pending Projects</h4></div>
+            <div class="panel-body">
+             <table class="table col-md-12">
+              <tbody>
+              <tr>
+                <th>Project Name</th>
+                <th>Primary Contact</th>
+                <th>Notes</th>
+                <th class="center">Pending Build<br> Requests</th>
+                <th class="center">Active</th>
+                <th class="center"> Manage 
+
+                  <!--<button type="submit" class="btn btn-success" id="submit" onclick="window.location.href='project_launcher.html'">Launch New Project</button>--></th>
+              </tr>
+                <td>Brockway</td>
+                <td>---</td>
+                <td>app still in development</td>
+                <td class="center">0</td>
+                <td class="center"><input type="checkbox" disabled="disabled"></td>
+                <td class="center"><button class="btn btn-default client_admin">Client Admin</button><button class="btn btn-info manage_project">Manage Project</button></td>           
               </tr>          
             </tbody>
             </table>
@@ -136,6 +197,8 @@
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         <script>
+$('.manage_project').click(function(){ window.location.href = "data_management-home.html?admin=true&project=links_park_district"});
+$('.client_admin').click(function(){ window.location.href = "data_management-home.html?admin=true&project=links_park_district"});
 
 </script>
         <script>

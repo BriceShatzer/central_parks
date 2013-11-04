@@ -1,9 +1,13 @@
 var page = $(location).attr('href').slice(  $(location).attr('href').lastIndexOf('/')+1  );
 
 
+if (page ==="data_management-home.html?admin=true&project=links_park_district"){ 
+//	$('<button type="button" ></button>')
+$('<button type="button" class="btn btn-info navbar-btn" id="ManageProjects_btn">Projects Admin</button>').prependTo('div.navbar-right');
+$('#ManageProjects_btn').click(function() { window.location.href="project_list.html"});
+}
 
-
-if( page==="create-edit_news.html?id=fall_food_drive_was_a_huge_success"){
+else if( page==="create-edit_news.html?id=fall_food_drive_was_a_huge_success"){
 	$('#news-headline').val("Fall Food Drive Was A Huge Success!");
 	$('#news-publish_date').val("9/12/2013");
 	$('#news-expire_date').val("12/1/2013");

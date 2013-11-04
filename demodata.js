@@ -2,9 +2,22 @@ var page = $(location).attr('href').slice(  $(location).attr('href').lastIndexOf
 
 
 if (page ==="data_management-home.html?admin=true&project=links_park_district"){ 
+$('.navbar-brand').css({
+	"background": "url('img/links_pd.png')",
+	"background-repeat": "no-repeat",
+	"line-height": "0",
+	"margin-top": "2px",
+	"width": "140px",
+	"height": "48px",
+	"text-indent": "-9999px"
+}); 
+
+
 //	$('<button type="button" ></button>')
 $('<button type="button" class="btn btn-info navbar-btn" id="ManageProjects_btn">Projects Admin</button>').prependTo('div.navbar-right');
 $('#ManageProjects_btn').click(function() { window.location.href="project_list.html"});
+
+
 }
 
 else if( page==="create-edit_news.html?id=fall_food_drive_was_a_huge_success"){

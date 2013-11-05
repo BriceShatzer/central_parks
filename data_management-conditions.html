@@ -77,6 +77,63 @@
     }
     #group_submit{text-align:center;margin-top:20px;}
     #group_submit button{font-size:35px}
+/* open/closed toggle switches */
+.onoffswitch {
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 1px solid #DDD; border-radius: 20px;
+}
+.onoffswitch-inner {
+    width: 200%; margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "Open";
+    padding-left: 10px;
+    background-image: -webkit-gradient(linear,left 0,left 100%,from(#5CB85C),to(#449D44));
+    background-image: -webkit-linear-gradient(top,#5cb85c,0%,#449d44,100%);
+    background-image: -moz-linear-gradient(top,#5cb85c 0,#449d44 100%);
+    background-image: linear-gradient(to bottom,#5CB85C 0,#449D44 100%);
+    background-repeat: repeat-x;
+    border-color: #419641;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5cb85c',endColorstr='#ff449d44',GradientType=0);
+    background-color: #419641; 
+    color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "Closed";
+    padding-right: 10px;
+    background-color: #EEEEEE; color: #C72222;
+    text-align: right;
+}
+.onoffswitch-switch {
+    width: 18px; margin: 8px;
+    background: #FFFFFF;
+    border: 1px solid #999999; border-radius: 20px;
+    position: absolute; top: 0; bottom: 0; right: 56px;
+    -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
+    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+
+
 @media (max-width: 1200px){
   /*#group_submit{margin-top:-25px;margin-bottom: 10px;}
   #group_submit button{font-size:25px;margin-top:0px;}*/
@@ -194,9 +251,9 @@
               <div class="panel panel-default col-xs-12 process-step group_type">
                 <div class="panel-body">
                   <p style="margin-top:8px;">Select one or more group types to manage</p>
-                  <label><input type="checkbox"> Pools</label><br>
                   <label><input type="checkbox"> Ball Fields</label><br>
                   <label><input type="checkbox"> Ice Rinks</label><br>
+                  <label><input type="checkbox"> Pools</label>
                 </div>
               </div>
               </div>
@@ -264,7 +321,13 @@
                 <td>Ball Field</td>
                 <td>1800 Gold Medal Lane</td>
                 <td></td>
-                <td class="status-open">open</td>
+                <td><div class="onoffswitch ballfield_toggle">
+                      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="olympic_1" checked>
+                      <label class="onoffswitch-label" for="olympic_1">
+                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-switch"></div>
+                      </label>
+                  </div></td>
                 <td><input type="checkbox" checked="checked" disabled="disabled"></td>
                 <td><button class="btn btn-default edit-condition">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>
@@ -273,7 +336,15 @@
                 <td>Ball Field</td>
                 <td>1800 Gold Medal Lane</td>
                 <td></td>
-                <td class="status-open">open</td>
+                <td>
+                  <div class="onoffswitch ballfield_toggle">
+                      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="olympic_2" checked>
+                      <label class="onoffswitch-label" for="olympic_2">
+                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-switch"></div>
+                      </label>
+                  </div>
+                </td>
                 <td><input type="checkbox" checked="checked" disabled="disabled"></td>
                 <td><button class="btn btn-default edit-condition">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>
@@ -282,7 +353,14 @@
                 <td>Ball Field</td>
                 <td>1800 Gold Medal Lane</td>
                 <td>North end of field #3 closed for ground repair</td>
-                <td class="status-open">open</td>
+                <td>
+                 <div class="onoffswitch ballfield_toggle">
+                      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="olympic_3" checked>
+                      <label class="onoffswitch-label" for="olympic_3">
+                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-switch"></div>
+                      </label>
+                  </div></td>
                 <td><input type="checkbox" checked="checked" disabled="disabled"></td>
                 <td><button class="btn btn-default edit-condition">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>                            
@@ -291,7 +369,13 @@
                 <td>Pool</td>
                 <td>123 Abc St.</td>
                 <td>Closed for winter</td>
-                <td class="status-closed">closed</td>
+                <td><div class="onoffswitch pool_toggle">
+                      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="family_splash" >
+                      <label class="onoffswitch-label" for="family_splash">
+                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-switch"></div>
+                      </label>
+                  </div></td>
                 <td><input type="checkbox" checked="checked" disabled="disabled"></td>               
                 <td><button class="btn btn-default edit-condition">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>               
@@ -300,7 +384,13 @@
                 <td>Ice Rink</td>
                 <td>987 Willow dr.</td>
                 <td>Free Skate from noon-4:30pm daily</td>
-                <td class="status-open">open</td>
+                <td><div class="onoffswitch ballfield_toggle">
+                      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="twin_ice" checked>
+                      <label class="onoffswitch-label" for="twin_ice">
+                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-switch"></div>
+                      </label>
+                  </div></td>
                 <td><input type="checkbox" checked="checked" disabled="disabled"></td>               
                 <td><button class="btn btn-default edit-condition">Edit</button><button class="btn btn-danger">Delete</button></td>
               </tr>

@@ -24,9 +24,10 @@
             .target_devices label{padding:6px 0px;}
             td>button{margin:0 5px;
             }
+            #actions, #message,
             .action-details div,
             #controlButtons div {margin-top: 10px;
-            }
+            }*/
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
@@ -85,12 +86,6 @@
             <div class="panel-body">
 
             <fieldset id="create_push">
-              <label class="col-md-8">
-                <div class="input-group">
-                <span class="input-group-addon">Message Content</span><input type="text" class="form-control" id="create_push-content">
-                </div>
-              </label>
-
               <label class="col-md-4" id="actions">
                 <div class="input-group">
                 <span class="input-group-addon">Type</span>
@@ -100,18 +95,18 @@
                     <option value="appNews">Launch News Story</option>
                     <option value="appEvents">Lauch Event </option>
                     <option value="appConditions">Launch Conditions Notification</option>
-                    <option value="browser">Launch Website in browser</option>
+                    <!-- <option value="browser">Launch Website in browser</option> --> 
                   </select>
                 </div>
               </label>
-<!--
-              <div class="col-md-4 target_devices"> 
-                <p class="col-md-5">Target Devices</p>
-                <label class="col-md-3"><input type="checkbox" id="create_push-target_ios" value="iOS">iOS</label>
-                <label class="col-md-4"><input type="checkbox" id="create_push-target_android" value="android">android</label>
-              </div> 
 
-<div class="col-md-12"> -->
+              <label class="col-md-8" id="message">
+                <div class="input-group">
+                <span class="input-group-addon">Message Content</span><input type="text" class="form-control" id="create_push-content">
+                </div>
+              </label>
+
+              
               <label class="col-md-6 action-details" id="news-actions">
                 <div class="input-group">
                 <span class="input-group-addon">News to Open</span>
@@ -150,7 +145,8 @@
                     <option value="conditions_ice-rinks">Open ice rink conditions</option>
                   </select>
                 </div>
-              </label>                               
+              </label>
+
               <label class="col-md-6 action-details" id="launch_url-actions">
                 <div class="input-group">
                 <span class="input-group-addon">URL to Open </span>
@@ -162,7 +158,8 @@
               <div class="col-md-4 col-xs-12">
                 <input class="btn btn-success btn-block" type="submit" value="Send">
               </div>
-            </div>              
+            </div>  
+
                 </fieldset> 
      </div>      
             </div>
@@ -234,11 +231,13 @@
         <script>
 $(document).ready(function() {
   
-$('.action-details').hide();
+$('.action-details, #message').hide();
 $('#create_push-action').change(function() {
-  $('.action-details').hide();
+  $('#message, .action-details').hide();
   var act = $(this).val();
-  if(act === "appNews"){ $('#news-actions').fadeIn();}
+  if (act=== "open_homepage"){$('#message').fadeIn('fast');}
+  else if(act === "appNews"){$('#message , #news-actions').fadeIn();
+  }
   else if (act === "appEvents"){ $('#event-actions').fadeIn();}
   else if (act === "appConditions"){ $('#conditions-actions').fadeIn();}
   else if (act === "browser"){ $('#launch_url-actions').fadeIn();}

@@ -24,9 +24,10 @@
             .target_devices label{padding:6px 0px;}
             td>button{margin:0 5px;
             }
+            #actions, #message,
             .action-details div,
             #controlButtons div {margin-top: 10px;
-            }
+            }*/
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
@@ -98,6 +99,7 @@
                   </select>
                 </div>
               </label>
+
               <label class="col-md-8" id="message">
                 <div class="input-group">
                 <span class="input-group-addon">Message Content</span><input type="text" class="form-control" id="create_push-content">
@@ -143,7 +145,8 @@
                     <option value="conditions_ice-rinks">Open ice rink conditions</option>
                   </select>
                 </div>
-              </label>                               
+              </label>
+
               <label class="col-md-6 action-details" id="launch_url-actions">
                 <div class="input-group">
                 <span class="input-group-addon">URL to Open </span>
@@ -155,7 +158,8 @@
               <div class="col-md-4 col-xs-12">
                 <input class="btn btn-success btn-block" type="submit" value="Send">
               </div>
-            </div>              
+            </div>  
+
                 </fieldset> 
      </div>      
             </div>
@@ -231,7 +235,7 @@ $('.action-details, #message').hide();
 $('#create_push-action').change(function() {
   $('#message, .action-details').hide();
   var act = $(this).val();
-  if (act=== "open_homepage"){$('#message').fadeIn();}
+  if (act=== "open_homepage"){$('#message').fadeIn('fast');}
   else if(act === "appNews"){$('#message , #news-actions').fadeIn();
   }
   else if (act === "appEvents"){ $('#event-actions').fadeIn();}

@@ -150,7 +150,7 @@
                 <div class="col-md-7 col-sm-12 col-xs-7" >
                   
                     <div class="fileupload fileupload-new" data-provides="fileupload">
-                      <div class="fileupload-preview thumbnail" style="width: 250px; height: 250px;"></div>
+                      <div class="fileupload-preview thumbnail" style="width: 250px; height: 444px;"></div>
                       <div>
                         <span class="btn btn-default btn-file"><span class="fileupload-new">Upload</span><span class="fileupload-exists">Change</span><input type="file" /></span>
                         <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
@@ -160,28 +160,41 @@
                 <div class="col-md-5 col-sm-12 col-xs-5" id="splash_background">
                   <div class="sampleBackgrounds col-xs-6">
                     <label>
-                    <input type="radio" id="app_style-background_1" name="app_style-background" value="park_summer">                      
-                    <img src="img/backgrounds/park_summer.jpg" alt="img" class="thumbnail">
+                    <input type="radio" id="app_style-background_1" name="app_style-background" value="GrassyField">                      
+                    <img src="img/backgrounds/GrassyField.jpg" alt="img" class="thumbnail">
                     </label>
                   </div>
                   <div class="sampleBackgrounds col-xs-6">
                     <label>
-                    <input type="radio" id="app_style-background_2" name="app_style-background" value="fall_leaves">                      
-                    <img src="img/backgrounds/fall_leaves.jpg" alt="img" class="thumbnail">
+                    <input type="radio" id="app_style-background_2" name="app_style-background" value="Family">                      
+                    <img src="img/backgrounds/Family.jpg" alt="img" class="thumbnail">
                     </label>
                   </div>        
                   <div class="sampleBackgrounds col-xs-6">
                     <label>
-                    <input type="radio" id="app_style-background_3" name="app_style-background" value="snowman">                      
-                    <img src="img/backgrounds/snowman.jpg" alt="img" class="thumbnail">
+                    <input type="radio" id="app_style-background_3" name="app_style-background" value="SnowBird">                      
+                    <img src="img/backgrounds/SnowBird.jpg" alt="img" class="thumbnail">
                     </label>
                   </div>
                   <div class="sampleBackgrounds col-xs-6">
                     <label>
-                    <input type="radio" id="app_style-background_4" name="app_style-background" value="grass">                      
-                    <img src="img/backgrounds/grass.jpg" alt="img" class="thumbnail">
+                    <input type="radio" id="app_style-background_4" name="app_style-background" value="Butterfly">                      
+                    <img src="img/backgrounds/Butterfly.jpg" alt="img" class="thumbnail">
                     </label>
-                  </div>                  
+                  </div>
+                  <div class="sampleBackgrounds col-xs-6">
+                    <label>
+                    <input type="radio" id="app_style-background_5" name="app_style-background" value="FlowerTree">                      
+                    <img src="img/backgrounds/FlowerTree.jpg" alt="img" class="thumbnail">
+                    </label>
+                  </div>
+                  <!--
+                  <div class="sampleBackgrounds col-xs-6">
+                    <label>
+                    <input type="radio" id="app_style-background_6" name="app_style-background" value="color">                      
+                    <input class="thumbnail color" id="app_style-background_color">
+                    </label>
+                  </div>  -->                                                        
                             
 
                 </div> 
@@ -986,10 +999,30 @@ $('#menu_custom6 img').attr('src', "img/icons/"+$(this).val()+".png");
 
 
 $('#splash_background input[name="app_style-background"]').click(function(){
+  if ($(this).val() === 'color'){
+    var color= $('#app_style-background_color').val();
+    $('.fileupload-preview').css({
+      backgroundImage: '',
+      "background-color": color
+    });
+      
+  }
+  else{
   var backgroundImage = "url(img/backgrounds/"+$(this).val()+".jpg)";
- $('.fileupload-preview').css('background', backgroundImage);   
+ $('.fileupload-preview').css('background', backgroundImage);
+ }   
 });
-
+/*
+$('#app_style-background_color').on ("change", function() {
+ if ($('#splash_background input[name="app_style-background"]').val() === 'color'  ){
+ var color= $('#app_style-background_color').val();
+    $('.fileupload-preview').css({
+      backgroundImage: '',
+      "background-color": color
+    })
+  }
+});
+*/
 /*})
 
 

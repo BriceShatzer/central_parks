@@ -24,6 +24,9 @@
             }
             #controlButtons div {margin-bottom: 10px;
             }
+            @media (max-width: 992px){
+              #fix{margin-top:0px !important}
+            }
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
@@ -90,20 +93,29 @@
                 <span class="input-group-addon">Event Title</span><input type="text" class="form-control" id="event-title" name="event-title">
                 </div>
               </label>
-              <label class="col-sm-6 col-xs-12" style="margin-bottom:20px;margin-top:10px;">
-                <div class="input-group">
-                <span class="input-group-addon">Event Start Date</span><input type="text" class="form-control" id="event-start_date" name="event-start_date">
-                </div>
-              </label>
+
           
              
-              <label class="col-sm-6 col-xs-12" style="margin-bottom:20px;margin-top:10px;">
-                <div class="input-group">
-                <span class="input-group-addon">Event End Date</span><input type="text" class="form-control" id="event-end_date" name="event-end_date">
-                </div>
-              </label>
+
 </div>              
 <div class="col-sm-6 col-xs-12">
+              <label class="col-md-6 col-xs-12" style="margin-bottom:20px;margin-top:10px;">
+                <div class="input-group">
+                <span class="input-group-addon">Start Date</span><input type="text" class="form-control" id="event-start_date" name="event-start_date">
+                </div>
+              </label>
+              <label class="col-md-6 col-xs-12" id="fix" style="margin-bottom:20px;margin-top:10px;">
+                <div class="input-group">
+                <span class="input-group-addon">End Date</span><input type="text" class="form-control" id="event-end_date" name="event-end_date">
+                </div>
+              </label>
+
+
+              <label class="col-md-12" style="margin-bottom:20px;">
+                <div class="input-group">
+                <span class="input-group-addon">Display Date</span><input class="form-control" id="event-display_date" name="event-display_date">
+                </div>
+              </label>
 
               
            
@@ -176,7 +188,13 @@
                   <input type="checkbox" name="event-launch_browser" id="event_launch_browser" value="launch_browser"><br class="visible-md visible-lg">Open in browser</div>
                 </label>
               </div>
-</div>    
+                            <label class="col-xs-12">
+                <div class="input-group">
+                <span class="input-group-addon">More Info URL</span><input type="text" class="form-control" id="event-more_info_url" name="event-more_info_url">
+                </div>
+              </label>  
+</div>
+<div class="col-xs-12 clearfix">    
                     <div class="col-xs-12 clearfix" id="feature_image-widget">    
                       <div class="panel panel-default">
                         <div class="panel-heading"><span class="tertiaryTitle">Feature Image</span></div>
@@ -191,17 +209,13 @@
                         </div>
                       </div>
                     </div>
-
+</div>
                   </div>
                 </div>
   
 
               </div>
-              <label class="col-xs-12">
-                <div class="input-group">
-                <span class="input-group-addon">More Info URL</span><input type="text" class="form-control" id="event-more_info_url" name="event-more_info_url">
-                </div>
-              </label>                      
+                    
 
 
           

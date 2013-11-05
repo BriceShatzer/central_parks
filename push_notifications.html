@@ -92,10 +92,10 @@
                 <span class="input-group-addon">Type</span>
                  <select class="form-control" name="create_push-action" id="create_push-action">
                     <option disabled="disabled" selected="selected" style="display:none;"></option>
-                    <option value="open_homepage">Launch App to homescreen</option>                         
-                    <option value="appNews">Launch News Story</option>
-                    <option value="appEvents">Lauch Event </option>
-                    <option value="appConditions">Launch Conditions Notification</option>
+                    <option value="appNews">News</option>
+                    <option value="appEvents">Event </option>
+                    <option value="appConditions">Conditions</option>
+                    <option value="appGeneric">General</option>    
                     <!-- <option value="browser">Launch Website in browser</option> --> 
                   </select>
                 </div>
@@ -103,50 +103,69 @@
 
               <label class="col-md-8" id="message">
                 <div class="input-group">
-                <span class="input-group-addon">Message Content</span><input type="text" class="form-control" id="create_push-content">
+                <span class="input-group-addon">Message</span><input type="text" class="form-control" id="create_push-content">
                 </div>
               </label>
 
               
               <label class="col-md-6 action-details" id="news-actions">
                 <div class="input-group">
-                <span class="input-group-addon">News to Open</span>
-                 <select class="form-control" name="news-actions" id="news-actions">
+                <span class="input-group-addon">News Notification Action</span>
+                 <select class="form-control" name="news-actions" id="news-actions_picker">
                     <option disabled="disabled" selected="selected" style="display:none;"></option>
-                    <option value="news_section">--Open news section</option>                  
-                    <option value="fall_food_drive_was_a_huge_success">Fall Food Drive Was A Huge Success!</option>
-                    <option value="winter_youth_sports_kickoff_soon">Winter Youth Sports Kickoff Soon</option>
-                    <option value="santa_to_visit_rec_center">Santa to Visit Rec Center</option>
-                    <option value="keep_that_new-years-resolution">Keep that New Years resolution, register for January fitness classes</option>
+                    <option value="home_news">-- Open to home screen, filter to news</option>  
+                    <!--<option value="news_section">- Open to news section</option> -->                  
+                    <option value="fall_food_drive_was_a_huge_success">Open story - Fall Food Drive Was A Huge Success!</option>
+                    <option value="winter_youth_sports_kickoff_soon">Open story - Winter Youth Sports Kickoff Soon</option>
+                    <option value="santa_to_visit_rec_center">Open story - Santa to Visit Rec Center</option>
+                    <option value="keep_that_new-years-resolution">Open story - Keep that New Years resolution, register for January fitness classes</option>
                   </select>
                 </div>
               </label>
 
               <label class="col-md-6 action-details" id="event-actions">
                 <div class="input-group">
-                <span class="input-group-addon">Event to Open</span>
-                 <select class="form-control" name="event-actions" id="event-actions">
+                <span class="input-group-addon">Event Notification Action</span>
+                 <select class="form-control" name="event-actions" id="event-actions_picker">
                     <option disabled="disabled" selected="selected" style="display:none;"></option>
-                    <option value="events_section">--Open events section</option>                  
-                    <option value="closed_for_thanksgiving">Closed for Thanksgiving</option>
-                    <option value="santa_to_visit_rec_center">Santa to Visit Rec Center</option>
-                    <option value="closed_for_holidays">Closed for Holidays</option>
+                    <option value="home_events">-- Open to home screen , filter to events</option>
+                    <!--<option value="events_section">- Open to events section</option> -->                  
+                    <option value="closed_for_thanksgiving">Open event - Closed for Thanksgiving</option>
+                    <option value="santa_to_visit_rec_center">Open event - Santa to Visit Rec Center</option>
+                    <option value="closed_for_holidays">Open event - Closed for Holidays</option>
                   </select>
                 </div>
               </label>
 
               <label class="col-md-6 action-details" id="conditions-actions">
                 <div class="input-group">
-                <span class="input-group-addon">Condition Category to Open</span>
-                 <select class="form-control" name="conditions-actions" id="conditions-actions">
+                <span class="input-group-addon">Condition Notification Action</span>
+                 <select class="form-control" name="conditions-actions" id="conditions-actions_picker">
                     <option disabled="disabled" selected="selected" style="display:none;"></option>
-                    <option value="conditions_section">--Open conditions section</option>                  
-                    <option value="conditions_pools">Open pool conditions</option>
-                    <option value="conditions_ball-fields">Open ball field conditions</option>
-                    <option value="conditions_ice-rinks">Open ice rink conditions</option>
+                    <option value="home">-- Open to home screen</option>
+                    <option value="conditions_section">- Open to conditions section</option>                  
+                    <option value="conditions_pools">Open to conditions section, filter to pools</option>
+                    <option value="conditions_ball-fields">Open to conditions section, filter to ball fields</option>
+                    <option value="conditions_ice-rinks">Open to conditions section, filter to ice rinks</option>
                   </select>
                 </div>
               </label>
+
+              <label class="col-md-6 action-details" id="generic-actions">
+                <div class="input-group">
+                <span class="input-group-addon">Notification Action</span> 
+               <!--
+                <input type="text" class="form-control" id="generic-home" name="generic-home" value="Open to home screen" disabled="disabled">
+              -->
+                <select class="form-control" name="generic-actions" id="generic-actions_picker">
+
+                    <option value="home">Open to home screen</option>
+                    <option value="facilities_section">Open to facilities section</option>                    
+                    <option value="contact_section">Open to contact section</option>
+                    <option value="update">Update app (launch to app store page)</option>                 
+                  </select>
+              </div>
+            </label>
 
               <label class="col-md-6 action-details" id="launch_url-actions">
                 <div class="input-group">
@@ -177,7 +196,7 @@
               <tbody>
               <tr>
                 <th>Date</th>
-                <th>Message Content</th>
+                <th>Message</th>
                 <th>Type</th>
                 <th>Action</th>
               </tr>
@@ -185,27 +204,27 @@
                 <td>10-14-13</td>
                 <td>Parks closed due to weather</td>
                 <td>Condition</td>
-                <td>Open conditions section</td>              
+                <td>Open to conditions section, filter to ball fields</td>              
               </tr>
               <tr>
                 <td>9-26-13</td>
                 <td>Fall Food Drive Was A Huge Success!</td>
                 <td>News</td>
-                <td>Fall Food Drive Was A Huge Success!</td>
+                <td>Open story - Fall Food Drive Was A Huge Success!</td>
                 <td></td>              
-              </tr>
-              <tr>
-                <td>9-12-13</td>
-                <td>Winter Sports Signups Now Open</td>
-                <td>Launch Website</td>
-                <td>http://www.parks.gov/wintersports/signup</td>
               </tr>
               <tr>
                 <td>9-2-13</td>
                 <td>Family Splash Center Closed for Winter</td>
                 <td>Condition</td>
-                <td>Family Splash Center</td>              
-              </tr> 
+                <td>Open to conditions section, filter to pools</td>              
+              </tr>
+              <tr>
+                <td>5-31-13</td>
+                <td>New extended summer hours for most parks</td>
+                <td>General</td>
+                <td>Open to facilities section</td>
+              </tr>               
                            
             </tbody>
             </table>
@@ -241,13 +260,14 @@ $('.action-details, #message').hide();
 $('#create_push-action').change(function() {
   $('#message, .action-details').hide();
   var act = $(this).val();
-  if (act=== "open_homepage"){showMessage()}
+  if (act=== "appGeneric"){showMessage();$('#generic-actions').fadeIn();}
   else if(act === "appNews"){ showMessage();$('#news-actions').fadeIn();
   }
   else if (act === "appEvents"){showMessage(); $('#event-actions').fadeIn();}
   else if (act === "appConditions"){ showMessage();$('#conditions-actions').fadeIn();}
-  else if (act === "browser"){ $('#launch_url-actions').fadeIn();}
+  //else if (act === "browser"){ $('#launch_url-actions').fadeIn();}
 });
+ /*
 $('div.target_devices input[type="checkbox"').click( function(){
   if($(this).val()==="iOS") {
     if($(this).is(':checked')){$('#iOS_actions').slideDown();}
@@ -257,7 +277,8 @@ $('div.target_devices input[type="checkbox"').click( function(){
     if($(this).is(':checked')){$('#android_actions').slideDown();}
     else{$('#android_actions').slideUp();}
   }
-});
+});*/
+
 });
 
 </script>

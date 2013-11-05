@@ -62,6 +62,7 @@
                 <li><a href="data_management-facilities_parks.html">Facilities/Parks</a></li>
                 <li><a href="data_management-conditions.html">Conditions</a></li>
                 <li><a href="data_management-contacts.html">Contacts</a></li>
+                <li><a href="data_management-settings.html">Settings</a></li>
               </ul>
             </li>
             <li class="active"><a href="push_notifications.html">Push Notifications</a></li>
@@ -229,17 +230,22 @@
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         <script>
+
 $(document).ready(function() {
-  
+ 
+
 $('.action-details, #message').hide();
+ function showMessage() {
+    if($('#message').is(':hidden') ){$('#message').fadeIn();}
+  }
 $('#create_push-action').change(function() {
   $('#message, .action-details').hide();
   var act = $(this).val();
-  if (act=== "open_homepage"){$('#message').fadeIn('fast');}
-  else if(act === "appNews"){$('#message , #news-actions').fadeIn();
+  if (act=== "open_homepage"){showMessage()}
+  else if(act === "appNews"){ showMessage();$('#news-actions').fadeIn();
   }
-  else if (act === "appEvents"){ $('#event-actions').fadeIn();}
-  else if (act === "appConditions"){ $('#conditions-actions').fadeIn();}
+  else if (act === "appEvents"){showMessage(); $('#event-actions').fadeIn();}
+  else if (act === "appConditions"){ showMessage();$('#conditions-actions').fadeIn();}
   else if (act === "browser"){ $('#launch_url-actions').fadeIn();}
 });
 $('div.target_devices input[type="checkbox"').click( function(){

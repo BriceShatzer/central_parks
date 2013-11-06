@@ -42,13 +42,20 @@
              
               text-align: center;
             }
-           
+
             .sampleBackgrounds .thumbnail {width: 100%;}
+            #colorThumbnail{};
+            #app_style-background_color{
+              border:0px;
+              -webkit-box-shadow: 0px;
+              box-shadow: 0px;}
+
             #controlButtons {
               clear:left;
-            }*/
+            }
             #controlButtons div {margin-bottom: 10px;margin-top: 15px; 
             }
+
             .testGradient {
               height: 120px;
               width: 80px;
@@ -66,11 +73,21 @@
               background-image: linear-gradient(top, #008000, #ffffff);
             }
             .custom_menu_item{display: none;}
-            #menuBar-items li {background-color:#fff; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
+            #menuBar-items li {background-color:#fff; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; clear:both;}
             #menuBar-items li img{display: none;}
             #menuBar-items li.active{background-color: #ccc; color:#fff;}
             #menuBar-items li.active img {display:inline;}
-            #menuBar-items li.active.inMenuBar {background-color: #999}
+            #menuBar-items li.active.inMenuBar {background-color: #999; width:90px; height:90px;float: left;text-align: center; clear:none;}
+            li.placeholder {
+              float: left;
+              clear:none;
+              background-color: #000; 
+              width:90px; height:60px;
+              /*
+              -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
+              filter: alpha(opacity=25);
+              opacity: 0.25;*/
+            }
             label.text_input{width:100%;}
 
 
@@ -143,61 +160,34 @@
               <fieldset id="org_info">
                 <label class="col-xs-12">
                   <div class="input-group">
-                    <span class="input-group-addon">App Name</span><input type="text" class="form-control" id="org_info-name" name="org_info-name">
+                    <span class="input-group-addon">App Name</span>
+                    <input type="text" class="form-control" id="app_info-name" name="app_info-name">
                   </div>
                 </label>
-                <p class="col-xs-12">Upload a logo and then select a background image to be used as your app's welcome screen. <em>(.png files with no background work best)</em> 
-                <div class="col-md-7 col-sm-12 col-xs-7" >
-                  
-                    <div class="fileupload fileupload-new" data-provides="fileupload">
-                      <div class="fileupload-preview thumbnail" style="width: 250px; height: 444px;"></div>
-                      <div>
-                        <span class="btn btn-default btn-file"><span class="fileupload-new">Upload</span><span class="fileupload-exists">Change</span><input type="file" /></span>
-                        <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
-                      </div>
-                    </div>
-                </div>    
-                <div class="col-md-5 col-sm-12 col-xs-5" id="splash_background">
-                  <div class="sampleBackgrounds col-xs-6">
-                    <label>
-                    <input type="radio" id="app_style-background_1" name="app_style-background" value="GrassyField">                      
-                    <img src="img/backgrounds/GrassyField.jpg" alt="img" class="thumbnail">
-                    </label>
+                <label class="col-xs-12">
+                  <div class="input-group">
+                    <span class="input-group-addon">App Store<br> Description</span>
+                    <textarea class="form-control" maxlength="700" rows="6" id="app_info-description"></textarea>
                   </div>
-                  <div class="sampleBackgrounds col-xs-6">
-                    <label>
-                    <input type="radio" id="app_style-background_2" name="app_style-background" value="Family">                      
-                    <img src="img/backgrounds/Family.jpg" alt="img" class="thumbnail">
-                    </label>
-                  </div>        
-                  <div class="sampleBackgrounds col-xs-6">
-                    <label>
-                    <input type="radio" id="app_style-background_3" name="app_style-background" value="SnowBird">                      
-                    <img src="img/backgrounds/SnowBird.jpg" alt="img" class="thumbnail">
-                    </label>
+                </label>
+                <label class="col-xs-12">
+                  <div class="input-group">
+                    <span class="input-group-addon">Keywords</span>
+                    <textarea class="form-control" max-length="100" rows="3" id="app_info-keywords"></textarea>
                   </div>
-                  <div class="sampleBackgrounds col-xs-6">
-                    <label>
-                    <input type="radio" id="app_style-background_4" name="app_style-background" value="Butterfly">                      
-                    <img src="img/backgrounds/Butterfly.jpg" alt="img" class="thumbnail">
-                    </label>
+                </label>
+                <label class="col-xs-12">
+                  <div class="input-group">
+                    <span class="input-group-addon">District Website</span><input type="text" class="form-control" id="app_info-district_websites">
                   </div>
-                  <div class="sampleBackgrounds col-xs-6">
-                    <label>
-                    <input type="radio" id="app_style-background_5" name="app_style-background" value="FlowerTree">                      
-                    <img src="img/backgrounds/FlowerTree.jpg" alt="img" class="thumbnail">
-                    </label>
+                </label>
+                <label class="col-xs-12">
+                  <div class="input-group">
+                    <span class="input-group-addon">App Contact Email</span><input type="text" class="form-control" id="app_info-district_websites">
                   </div>
-                  <!--
-                  <div class="sampleBackgrounds col-xs-6">
-                    <label>
-                    <input type="radio" id="app_style-background_6" name="app_style-background" value="color">                      
-                    <input class="thumbnail color" id="app_style-background_color">
-                    </label>
-                  </div>  -->                                                        
-                            
+                </label>                
 
-                </div> 
+
 
                 <!--<label>
                   <div class="input-group">
@@ -262,6 +252,70 @@
           </div>
         </div>        
 </div>
+        
+<div class="col-md-6 col-sm-6">
+  <div class="panel panel-default">
+    <div class="panel-heading"><h4>Welcome/Splash Image</h4></div>
+    <div class="panel-body">
+
+                <p class="col-xs-12">Upload a logo and then select a background image to be used as your app's welcome screen. <em>(.png files with no background work best)</em> 
+                <div class="col-md-7 col-sm-12 col-xs-7" >
+                  
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                      <div class="fileupload-preview thumbnail" style="width: 250px; height: 444px;"></div>
+                      <div>
+                        <span class="btn btn-default btn-file"><span class="fileupload-new">Upload</span><span class="fileupload-exists">Change</span><input type="file" /></span>
+                        <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+                      </div>
+                    </div>
+                </div>    
+                <div class="col-md-5 col-sm-12 col-xs-5" id="splash_background">
+                  <div class="sampleBackgrounds col-xs-6">
+                    <label>
+                    <input type="radio" id="app_style-background_1" name="app_style-background" value="GrassyField">                      
+                    <img src="img/backgrounds/GrassyField.jpg" alt="img" class="thumbnail">
+                    </label>
+                  </div>
+                  <div class="sampleBackgrounds col-xs-6">
+                    <label>
+                    <input type="radio" id="app_style-background_2" name="app_style-background" value="Family">                      
+                    <img src="img/backgrounds/Family.jpg" alt="img" class="thumbnail">
+                    </label>
+                  </div>        
+                  <div class="sampleBackgrounds col-xs-6">
+                    <label>
+                    <input type="radio" id="app_style-background_3" name="app_style-background" value="SnowBird">                      
+                    <img src="img/backgrounds/SnowBird.jpg" alt="img" class="thumbnail">
+                    </label>
+                  </div>
+                  <div class="sampleBackgrounds col-xs-6">
+                    <label>
+                    <input type="radio" id="app_style-background_4" name="app_style-background" value="Butterfly">                      
+                    <img src="img/backgrounds/Butterfly.jpg" alt="img" class="thumbnail">
+                    </label>
+                  </div>
+                  <div class="sampleBackgrounds col-xs-6">
+                    <label>
+                    <input type="radio" id="app_style-background_5" name="app_style-background" value="FlowerTree">                      
+                    <img src="img/backgrounds/FlowerTree.jpg" alt="img" class="thumbnail">
+                    </label>
+                  </div>
+                  
+                  <div class="sampleBackgrounds col-xs-6">
+                    <div>
+                    <input type="radio" id="app_style-background_6" name="app_style-background" value="color">                      
+                     <img src="img/backgrounds/clear.png" alt="color" class="thumbnail" id="colorThumbnail" />
+                      <input class="thumbnail color" id="app_style-background_color">
+                    </div>
+                  </div>                                                         
+                            
+
+                </div> 
+    </div>
+  </div>
+</div>
+
+
         <div class="col-md-6 col-sm-6">
           <div class="panel panel-default">
             <div class="panel-heading"><h4>Menu Items</h4></div>
@@ -270,10 +324,10 @@
               <div class="clearfix"></div>
 
               <ul id="menuBar-items">
-                <li id="menu_home" class="active inMenuBar"><input type="checkbox" checked="checked"> <img src="img/icons/home_icon.png" alt="home icon" /> Home</li>
-                <li id="menu_facilities" class="active inMenuBar"><input type="checkbox" checked="checked"> <img src="img/icons/tree_icon.png" alt="facilities icon" /> Facilities</li>
-                <li id="menu_conditions" class="active inMenuBar"><input type="checkbox" checked="checked"> <img src="img/icons/weather_icon.png" alt="conditions icon" /> Conditions</li>
-                <li id="menu_contact" class="active inMenuBar"><input type="checkbox" checked="checked"><img src="img/icons/phone_icon.png" alt="contact icon" /> Contact </li>
+                <li id="menu_home" class="active inMenuBar"><img src="img/icons/home_icon.png" alt="home icon" /><p>Home</p></li>
+                <li id="menu_facilities" class="active inMenuBar"><img src="img/icons/tree_icon.png" alt="facilities icon" /> Facilities</li>
+                <li id="menu_conditions" class="active inMenuBar"><img src="img/icons/weather_icon.png" alt="conditions icon" /> Conditions</li>
+                <li id="menu_contact" class="active inMenuBar"><img src="img/icons/phone_icon.png" alt="contact icon" /> Contact </li>
                 <li id="menu_custom1"><input type="checkbox">&nbsp;<img /> &nbsp;<span>custom menu item 1</span> </li>
                 <li id="menu_custom2"><input type="checkbox">&nbsp;<img /> &nbsp;<span>custom menu item 2</span> </li>
                 <li id="menu_custom3"><input type="checkbox">&nbsp;<img /> &nbsp;<span>custom menu item 3</span> </li>
@@ -286,6 +340,91 @@
           </div>
         </div>
 <div class="clearfix"></div>
+
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 custom_menu_item-manage" id="custom_menu_manage">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h4>Additional Menu Item</h4></div>
+            <div class="panel-body">
+              <fieldset id="add_url">
+                <label class="text_input">
+                  <div class="input-group">
+                    <span class="input-group-addon">Display Name</span><input type="text" class="form-control" id="custom_nav1-display-name" name="custom_nav1-display-name" value="custom menu item 1">
+                  </div>
+                </label>              
+<label><input type="checkbox" > Active
+                  <div class="panel panel-default col-xs-12 icons" style="">
+                    <!--<span class="">Icon</span><br>-->
+                     <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav1-icon_award" name="custom_nav1" value="award_icon"> <br>
+                      <img src="img/icons/award_icon.png" alt="award icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav1-icon_book" name="custom_nav1" value="book_icon"> <br>
+                      <img src="img/icons/book_icon.png" alt="book icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav1-icon_buildings" name="custom_nav1" value="buildings_icon"> <br>
+                      <img src="img/icons/buildings_icon.png" alt="buildings icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav1-icon_computer" name="custom_nav1" value="computer_icon"> <br>
+                      <img src="img/icons/computer_icon.png" alt="computer icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav1-icon_donate" name="custom_nav1" value="donate_icon"> <br>
+                      <img src="img/icons/donate_icon.png" alt="donate icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav1-icon_facebook" name="custom_nav1" value="facebook_icon"> <br>
+                      <img src="img/icons/facebook_icon.png" alt="facebook icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav1-icon_flag" name="custom_nav1" value="flag_icon"> <br>
+                      <img src="img/icons/flag_icon.png" alt="flag icon" /> 
+                    </label>
+                    <label style="text-align:center">
+                       <input type="radio" id="custom_nav1-icon_keys" name="custom_nav1" value="key_icon"><br>
+                       <img src="img/icons/key_icon.png" alt="key icon" />
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav1-icon_kids" name="custom_nav1" value="kids_icon"> <br>
+                      <img src="img/icons/kids_icon.png" alt="kids icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav1-icon_map" name="custom_nav1" value="map_icon"> <br>
+                      <img src="img/icons/map_icon.png" alt="map icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav1-icon_podium" name="custom_nav1" value="podium_icon"> <br>
+                      <img src="img/icons/podium_icon.png" alt="podium icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav1-icon_shoe" name="custom_nav1" value="shoe_icon"> <br>
+                      <img src="img/icons/shoe_icon.png" alt="shoe icon" /> 
+                    </label>  
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav1-icon_squirrel" name="custom_nav1" value="squirrel_icon"> <br>
+                      <img src="img/icons/squirrel_icon.png" alt="squirrel icon" /> 
+                    </label>  
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav1-icon_swim" name="custom_nav1" value="swim_icon"> <br>
+                      <img src="img/icons/swim_icon.png" alt="swim icon" /> 
+                    </label>  
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_nav1-icon_twitter" name="custom_nav1" value="twitter_icon"> <br>
+                      <img src="img/icons/twitter_icon.png" alt="twitter icon" /> 
+                    </label>
+                  </div>
+
+                <label class="text_input">
+                  <div class="input-group">
+                    <span class="input-group-addon">URL</span><input type="text" class="form-control" id="custom_nav1-url" name="custome_nav1-url">
+                  </div>
+                </label>                
+              </fieldset>
+            </div>
+          </div>
+        </div>
         
         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 custom_menu_item" id="custom_menu_item1">
           <div class="panel panel-default">
@@ -833,18 +972,24 @@
         <script src="js/plugins/jscolor/jscolor.js"></script>
         <script src="js/plugins/fileupload.js"></script>
         <script src="js/plugins/drag.js"></script>
+
         <script>
 $(document).ready(function() {
-  //var $menuBarItems = "#menuBar-items li"
-  $( "#menuBar-items" ).sortable();
-  $( "#menuBar-items" ).disableSelection();
+
+  $( "#menuBar-items" ).sortable({
+      items: "li:not(#menu_home)",
+      placeholder: "placeholder"
+
+  });
+
+  $( "#menuBar-items li" ).css('user-select', 'none');
   
   function setButtonBarColor(){
     var color = $("#app_style-menu_bar_color").val();
     $('#menuBar-items li').css('background-color', '#fff')
     $('#menuBar-items li.active').css('background-color', '#ccc')
     $('#menuBar-items li.active.inMenuBar').css('background-color', color);
-    $('div.icons').css('background-color', color);
+    $('div.icons').css('background-color', color);    
   } 
 
   function setFeatured(){
@@ -855,21 +1000,21 @@ $(document).ready(function() {
         .attr('data-item_order', i)
         .removeClass('inMenuBar');
       if(activeCount<4 && $(val).hasClass('active')){$(val).addClass('inMenuBar'); activeCount++};
-      //if(i<4 && $(val).hasClass('active')){$(val).addClass('inMenuBar')};
-     
     });
-  //setButtonBarColor();
+ // $li.not('.active.inMenuBar').css('clear','left');
   }
 
- 
 setFeatured();
 
+/* ====================
+Splash image construction 
+==================== */
 
+/* === Menu bar management === */
 $( "#menuBar-items" ).on( "sortupdate", function(){ 
   setFeatured();
   setButtonBarColor(); 
 });
-
 
 $("#menuBar-items li input").click(function() {
   if( $(this).prop('checked') ) {
@@ -882,6 +1027,9 @@ setFeatured();setButtonBarColor();
 $("#app_style-menu_bar_color").change(function() {
 setButtonBarColor()
 });
+
+/* === Individual item management === */
+
 /* custom item one */
 $("#menu_custom1 input").click(function() {
   if( $(this).prop('checked') ) { 
@@ -998,20 +1146,43 @@ $('#menu_custom6 img').attr('src', "img/icons/"+$(this).val()+".png");
 
 
 
-$('#splash_background input[name="app_style-background"]').click(function(){
-  if ($(this).val() === 'color'){
-    var color= $('#app_style-background_color').val();
+
+/* ====================
+Splash image construction 
+==================== */
+
+
+var bgRadio = $('#splash_background input[name="app_style-background"]');
+
+
+function splashBG_color(){
     $('.fileupload-preview').css({
       backgroundImage: '',
-      "background-color": color
+      "background-color": $('#app_style-background_color').val()
     });
-      
-  }
+};
+
+
+$('#app_style-background_color')
+.css({
+  'margin-top':  "-"+$('#app_style-background_color').outerHeight()+"px",
+  'border':'0px'
+})
+.on("change", function() {
+  $('#colorThumbnail').css('background-color',$('#app_style-background_color').val());
+    if(bgRadio.filter(":checked").val()==="color"){ splashBG_color() };
+ });
+
+
+bgRadio.click(function(){
+  if ($(this).val() === "color") { splashBG_color() }
   else{
   var backgroundImage = "url(img/backgrounds/"+$(this).val()+".jpg)";
  $('.fileupload-preview').css('background', backgroundImage);
  }   
 });
+
+
 /*
 $('#app_style-background_color').on ("change", function() {
  if ($('#splash_background input[name="app_style-background"]').val() === 'color'  ){
@@ -1033,14 +1204,10 @@ $('#app_style-background_color').on ("change", function() {
 "menu_custom5">
 
 */
+$('form').submit(function(){return false}) ;
 
 });
-/*    Add analytics when available
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-*/
+
         </script>
     </body>
 </html>

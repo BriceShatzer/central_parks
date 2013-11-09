@@ -78,6 +78,8 @@
               clear:none;
               line-height: .8em;
               margin: 2px;}
+            #menuBar-items li.selected {border:3px dashed #777;}
+            #menuBar-items li.active.selected.locked {border:0px;}
             #menuBar-items li.active.inMenuBar img {display:inline;}
             #menuBar-items li.placeholder {
               border: 2px dashed #888;
@@ -183,7 +185,12 @@
                   <div class="input-group">
                     <span class="input-group-addon">App Contact Email</span><input type="text" class="form-control" id="app_info-district_websites">
                   </div>
-                </label>                
+                </label>
+                <label class="col-xs-12">
+                  <div class="input-group">
+                    <span class="input-group-addon">UA Code</span><input type="text" class="form-control" id="app_info-UA_code">
+                  </div>
+                </label>                                   
 
 
 
@@ -209,36 +216,7 @@
                     <span class="input-group-addon">Top Bar</span><input type="text" class="form-control color" id="app_style-top_bar_color">
                   </div>
                 </label>              
-                <!--
-                <P>App Background</p>
-                  <div class="col-md-3 sampleBackgrounds">
-                     <input type="radio" style="" id="app_style-background_1" name="app_style-background" value="x">
-
-                      
-                  </div>
-
-                  <div class="sampleBackgrounds col-md-3 col-xs-4" style="text-align:center;">
-                    <label>
-                    <input type="radio" id="app_style-background_2" name="app_style-background" value="gradient">
-                    <div class="thumbnail"><div class="testGradient thumbnail" style=""></div></div>
-                    </label>
-                  </div>
-                  <div class="sampleBackgrounds col-md-3 col-xs-4" style="text-align:center;">
-                    <label>
-                    <input type="radio" id="app_style-background_3" name="app_style-background" value="nature">                      
-                    <img src="" alt="img" class="thumbnail">
-
-                    </label>
-                  </div>
-                  <div class="sampleBackgrounds col-md-3 col-xs-4" style="text-align:center;">
-                    <label>
-                    <input type="radio" id="app_style-background_4" name="app_style-background" value="pattern">  
-                    <img src="http://wfiles.brothersoft.com/i/i_s/iphone-4-pattern-wallpaper-07_6151-160x120.jpg" alt="img" class="thumbnail">
-                    
-                    </label>
-                  </div>
-                -->
-                  <label>
+                <label>
                   <div class="input-group" id="TopBarColor">
                     <span class="input-group-addon">Button Menu Bar</span><input type="text" class="form-control color" id="app_style-menu_bar_color" value="999999">
                   </div>
@@ -306,10 +284,8 @@
                       <input class="thumbnail color" id="app_style-background_color">
                     </div>
                   </div>                                                         
-                            
-
-                </div> 
-    </div>
+                 </div> 
+                    </div>
   </div>
 </div>
 
@@ -323,95 +299,91 @@
               <!--<div class="clearfix"></div>-->
 
               <ul id="menuBar-items">
-                <li id="menu_home" class="active inMenuBar locked"><img src="img/icons/home_icon.png" alt="Home" /><p>Home</p></li>
-                <li id="menu_facilities" class="active inMenuBar"><img src="img/icons/tree_icon.png" alt="Facilities" /> Facilities</li>
-                <li id="menu_conditions" class="active inMenuBar"><img src="img/icons/weather_icon.png" alt="Conditions" /> Conditions</li>
-                <li id="menu_contact" class="active inMenuBar"><img src="img/icons/phone_icon.png" alt="Contact" /> Contact </li>
-                <li id="menu_more" class="active inMenuBar locked"><img src="img/icons/more_icon.png" alt="More"> More</li>
-                <li id="menu_custom1"><img /> &nbsp;<span>custom menu item 1</span> </li>
-                <li id="menu_custom2"><img /> &nbsp;<span>custom menu item 2</span> </li>
-                <li id="menu_custom3"><img /> &nbsp;<span>custom menu item 3</span> </li>
-           
+                <li id="menu_home" class="active inMenuBar locked"><img src="img/icons/home_icon.png" alt="Home" /><span>Home</span></li>
+                <li id="menu_facilities" class="active inMenuBar protected"><img src="img/icons/tree_icon.png" alt="Facilities" /><span>Facilities</span></li>
+                <li id="menu_conditions" class="active inMenuBar protected"><img src="img/icons/weather_icon.png" alt="Conditions" /><span>Conditions</span></li>
+                <li id="menu_contact" class="active inMenuBar protected"><img src="img/icons/phone_icon.png" alt="Contact" /> <span>Contact</span> </li>
+                <li id="menu_more" class="active inMenuBar locked"><img src="img/icons/more_icon.png" alt="More"><span>More</span></li>         
               </ul>
 </div>         
 
  <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 custom_menu_item-manage" id="custom_menu_manage">
           <div class="panel panel-default">
-            <div class="panel-heading"><h4>Additional Menu Item</h4></div>
+            <div class="panel-heading"><button id="newItem" type="button" class="btn btn-default" style="float:right;">New Item</button><h4>Edit Menu Item</h4></div>
             <div class="panel-body">
               <fieldset id="add_url">
                 <label class="text_input">
                   <div class="input-group">
-                    <span class="input-group-addon">Display Name</span><input type="text" class="form-control" id="custom_nav1-display-name" name="custom_nav1-display-name" value="custom menu item 1">
+                    <span class="input-group-addon">Display Name</span><input type="text" class="form-control" id="custom_item-display-name" name="custom_item-display-name" value="">
                   </div>
                 </label>              
-                <label style="margin-top:5px;"><input type="checkbox" > Active</label>
+                <label style="margin-top:5px;"><input type="checkbox" id="custom_item-active" > Active</label>
                   <div class="panel panel-default col-xs-12 icons" style="margin-top:5px;">
                      <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_award" name="custom_nav1" value="award_icon"> <br>
+                      <input type="radio" id="custom_item-icon_award" name="custom_nav" value="award_icon"> <br>
                       <img src="img/icons/award_icon.png" alt="award icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_book" name="custom_nav1" value="book_icon"> <br>
+                      <input type="radio" id="custom_item-icon_book" name="custom_nav" value="book_icon"> <br>
                       <img src="img/icons/book_icon.png" alt="book icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_buildings" name="custom_nav1" value="buildings_icon"> <br>
+                      <input type="radio" id="custom_item-icon_buildings" name="custom_nav" value="buildings_icon"> <br>
                       <img src="img/icons/buildings_icon.png" alt="buildings icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_computer" name="custom_nav1" value="computer_icon"> <br>
+                      <input type="radio" id="custom_item-icon_computer" name="custom_nav" value="computer_icon"> <br>
                       <img src="img/icons/computer_icon.png" alt="computer icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_donate" name="custom_nav1" value="donate_icon"> <br>
+                      <input type="radio" id="custom_item-icon_donate" name="custom_nav" value="donate_icon"> <br>
                       <img src="img/icons/donate_icon.png" alt="donate icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_facebook" name="custom_nav1" value="facebook_icon"> <br>
+                      <input type="radio" id="custom_item-icon_facebook" name="custom_nav" value="facebook_icon"> <br>
                       <img src="img/icons/facebook_icon.png" alt="facebook icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_flag" name="custom_nav1" value="flag_icon"> <br>
+                      <input type="radio" id="custom_item-icon_flag" name="custom_nav" value="flag_icon"> <br>
                       <img src="img/icons/flag_icon.png" alt="flag icon" /> 
                     </label>
                     <label style="text-align:center">
-                       <input type="radio" id="custom_nav1-icon_keys" name="custom_nav1" value="key_icon"><br>
+                       <input type="radio" id="custom_item-icon_keys" name="custom_nav" value="key_icon"><br>
                        <img src="img/icons/key_icon.png" alt="key icon" />
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_kids" name="custom_nav1" value="kids_icon"> <br>
+                      <input type="radio" id="custom_item-icon_kids" name="custom_nav" value="kids_icon"> <br>
                       <img src="img/icons/kids_icon.png" alt="kids icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_map" name="custom_nav1" value="map_icon"> <br>
+                      <input type="radio" id="custom_item-icon_map" name="custom_nav" value="map_icon"> <br>
                       <img src="img/icons/map_icon.png" alt="map icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_podium" name="custom_nav1" value="podium_icon"> <br>
+                      <input type="radio" id="custom_item-icon_podium" name="custom_nav" value="podium_icon"> <br>
                       <img src="img/icons/podium_icon.png" alt="podium icon" /> 
                     </label>
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_shoe" name="custom_nav1" value="shoe_icon"> <br>
+                      <input type="radio" id="custom_item-icon_shoe" name="custom_nav" value="shoe_icon"> <br>
                       <img src="img/icons/shoe_icon.png" alt="shoe icon" /> 
                     </label>  
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_squirrel" name="custom_nav1" value="squirrel_icon"> <br>
+                      <input type="radio" id="custom_item-icon_squirrel" name="custom_nav" value="squirrel_icon"> <br>
                       <img src="img/icons/squirrel_icon.png" alt="squirrel icon" /> 
                     </label>  
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_swim" name="custom_nav1" value="swim_icon"> <br>
+                      <input type="radio" id="custom_item-icon_swim" name="custom_nav" value="swim_icon"> <br>
                       <img src="img/icons/swim_icon.png" alt="swim icon" /> 
                     </label>  
                     <label style="text-align:center"> 
-                      <input type="radio" id="custom_nav1-icon_twitter" name="custom_nav1" value="twitter_icon"> <br>
+                      <input type="radio" id="custom_item-icon_twitter" name="custom_nav" value="twitter_icon"> <br>
                       <img src="img/icons/twitter_icon.png" alt="twitter icon" /> 
                     </label>
                   </div>
 
                 <label class="text_input">
                   <div class="input-group">
-                    <span class="input-group-addon">URL</span><input type="text" class="form-control" id="custom_nav1-url" name="custome_nav1-url">
+                    <span class="input-group-addon">URL</span><input type="text" class="form-control" id="custom_item-url" name="custom_item-url">
                   </div>
                 </label>                
               </fieldset>
@@ -422,6 +394,42 @@
             </div>
           </div>
         </div>
+        <div class="col-xs-12" style="clear:both">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h4>Data Management Settings</h4></div>
+            <div class="panel-body">
+              <div class="col-xs-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">Condition Types</div>
+                  <div class="panel-body">
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">Notification Types</div>
+                  <div class="panel-body">
+                    <div class="col-xs-12"><input type="text"> <button class=""></div>
+                     <table class="col-xs-12 table">
+                      <tr>
+                        <th></th><th>Active</th>
+                      </tr>
+
+                      <tr><td>News</td><td><button class="btn btn-danger" style="float:right;">Delete</button></td></tr>
+                      <tr><td>Event</td><td><button class="btn btn-danger" style="float:right;">Delete</button></td></tr>
+                      <tr><td>Conditions</td><td><button class="btn btn-danger" style="float:right;">Delete</button></td></tr>
+                      <tr><td>General</td><td><button class="btn btn-danger" style="float:right;">Delete</button></td></tr>
+
+                     </table>
+
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
 <div class="clearfix"></div>
 
           <div id="controlButtons">
@@ -483,7 +491,13 @@ $('#menuBar-items').sortable({
 });
 
 
+$('#newItem').click(function(){
+  $('.selected').removeClass('selected');
+ // $('#custom_item-active').prop('checked', true);
+  $('#menuBar-items').append('<li class="active selected"><img /><span>New Menu Item</span></li>');
+  $('.selected').trigger('click');
 
+})
 
 /*
   $( "#menuBar-items" ).sortable({
@@ -508,19 +522,54 @@ $('#menuBar-items').sortable({
         $helper.remove();
 
 */
-  $("#menuBar-items li").css('user-select', 'none')
-    
-    .click(function(){
+
+
+
+
+
+  $("#menuBar-items li").css('user-select', 'none');
+  $("#menuBar-items").on('click', 'li' , function() {
+
+ 
+
+    if ($(this).hasClass('locked') ){
+  // $('custom_item-display-name').attr('disabled', 'disabled');
+  // $('custom_item-url').parent().slideUp(fast);
+  // $('div.icons').slideUp(fast);
+}
+  else if ( $(this).hasClass('protected')){
+    $('.selected').removeClass('selected');
+    $(this).addClass('selected');
+    $('#custom_item-display-name').val( $(this).find('span').text() ); 
+    $('#custom_item-display-name').prop('disabled', true);
+      if( $(this).hasClass('active') ){$('#custom_item-active').prop('checked', true);}
+      else{$('#custom_item-active').prop('checked', false)}
+    $('#custom_item-url').parent().slideUp('fast');
+    $('div.icons').slideUp('fast');
+  }
+  else{
+    event.preventDefault();
       $('.selected').removeClass('selected');
       $(this).addClass('selected');
+      $('#custom_item-display-name').prop('disabled', false);
+      if ( $('#custom_item-url').parent().is(":hidden") ) {$('#custom_item-url').parent().slideDown()};
+      if ( $('div.icons').is(":hidden") ) {$('div.icons').slideDown()};
+      //$(this).find('span').text()
+      $('#custom_item-display-name').val( $(this).find('span').text() ); 
+      
+      $('input[name="custom_nav"]').filter('[name="'+$('.selected img').data('icon')+'"]')
+        .attr('checked', true);
 
-      if( $(this).hasClass('active') ){
+      $('input[name="custom_item-url"]').val( $(this).data('url') );
+
+      if( $(this).hasClass('active') ){$('#custom_item-active').prop('checked', true);}
+      else{$('#custom_item-active').prop('checked', false)}
+
+  }
+      
+});
 
 
-      }
-
-
-    });
 
 /*
 if(   !$( "#menuBar-items li" ).hasClass('inMenuBar')){
@@ -552,6 +601,47 @@ if(   !$( "#menuBar-items li" ).hasClass('inMenuBar')){
 
 setFeatured();
 
+
+
+
+$('#custom_item-display-name').change(function() {
+  $('.selected span').text( $(this).val() )
+});
+
+$('#custom_item-active').click(function(){
+  if( $(this).is(':checked') ){
+    $('.selected').addClass('active');
+  }
+  else {
+    if ($('#menuBar-items li.active').size()==5){ 
+      alert("Deactivating this item will put your total number of active menu items below the minimum of 5. Please activate additional items before deactivating this one. ");
+      $(this).prop('checked', true);
+    }
+    else{
+      $('.selected').removeClass('active');
+      if($('.selected').hasClass('inMenuBar')){ $('.selected').insertAfter($("#menuBar-items li:eq(5)")); }
+    }
+  }
+$('#menu_more').insertAfter($("#menuBar-items li:eq(4)"))
+$('#menuBar-items').sortable( "refresh" );
+setFeatured();setButtonBarColor();
+
+})
+
+$('input[name="custom_nav"]').change(function() {
+  $('.selected img')
+    .attr('src', "img/icons/"+$(this).val()+".png")
+    .attr('data-icon', $(this).val() );
+});
+
+$('input[name="custom_item-url"]').change(function() {
+  $('.selected').attr('data-url', $(this).val() );
+})
+
+
+
+
+
 /* ====================
 Splash image construction 
 ==================== */
@@ -565,13 +655,16 @@ $('#colorThumbnail').click(function() {
   document.getElementById('app_style-background_color').color.showPicker()
 });
 
-$("#menuBar-items li input").click(function() {
-  if( $(this).prop('checked') ) {
-    $(this).parent().addClass('active');
-  }
-  else {$(this).parent().removeClass('active');}
-setFeatured();setButtonBarColor();  
-});
+// $("#menuBar-items li input").click(function() {
+//   if( $(this).prop('checked') ) {
+//     $(this).parent().addClass('active');
+//   }
+//   else {
+//     if( $('#menuBar-items li.active').size()==5){ alert("Deactivating this item will put your total number of active menu items below the minimum of 5. Please activate additional items before deactivating this one. ");event.preventDefault;}
+//     else{ $(this).parent().removeClass('active');}
+//   }
+// setFeatured();setButtonBarColor();  
+// });
 
 $("#app_style-menu_bar_color").change(function() {
 setButtonBarColor()
@@ -580,120 +673,6 @@ setButtonBarColor()
 })
 
 /* === Individual item management === */
-
-/* custom item one */
-$("#menu_custom1 input").click(function() {
-  if( $(this).prop('checked') ) { 
-    $("#menu_custom1").addClass('active');
-    $("#custom_menu_item1").fadeIn();
-  } 
-  else {
-    $("#menu_custom1").removeClass('active');
-    $("#custom_menu_item1").fadeOut();
-  } 
-});
-
-$("#custom_nav1-display-name").change(function() {
-  $("#menu_custom1 span").text( $(this).val() );
-});
-$('input[name="custom_nav1"]').change(function() {
-$('#menu_custom1 img').attr('src', "img/icons/"+$(this).val()+".png");   
-});
-
-/* custom item two */ 
-$("#menu_custom2 input").click(function() {
-  if( $(this).prop('checked') ) { 
-    $("#menu_custom2").addClass('active');
-    $("#custom_menu_item2").fadeIn();
-  } 
-  else {
-    $("#menu_custom2").removeClass('active');
-    $("#custom_menu_item2").fadeOut();
-  } 
-});
-
-$("#custom_nav2-display-name").change(function() {
-  $("#menu_custom2 span").text( $(this).val() );
-});
-$('input[name="custom_nav2"]').change(function() {
-$('#menu_custom2 img').attr('src', "img/icons/"+$(this).val()+".png");   
-});
-
-/* custom item three */
-$("#menu_custom3 input").click(function() {
-  if( $(this).prop('checked') ) { 
-    $("#menu_custom3").addClass('active');
-    $("#custom_menu_item3").fadeIn();
-  } 
-  else {
-    $("#menu_custom3").removeClass('active');
-    $("#custom_menu_item3").fadeOut();
-  } 
-});
-
-$("#custom_nav3-display-name").change(function() {
-  $("#menu_custom3 span").text( $(this).val() );
-});
-$('input[name="custom_nav3"]').change(function() {
-$('#menu_custom3 img').attr('src', "img/icons/"+$(this).val()+".png");   
-});
-
-/* custom item four */
-$("#menu_custom4 input").click(function() {
-  if( $(this).prop('checked') ) { 
-    $("#menu_custom4").addClass('active');
-    $("#custom_menu_item4").fadeIn();
-  } 
-  else {
-    $("#menu_custom4").removeClass('active');
-    $("#custom_menu_item4").fadeOut();
-  } 
-});
-
-$("#custom_nav4-display-name").change(function() {
-  $("#menu_custom4 span").text( $(this).val() );
-});
-$('input[name="custom_nav4"]').change(function() {
-$('#menu_custom4 img').attr('src', "img/icons/"+$(this).val()+".png");   
-});
-
-/*custom item five */
-$("#menu_custom5 input").click(function() {
-  if( $(this).prop('checked') ) { 
-    $("#menu_custom5").addClass('active');
-    $("#custom_menu_item5").fadeIn();
-  } 
-  else {
-    $("#menu_custom5").removeClass('active');
-    $("#custom_menu_item5").fadeOut();
-  }
-});
-
-$("#custom_nav5-display-name").change(function() {
-  $("#menu_custom5 span").text( $(this).val() );
-});
-$('input[name="custom_nav5"]').change(function() {
-$('#menu_custom5 img').attr('src', "img/icons/"+$(this).val()+".png");   
-});
-
-/*custom item six */
-$("#menu_custom6 input").click(function() {
-  if( $(this).prop('checked') ) { 
-    $("#menu_custom6").addClass('active');
-    $("#custom_menu_item6").fadeIn();
-  } 
-  else {
-    $("#menu_custom6").removeClass('active');
-    $("#custom_menu_item6").fadeOut();
-  }
-});
-
-$("#custom_nav6-display-name").change(function() {
-  $("#menu_custom6 span").text( $(this).val() );
-});
-$('input[name="custom_nav6"]').change(function() {
-$('#menu_custom6 img').attr('src', "img/icons/"+$(this).val()+".png");   
-});
 
 
 

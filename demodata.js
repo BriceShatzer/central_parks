@@ -1,7 +1,13 @@
 var page = $(location).attr('href').slice(  $(location).attr('href').lastIndexOf('/')+1  );
 
+if(page ==="client_admin.html?project=links_park_district"){
+	$('#define_functionality input[type="checkbox"]').prop('checked', true);
+	$('#projectName').val('Links Park District');
+	$('#projectContact').val('John Smith');
+	$('#active').prop('checked', true)
+}
 
-if (page ==="data_management-home.html?admin=true&project=links_park_district"){ 
+else if (page ==="data_management-home.html?admin=true&project=links_park_district"){ 
 $('.navbar-brand').css({
 	"background": "url('img/links_pd.png')",
 	"background-repeat": "no-repeat",

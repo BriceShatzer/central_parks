@@ -400,9 +400,14 @@
             <div class="panel-body">
               <div class="col-xs-6">
                 <div class="panel panel-default">
-                  <div class="panel-heading">Condition Types</div>
+                  <div class="panel-heading">Condition Groups</div>
                   <div class="panel-body">
-
+                     <div class="col-xs-12" style="margin-bottom:15px;"><input type="text" id="createCondition_text"> <button id="createCondition">New Condition Group</button></div>
+                     <table id="conditionGroups" class="col-xs-12 table">
+                      <tr><td>Ball Fields</td><td><button class="btn btn-danger" style="float:right;">Delete</button></td></tr>
+                      <tr><td>Ice Rinks</td><td><button class="btn btn-danger" style="float:right;">Delete</button></td></tr>
+                      <tr><td>Pools</td><td><button class="btn btn-danger" style="float:right;">Delete</button></td></tr>
+                     </table>
                   </div>
                 </div>
               </div>
@@ -410,19 +415,13 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">Notification Types</div>
                   <div class="panel-body">
-                    <div class="col-xs-12"><input type="text"> <button class=""></div>
-                     <table class="col-xs-12 table">
-                      <tr>
-                        <th></th><th>Active</th>
-                      </tr>
-
+                    <div class="col-xs-12" style="margin-bottom:15px;"><input type="text" id="createNotification_text"> <button id="createNotification">New Notification Type</button></div>
+                     <table id="notificationTypes" class="col-xs-12 table">
                       <tr><td>News</td><td><button class="btn btn-danger" style="float:right;">Delete</button></td></tr>
                       <tr><td>Event</td><td><button class="btn btn-danger" style="float:right;">Delete</button></td></tr>
                       <tr><td>Conditions</td><td><button class="btn btn-danger" style="float:right;">Delete</button></td></tr>
                       <tr><td>General</td><td><button class="btn btn-danger" style="float:right;">Delete</button></td></tr>
-
                      </table>
-
                   </div>
                 </div>
               </div>
@@ -467,6 +466,12 @@
         <script>
 $(document).ready(function() {
 
+/* ====================
+Menu Items 
+==================== */
+
+/* === make list of menu items sortable === */
+
 $('#menuBar-items').sortable({
     items: 'li:not(.locked)',
     placeholder: 'placeholder',
@@ -489,54 +494,20 @@ $('#menuBar-items').sortable({
         $helper.remove();
     }
 });
+$("#menuBar-items li").css('user-select', 'none');
 
+/* === create new menu item === */
 
 $('#newItem').click(function(){
   $('.selected').removeClass('selected');
- // $('#custom_item-active').prop('checked', true);
   $('#menuBar-items').append('<li class="active selected"><img /><span>New Menu Item</span></li>');
   $('.selected').trigger('click');
 
 })
 
-/*
-  $( "#menuBar-items" ).sortable({
-      items: "li:not(.locked)",
-      placeholder: "placeholder",
-      start: function(){
-            $('.locked', this).each(function(){
-            var $this = $(this);
-            $this.data('pos', $this.index());
-            });
-          },
-      change: function(){
-        $sortable = $(this);
-        $statics = $('.static', this).detach();
-        $helper = $('<li></li>').prependTo(this);
-        $statics.each(function(){
-            var $this = $(this);
-            var target = $this.data('pos');
-
-            $this.insertAfter($('li', $sortable).eq(target));
-        });
-        $helper.remove();
-
-*/
-
-
-
-
-
-  $("#menuBar-items li").css('user-select', 'none');
-  $("#menuBar-items").on('click', 'li' , function() {
-
- 
-
-    if ($(this).hasClass('locked') ){
-  // $('custom_item-display-name').attr('disabled', 'disabled');
-  // $('custom_item-url').parent().slideUp(fast);
-  // $('div.icons').slideUp(fast);
-}
+/* === make menu items selectable === */
+$("#menuBar-items").on('click', 'li' , function() {
+  if ($(this).hasClass('locked') ){ }
   else if ( $(this).hasClass('protected')){
     $('.selected').removeClass('selected');
     $(this).addClass('selected');
@@ -549,36 +520,23 @@ $('#newItem').click(function(){
   }
   else{
     event.preventDefault();
-      $('.selected').removeClass('selected');
-      $(this).addClass('selected');
-      $('#custom_item-display-name').prop('disabled', false);
-      if ( $('#custom_item-url').parent().is(":hidden") ) {$('#custom_item-url').parent().slideDown()};
-      if ( $('div.icons').is(":hidden") ) {$('div.icons').slideDown()};
-      //$(this).find('span').text()
-      $('#custom_item-display-name').val( $(this).find('span').text() ); 
-      
-      $('input[name="custom_nav"]').filter('[name="'+$('.selected img').data('icon')+'"]')
-        .attr('checked', true);
-
-      $('input[name="custom_item-url"]').val( $(this).data('url') );
-
-      if( $(this).hasClass('active') ){$('#custom_item-active').prop('checked', true);}
-      else{$('#custom_item-active').prop('checked', false)}
+    $('.selected').removeClass('selected');
+    $(this).addClass('selected');
+    $('#custom_item-display-name').prop('disabled', false);
+    if ( $('#custom_item-url').parent().is(":hidden") ) {$('#custom_item-url').parent().slideDown()};
+    if ( $('div.icons').is(":hidden") ) {$('div.icons').slideDown()};
+    $('#custom_item-display-name').val( $(this).find('span').text() ); 
+    $('input[name="custom_nav"]').filter('[name="'+$('.selected img').data('icon')+'"]')
+      .attr('checked', true);
+    $('input[name="custom_item-url"]').val( $(this).data('url') );
+    if( $(this).hasClass('active') ){$('#custom_item-active').prop('checked', true);}
+    else{$('#custom_item-active').prop('checked', false)}
 
   }
       
 });
 
 
-
-/*
-if(   !$( "#menuBar-items li" ).hasClass('inMenuBar')){
-    $( "#menuBar-items li" )
-      .mousedown(function() { $(this).addClass('inMenuBar') })
-      .mouseup(function() { $(this).removeClass('inMenuBar') })
-  };
-  */  
-  
   function setButtonBarColor(){
     var color = $("#app_style-menu_bar_color").val();
     $('#menuBar-items li').css('background-color', '#fff')
@@ -596,14 +554,10 @@ if(   !$( "#menuBar-items li" ).hasClass('inMenuBar')){
         .removeClass('inMenuBar');
       if(activeCount<5 && $(val).hasClass('active')){$(val).addClass('inMenuBar'); activeCount++};
     });
- // $li.not('.active.inMenuBar').css('clear','left');
   }
-
 setFeatured();
 
-
-
-
+/* === edit menu items === */
 $('#custom_item-display-name').change(function() {
   $('.selected span').text( $(this).val() )
 });
@@ -639,13 +593,6 @@ $('input[name="custom_item-url"]').change(function() {
 })
 
 
-
-
-
-/* ====================
-Splash image construction 
-==================== */
-
 /* === Menu bar management === */
 $( "#menuBar-items" ).on( "sortupdate", function(){ 
   setFeatured();
@@ -655,26 +602,45 @@ $('#colorThumbnail').click(function() {
   document.getElementById('app_style-background_color').color.showPicker()
 });
 
-// $("#menuBar-items li input").click(function() {
-//   if( $(this).prop('checked') ) {
-//     $(this).parent().addClass('active');
-//   }
-//   else {
-//     if( $('#menuBar-items li.active').size()==5){ alert("Deactivating this item will put your total number of active menu items below the minimum of 5. Please activate additional items before deactivating this one. ");event.preventDefault;}
-//     else{ $(this).parent().removeClass('active');}
-//   }
-// setFeatured();setButtonBarColor();  
-// });
-
 $("#app_style-menu_bar_color").change(function() {
 setButtonBarColor()
 });
 
 })
 
-/* === Individual item management === */
 
+/* ====================
+Data Management Settings 
+==================== */
 
+/* === Update Condition Types === */
+$('#createCondition').click(function() {
+  $('<tr></tr>')
+    .append( $('<td></td>').text( $('#createCondition_text').val() ) )
+    .append( $('<td><button class="btn btn-danger" style="float:right;">Delete</button></td>'))
+    .appendTo('#conditionGroups');
+
+  $('#createCondition_text').val('');  
+});
+
+$('#conditionGroups').on('click', 'button', function() {
+  $(this).closest('tr').remove();
+});
+
+/* === Update Notification Types  === */
+
+$('#createNotification').click(function() {
+  $('<tr></tr>')
+    .append( $('<td></td>').text( $('#createNotification_text').val() ) )
+    .append( $('<td><button class="btn btn-danger" style="float:right;">Delete</button></td>'))
+    .appendTo('#notificationTypes');
+
+  $('#createNotification_text').val('');  
+});
+
+$('#notificationTypes').on('click', 'button', function() {
+  $(this).closest('tr').remove();
+});
 
 
 /* ====================
@@ -716,31 +682,7 @@ bgRadio.click(function(){
     }   
 });
 
-
-/*
-$('#app_style-background_color').on ("change", function() {
- if ($('#splash_background input[name="app_style-background"]').val() === 'color'  ){
- var color= $('#app_style-background_color').val();
-    $('.fileupload-preview').css({
-      backgroundImage: '',
-      "background-color": color
-    })
-  }
-});
-*/
-/*})
-
-
-; type="checkbox"><img /> <span></span> </li>
-"menu_custom2"><input type="checkbox"><img /> <span></span> </li>
-"menu_custom3"><input type="checkbox"><img /> <span></span> </li>
-"menu_custom4"><input type="checkbox"><img /> <span></span> </li>
-"menu_custom5">
-
-*/
 $('form').submit(function(){return false}) ;
-
-//});
 
         </script>
     </body>

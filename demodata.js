@@ -6,7 +6,19 @@ if(page ==="client_admin.html?project=links_park_district"){
 	$('#projectContact').val('John Smith');
 	$('#active').prop('checked', true)
 }
+else if (page ==="build_request.html?admin=true&project=Ogdenville"){
+$('#app_info-name').val('Ogdenville Parks');
+$('#app_info-description').val('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut dapibus nisi. Duis auctor turpis vel pulvinar luctus. Aenean id ultrices metus, pretium blandit nisl. Nulla sit amet pharetra lacus, et gravida arcu. Donec blandit ut justo id pulvinar. Nulla sollicitudin viverra mattis. Nulla malesuada libero sed eros ullamcorper, at sollicitudin libero venenatis.');
+$('#app_info-keywords').val('Parks, Ogdenville, Illinois');
+$('#app_info-district_websites').val('http://www.opd.gov');
+$('#app_info-contact_email').val('jane_doe@opd.gov');
 
+$('#app_info-UA_code').val('123456789987654321');
+$('<button type="button" class="btn btn-info navbar-btn" id="ManageProjects_btn">Projects Admin</button>').prependTo('div.navbar-right');
+$('#ManageProjects_btn').click(function() { window.location.href="project_list.html"});
+
+
+}
 else if (page ==="data_management-home.html?admin=true&project=links_park_district"){ 
 $('.navbar-brand').css({
 	"background": "url('img/links_pd.png')",

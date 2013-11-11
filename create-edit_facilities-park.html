@@ -23,6 +23,7 @@
             td>button{margin:0 5px;
             }
             #locationAttributes ul{list-style: none;padding:0px;}
+            #locationAttributes li {margin-top:5px;margin-bottom:5px;}
             .category{text-align: center;}
 
             #controlButtons div {margin-bottom: 10px;
@@ -361,7 +362,22 @@ $(document).ready(function() {
         .find('.panel-body').slideDown();   
     }
   })
-
+$('input[name="attributes"]').click(function() {
+  var text = $(this).val();
+  text = text.replace(/\s+/g, '').replace(/\(|\)/g, '').replace(/\-/g, '');
+    if( $(this).is(":checked") ) { 
+  //alert(text)
+ 
+  $('<input type="text" maxlength="6" style="width:60px;margin-left:10px;">')
+    .attr('id', text+'_text')
+    .appendTo($(this).parent());
+  }
+  else if ( $(this).not(":checked") ){
+    $('#'+text+'_text').remove()
+  }
+  //$(this).parent.append(text);
+  
+});
 // set thumbnail preview size for Feature Image widget
 
 var thumbnail_X = $('.fileupload-new').width();

@@ -1,6 +1,6 @@
 var page = $(location).attr('href').slice(  $(location).attr('href').lastIndexOf('/')+1  );
 
-if(page ==="client_admin.html?project=links_park_district"){
+if(page ==="edit_project.html?project=links_park_district"){
 	$('#define_functionality input[type="checkbox"]').prop('checked', true);
 	$('#projectName').val('Links Park District');
 	$('#projectContact').val('John Smith');

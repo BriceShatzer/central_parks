@@ -55,7 +55,6 @@
             <li class="active"><a href="project_list.html">View All Projects</a></li>
             <li><a href="project_launcher.html">New Project</a></li>
             <!--<li><a href="#">Analytics</a></li>-->
-            <li><a href="build_request.html">Build Request</a></li>
           </ul>
             <div class="navbar-right">
               <button type="button" class="btn btn-default navbar-btn" id="logOut_btn"><span class="text">Log Out&nbsp;&nbsp;</span><span class="glyphicon glyphicon-log-out"></span></button>
@@ -91,7 +90,7 @@
                 <td></td>
                 <td class="center"></td>
                 <td class="center"><input type="checkbox" checked="checked" disabled="disabled"></td>
-                <td class="center"><button class="btn btn-default client_admin">Client Admin</button><button class="btn btn-info manage_project">Manage Project</button></td>           
+                <td class="center"><button class="btn btn-default client_admin">Edit Project</button><button class="btn btn-info manage_project">Manage Data</button></td>           
               </tr>
               <tr>
                 <td>Ogdenville</td>
@@ -99,7 +98,7 @@
                 <td>Interested in logo update</td>
                 <td class="center"><a href="build_request.html?admin=true&project=Ogdenville">view</a></td>
                 <td class="center"><input type="checkbox" checked="checked" disabled="disabled"></td>
-                <td class="center"><button class="btn btn-default client_admin">Client Admin</button><button class="btn btn-info manage_project">Manage Project</button></td>
+                <td class="center"><button class="btn btn-default client_admin">Edit Project</button><button class="btn btn-info manage_project">Manage Data</button></td>
               </tr>
               <tr>
                 <td>North Haverbrook </td>
@@ -107,7 +106,7 @@
                 <td>need new primary contact</td>
                 <td class="center"></td>
                 <td class="center"><input type="checkbox" checked="checked" disabled="disabled"></td>
-                <td class="center"><button class="btn btn-default client_admin">Client Admin</button><button class="btn btn-info manage_project">Manage Project</button></td>           
+                <td class="center"><button class="btn btn-default client_admin">Edit Project</button><button class="btn btn-info manage_project">Manage Data</button></td>           
               </tr>          
             </tbody>
             </table>
@@ -139,7 +138,7 @@
                 <td>app still in development</td>
                 <td class="center"></td>
                 <td class="center"><input type="checkbox" disabled="disabled"></td>
-                <td class="center"><button class="btn btn-default client_admin">Client Admin</button><button class="btn btn-info manage_project">Manage Project</button></td>           
+                <td class="center"><button class="btn btn-default client_admin">Edit Project</button><button class="btn btn-info manage_project">Manage Data</button></td>           
               </tr>          
             </tbody>
             </table>
@@ -165,8 +164,7 @@
         <script src="js/main.js"></script>
         <script>
 $('.manage_project').click(function(){ window.location.href = "data_management-home.html?admin=true&project=links_park_district"});
-$('.client_admin').click(function(){ window.location.href = "client_admin.html?project=links_park_district"});
-$('.view_pending_build_request').click(function(){window.location.href = "build_request.html?admin=true&project=Ogdenville"})
+$('.client_admin').click(function(){ window.location.href = "edit_project.html?project=links_park_district"});
 </script>
         <script>
 /*    Add analytics when available

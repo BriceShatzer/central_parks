@@ -1,0 +1,36 @@
+[33m3c6396c[m master@{Mon Nov 11 18:10:35 2013}: merge origin/gh-pages: Fast-forward
+[33m1464e1b[m master@{Mon Nov 11 17:08:09 2013}: merge origin/gh-pages: Fast-forward
+[33me762b40[m master@{Fri Nov 8 19:25:57 2013}: commit: ...
+[33mf640d0a[m master@{Thu Nov 7 12:42:00 2013}: merge origin/gh-pages: Fast-forward
+[33me177e2c[m master@{Tue Nov 5 13:56:42 2013}: commit: ..
+[33mba71e4d[m master@{Tue Nov 5 13:21:34 2013}: merge origin/gh-pages: Fast-forward
+[33ma3a130e[m master@{Tue Nov 5 12:56:46 2013}: commit: ...
+[33meb31bf2[m master@{Tue Nov 5 12:41:11 2013}: commit: deleted commit message
+[33m5c05981[m master@{Tue Nov 5 12:38:39 2013}: commit: ..
+[33m31d9e21[m master@{Tue Nov 5 12:27:18 2013}: rebase finished: refs/heads/master onto 31d9e21c6424a5e83ec4aedad9bbdc4017768d03
+[33m64f1228[m master@{Tue Nov 5 11:59:13 2013}: commit: pulled controllable text, push notifications updated
+[33mcc48d0e[m master@{Tue Nov 5 11:17:46 2013}: commit: added help, updated menus
+[33m220a1d4[m master@{Tue Nov 5 10:55:27 2013}: commit: ..
+[33m4c4e9cd[m master@{Tue Nov 5 02:56:21 2013}: rebase finished: refs/heads/master onto 7952a812ecf2c055d88ddea5466f16d42d562b4c
+[33mf267517[m master@{Tue Nov 5 02:56:03 2013}: merge origin/gh-pages: Fast-forward
+[33m7952a81[m master@{Tue Nov 5 02:52:57 2013}: commit: ..
+[33m567d8da[m master@{Mon Nov 4 19:30:30 2013}: rebase finished: refs/heads/master onto 567d8da2fdcc2ffbc2bd6599af02b47111d75ff4
+[33m271c355[m master@{Mon Nov 4 09:59:22 2013}: rebase finished: refs/heads/master onto 271c3559ce200c07bc49cc8cee722a315860225b
+[33mfb9ad13[m master@{Fri Nov 1 19:37:40 2013}: commit: ...
+[33m85b5ebe[m master@{Fri Nov 1 19:04:59 2013}: commit: add icons and updated index page
+[33m7075bc7[m master@{Fri Nov 1 18:23:21 2013}: commit: widened the data create/edit pages
+[33me8607c3[m master@{Fri Nov 1 17:40:56 2013}: commit: ...
+[33m9627256[m master@{Thu Oct 31 23:29:57 2013}: commit: ...
+[33m67549b5[m master@{Thu Oct 31 19:57:36 2013}: commit: ...
+[33m5fe98c3[m master@{Thu Oct 31 15:45:25 2013}: merge origin/gh-pages: Fast-forward
+[33m62a0669[m master@{Wed Oct 30 19:34:51 2013}: commit: ...
+[33m27c0a6b[m master@{Wed Oct 30 15:09:16 2013}: rebase finished: refs/heads/master onto 8e2c2bb8287e5942de2262135983bfd1fc16a072
+[33m492c7f6[m master@{Wed Oct 30 15:09:06 2013}: commit: ...
+[33m135eae7[m master@{Wed Oct 30 10:07:08 2013}: commit: ...
+[33m72e7f7c[m master@{Wed Oct 30 06:24:26 2013}: merge origin/gh-pages: Fast-forward
+[33me353756[m master@{Tue Oct 29 11:53:48 2013}: commit: updated create-edit_news
+[33m31ca596[m master@{Tue Oct 29 11:16:39 2013}: merge origin/gh-pages: Fast-forward
+[33md77af0b[m master@{Tue Oct 29 10:23:56 2013}: rebase finished: refs/heads/master onto d77af0b03ba4151461b0ed67fc4a04dde04e53c3
+[33m7261514[m master@{Fri Oct 25 17:53:05 2013}: commit: New Data Menu
+[33medab947[m master@{Fri Oct 25 13:01:12 2013}: commit: update
+[33mab6eda8[m master@{Fri Oct 25 12:45:34 2013}: commit (initial): Initial Commit

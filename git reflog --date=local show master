@@ -1,0 +1,36 @@
+[33m3c6396c[m master@{0}: merge origin/gh-pages: Fast-forward
+[33m1464e1b[m master@{1}: merge origin/gh-pages: Fast-forward
+[33me762b40[m master@{2}: commit: ...
+[33mf640d0a[m master@{3}: merge origin/gh-pages: Fast-forward
+[33me177e2c[m master@{4}: commit: ..
+[33mba71e4d[m master@{5}: merge origin/gh-pages: Fast-forward
+[33ma3a130e[m master@{6}: commit: ...
+[33meb31bf2[m master@{7}: commit: deleted commit message
+[33m5c05981[m master@{8}: commit: ..
+[33m31d9e21[m master@{9}: rebase finished: refs/heads/master onto 31d9e21c6424a5e83ec4aedad9bbdc4017768d03
+[33m64f1228[m master@{10}: commit: pulled controllable text, push notifications updated
+[33mcc48d0e[m master@{11}: commit: added help, updated menus
+[33m220a1d4[m master@{12}: commit: ..
+[33m4c4e9cd[m master@{13}: rebase finished: refs/heads/master onto 7952a812ecf2c055d88ddea5466f16d42d562b4c
+[33mf267517[m master@{14}: merge origin/gh-pages: Fast-forward
+[33m7952a81[m master@{15}: commit: ..
+[33m567d8da[m master@{16}: rebase finished: refs/heads/master onto 567d8da2fdcc2ffbc2bd6599af02b47111d75ff4
+[33m271c355[m master@{17}: rebase finished: refs/heads/master onto 271c3559ce200c07bc49cc8cee722a315860225b
+[33mfb9ad13[m master@{18}: commit: ...
+[33m85b5ebe[m master@{19}: commit: add icons and updated index page
+[33m7075bc7[m master@{20}: commit: widened the data create/edit pages
+[33me8607c3[m master@{21}: commit: ...
+[33m9627256[m master@{22}: commit: ...
+[33m67549b5[m master@{23}: commit: ...
+[33m5fe98c3[m master@{24}: merge origin/gh-pages: Fast-forward
+[33m62a0669[m master@{25}: commit: ...
+[33m27c0a6b[m master@{26}: rebase finished: refs/heads/master onto 8e2c2bb8287e5942de2262135983bfd1fc16a072
+[33m492c7f6[m master@{27}: commit: ...
+[33m135eae7[m master@{28}: commit: ...
+[33m72e7f7c[m master@{29}: merge origin/gh-pages: Fast-forward
+[33me353756[m master@{30}: commit: updated create-edit_news
+[33m31ca596[m master@{31}: merge origin/gh-pages: Fast-forward
+[33md77af0b[m master@{32}: rebase finished: refs/heads/master onto d77af0b03ba4151461b0ed67fc4a04dde04e53c3
+[33m7261514[m master@{33}: commit: New Data Menu
+[33medab947[m master@{34}: commit: update
+[33mab6eda8[m master@{35}: commit (initial): Initial Commit

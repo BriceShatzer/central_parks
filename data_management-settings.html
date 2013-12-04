@@ -36,7 +36,49 @@
               background-color: #b20000 !important;
               color:#000;
             }
-            .status{color:green;}            
+            .status{color:green;}  
+             #menuBar-items li {
+              background-color:#fff; 
+              font-family: "Helvetica Neue", 
+              Helvetica, Arial, sans-serif; 
+              clear:both;
+              width:460px;
+            }
+            #menuBar-items li img{display: none;}
+            #menuBar-items li.active{background-color: #ccc; color:#fff;}
+            #menuBar-items li.active.inMenuBar {
+              background-color: #999; 
+              width:90px; 
+              height:90px;
+              float: left;
+              text-align: center; 
+              clear:none;
+              line-height: .8em;
+              margin: 2px;}
+            #menuBar-items li.selected {border:3px dashed #777;}
+            #menuBar-items li.active.selected.locked {border:0px;}
+            #menuBar-items li.active.inMenuBar img {display:inline;}
+            #menuBar-items li.placeholder {
+              border: 2px dashed #888;
+              float: left;
+              clear:none;
+              background-color: #ccc; 
+              width:86px; height:86px;
+            }
+            label.text_input{width:100%;}
+
+
+            .icons {background-color:#999999;overflow:hidden;padding-top: 10px;}
+            .icons input[type="radio"]{margin-right: 0px;}
+
+            #conditionGroups, #notificationTypes {margin-bottom: 0px;}
+
+            #menu_item-edit_options fieldset{display:none;}
+
+            #save{display:none;}
+
+
+
         </style>        
 
         <!--[if lt IE 9]>
@@ -74,7 +116,7 @@
             </li>
             <li><a href="push_notifications.html">Push Notifications</a></li>
             <li><a href="user_management.html">Users</a></li>
-            <li><a href="build_request.html">Build Request</a></li>
+            
           <li><a href="help.html">Help</a></li>
           </ul>
             <div class="navbar-right">
@@ -109,7 +151,7 @@
 
   <div class="panel-body" >
   <form id="form-data_import">
-        <div class="col-md-6 col-sm-6">
+        <div class="col-md-6 col-sm-6 col-xs-12">
           <div class="panel panel-default">
             <div class="panel-heading"><h4>Import Data</h4></div>
             <div class="panel-body">
@@ -136,6 +178,183 @@
           </div>
         </div>
   </form>
+
+  <div class="col-md-6 col-sm-6 col-xs-12 ">
+  <div class="panel panel-default">
+    <div class="panel-heading"><h4>Application Colors</h4></div>
+    <div class="panel-body">
+      <fieldset id="app_style">
+        <div class="col-lg-7 col-sm-12 col-xs-7">
+          <p>Select the colors that you would like to be used in your application</p>
+          <label>
+            <div class="input-group" id="TopBarColor">
+              <span class="input-group-addon">Top Bar</span><input type="text" class="form-control color" id="app_style-top_bar_color">
+            </div>
+          </label>              
+          <label>
+            <div class="input-group" id="TopBarColor">
+              <span class="input-group-addon">Button Menu Bar</span><input type="text" class="form-control color" id="app_style-menu_bar_color" value="999999">
+            </div>
+          </label>
+        </div>
+        <div class="col-lg-5 col-sm-12 col-xs-5" style="padding:0px"><img src="img/build_request-style_info.png" /></div>                   
+      </fieldset>
+    </div>
+    </div>
+  </div>
+
+  <div class="col-xs-12" style="clear:both">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h4>Menu Items</h4></div>
+            <div class="panel-body">
+<div class="col-lg-6 col-md-8 col-sm-6 col-xs-12">              
+              <p class="col-xs-12">Use the check boxes to indicate which menu items you would like to appear in your app, then arrange them in the order in which you would like them to be displayed in the menu bar/more tab. <em>(Note that only the top 4 items will be displayed at all times in your apps bottom menu bar. All other checked items will be accessiable by selecting the "More" button)</em></p>
+              <!--<div class="clearfix"></div>-->
+
+              <ul id="menuBar-items">
+                <li id="menu_home" class="active inMenuBar locked"><img src="img/icons/home_icon.png" alt="Home" /><span>Home</span></li>
+                <li id="menu_facilities" class="active inMenuBar protected"><img src="img/icons/tree_icon.png" alt="Facilities" /><span>Facilities</span></li>
+                <li id="menu_conditions" class="active inMenuBar protected"><img src="img/icons/weather_icon.png" alt="Conditions" /><span>Conditions</span></li>
+                <li id="menu_contact" class="active inMenuBar protected"><img src="img/icons/phone_icon.png" alt="Contact" /> <span>Contact</span> </li>
+                <li id="menu_more" class="active inMenuBar locked"><img src="img/icons/more_icon.png" alt="More"><span>More</span></li>         
+              </ul>
+</div>         
+
+ <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 custom_menu_item-manage" id="custom_menu_manage">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <button id="newItem" type="button" class="btn btn-default" style="float:right;">New Item</button> 
+              <button id="save" type="button" class="btn btn-success" style="float:right;margin-right:5px">Save</button>
+              <h4>Edit Menu Item</h4></div>
+            <div class="panel-body" id="menu_item-edit_options">
+              <p id="hint">Click on a menu item to edit it or create a new item using the button above</p>
+              <fieldset>
+                <div style="width:100%;">
+                  <label style="margin-top:5px;margin-bottom:5px;"><input type="checkbox" id="custom_item-active" > Active</label>
+                </div>
+                <label class="text_input" style="margin-top:5px;">
+                  <div class="input-group">
+                    <span class="input-group-addon">Display Name</span><input type="text" class="form-control" id="custom_item-display-name" name="custom_item-display-name" value="">
+                  </div>
+                </label>              
+                
+                  <div class="panel panel-default col-xs-12 icons" style="margin-top:5px;">
+                     <label style="text-align:center"> 
+                      <input type="radio" id="custom_item-icon_award" name="custom_nav" value="award_icon"> <br>
+                      <img src="img/icons/award_icon.png" alt="award icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_item-icon_book" name="custom_nav" value="book_icon"> <br>
+                      <img src="img/icons/book_icon.png" alt="book icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_item-icon_buildings" name="custom_nav" value="buildings_icon"> <br>
+                      <img src="img/icons/buildings_icon.png" alt="buildings icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_item-icon_computer" name="custom_nav" value="computer_icon"> <br>
+                      <img src="img/icons/computer_icon.png" alt="computer icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_item-icon_donate" name="custom_nav" value="donate_icon"> <br>
+                      <img src="img/icons/donate_icon.png" alt="donate icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_item-icon_facebook" name="custom_nav" value="facebook_icon"> <br>
+                      <img src="img/icons/facebook_icon.png" alt="facebook icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_item-icon_flag" name="custom_nav" value="flag_icon"> <br>
+                      <img src="img/icons/flag_icon.png" alt="flag icon" /> 
+                    </label>
+                    <label style="text-align:center">
+                       <input type="radio" id="custom_item-icon_keys" name="custom_nav" value="key_icon"><br>
+                       <img src="img/icons/key_icon.png" alt="key icon" />
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_item-icon_kids" name="custom_nav" value="kids_icon"> <br>
+                      <img src="img/icons/kids_icon.png" alt="kids icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_item-icon_map" name="custom_nav" value="map_icon"> <br>
+                      <img src="img/icons/map_icon.png" alt="map icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_item-icon_podium" name="custom_nav" value="podium_icon"> <br>
+                      <img src="img/icons/podium_icon.png" alt="podium icon" /> 
+                    </label>
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_item-icon_shoe" name="custom_nav" value="shoe_icon"> <br>
+                      <img src="img/icons/shoe_icon.png" alt="shoe icon" /> 
+                    </label>  
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_item-icon_squirrel" name="custom_nav" value="squirrel_icon"> <br>
+                      <img src="img/icons/squirrel_icon.png" alt="squirrel icon" /> 
+                    </label>  
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_item-icon_swim" name="custom_nav" value="swim_icon"> <br>
+                      <img src="img/icons/swim_icon.png" alt="swim icon" /> 
+                    </label>  
+                    <label style="text-align:center"> 
+                      <input type="radio" id="custom_item-icon_twitter" name="custom_nav" value="twitter_icon"> <br>
+                      <img src="img/icons/twitter_icon.png" alt="twitter icon" /> 
+                    </label>
+                  </div>
+
+                <label class="text_input">
+                  <div class="input-group">
+                    <span class="input-group-addon">URL</span><input type="text" class="form-control" id="custom_item-url" name="custom_item-url">
+                  </div>
+                </label>                
+              </fieldset>
+            </div>
+          </div>
+        </div>
+     
+            </div>
+          </div>
+        </div>
+
+
+
+</div>
+
+
+  <div class="panel-heading mid-page"><h4>Data Management Settings</h4></div>
+<br>
+  <div class="col-xs-12" style="clear:both">
+
+            <div class="panel-body"> 
+              <div class="col-xs-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">Condition Groups</div>
+                  <div class="panel-body">
+                     <div class="col-xs-12" style="margin-bottom:15px;"><input type="text" id="createCondition_text"> <button id="createCondition">New Condition Group</button></div>
+                     <table id="conditionGroups" class="col-xs-12 table">
+                      <tr><td>Ball Fields</td><td><button class="btn btn-danger" style="float:right;">Delete</button></td></tr>
+                      <tr><td>Ice Rinks</td><td><button class="btn btn-danger" style="float:right;">Delete</button></td></tr>
+                      <tr><td>Pools</td><td><button class="btn btn-danger" style="float:right;">Delete</button></td></tr>
+                     </table>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">Notification Types</div>
+                  <div class="panel-body">
+                    <div class="col-xs-12" style="margin-bottom:15px;"><input type="text" id="createNotification_text"> <button id="createNotification">New Notification Type</button></div>
+                     <table id="notificationTypes" class="col-xs-12 table">
+                      <tr><td>News</td><td><button class="btn btn-danger" style="float:right;">Delete</button></td></tr>
+                      <tr><td>Event</td><td><button class="btn btn-danger" style="float:right;">Delete</button></td></tr>
+                      <tr><td>Conditions</td><td><button class="btn btn-danger" style="float:right;">Delete</button></td></tr>
+                      <tr><td>General</td><td><button class="btn btn-danger" style="float:right;">Delete</button></td></tr>
+                     </table>
+                  </div>
+                </div>
+              </div>
+            </div>  
+
+          </div>
 <!--
         <div class="col-md-6 col-sm-6">
           <div class="panel panel-default data-panels">
@@ -170,6 +389,7 @@
           </div>
         </div>
 -->
+
   </div>
 </div>
 
@@ -189,11 +409,204 @@
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/plugins/jscolor/jscolor.js"></script>
+        <script src="js/plugins/drag.js"></script>
         <script>
+$(document).ready(function() {
+/*
+
 $('#facility_closings select').change( function() {
 if($(this).val()==="closed"){$(this).addClass('closed')}
   else{$(this).removeClass('closed')}
 });
+
+*/
+
+/* ====================
+Menu Items 
+==================== */
+
+/* === make list of menu items sortable === */
+
+$('#menuBar-items').sortable({
+    items: 'li:not(.locked)',
+    placeholder: 'placeholder',
+    start: function(){
+        $('.locked', this).each(function(){
+            var $this = $(this);
+            $this.data('pos', $this.index());
+        });
+    },
+    change: function(){
+        $sortable = $(this);
+        $statics = $('.locked', this).detach();
+        $helper = $('<li></li>').prependTo(this);
+        $statics.each(function(){
+            var $this = $(this);
+            var target = $this.data('pos');
+
+            $this.insertAfter($('li', $sortable).eq(target));
+        });
+        $helper.remove();
+    }
+});
+$("#menuBar-items li").css('user-select', 'none');
+
+/* === create new menu item === */
+
+$('#newItem').click(function(){
+  if( $('#menu_item-edit_options fieldset').is(':hidden') ){ $('#menu_item-edit_options fieldset').slideDown();}
+  $('#hint').hide();
+  $('.selected').removeClass('selected');
+  $('#menuBar-items').append('<li class="active selected"><img /><span>New Menu Item</span></li>');
+  $('.selected').trigger('click');
+
+})
+
+/* === make menu items selectable === */
+$("#menuBar-items").on('click', 'li' , function() {
+  if( $('#menu_item-edit_options fieldset').is(':hidden') ){ $('#menu_item-edit_options fieldset').slideDown();}
+  $('#hint').hide();
+  if ($(this).hasClass('locked') ){ }
+  else if ( $(this).hasClass('protected')){
+    if( $('#save').is(':visible') ){ $('#save').hide();}
+    $('.selected').removeClass('selected');
+    $(this).addClass('selected');
+    $('#custom_item-display-name').val( $(this).find('span').text() ); 
+    $('#custom_item-display-name').prop('disabled', true);
+      if( $(this).hasClass('active') ){$('#custom_item-active').prop('checked', true);}
+      else{$('#custom_item-active').prop('checked', false)}
+    $('#custom_item-url').parent().slideUp('fast');
+    $('div.icons').slideUp('fast');
+  }
+  else{
+    event.preventDefault();
+    if( $('#save').is(':hidden') ){ $('#save').show();}
+    $('.selected').removeClass('selected');
+    $(this).addClass('selected');
+    $('#custom_item-display-name').prop('disabled', false);
+    if ( $('#custom_item-url').parent().is(":hidden") ) {$('#custom_item-url').parent().slideDown()};
+    if ( $('div.icons').is(":hidden") ) {$('div.icons').slideDown()};
+    $('#custom_item-display-name').val( $(this).find('span').text() ); 
+    $('input[name="custom_nav"]').filter('[name="'+$('.selected img').data('icon')+'"]')
+      .attr('checked', true);
+    $('input[name="custom_item-url"]').val( $(this).data('url') );
+    if( $(this).hasClass('active') ){$('#custom_item-active').prop('checked', true);}
+    else{$('#custom_item-active').prop('checked', false)}
+
+  }
+      
+});
+
+
+  function setButtonBarColor(){
+    var color = $("#app_style-menu_bar_color").val();
+    $('#menuBar-items li').css('background-color', '#fff')
+    $('#menuBar-items li.active').css('background-color', '#ccc')
+    $('#menuBar-items li.active.inMenuBar').css('background-color', color);
+    $('div.icons').css('background-color', color);    
+  } 
+
+  function setFeatured(){
+    var $li = $("#menuBar-items li");
+    var activeCount = 0;
+    $.each($li, function(i, val) {
+      $(val)
+        .attr('data-item_order', i)
+        .removeClass('inMenuBar');
+      if(activeCount<5 && $(val).hasClass('active')){$(val).addClass('inMenuBar'); activeCount++};
+    });
+  }
+setFeatured();
+
+/* === edit menu items === */
+$('#custom_item-display-name').change(function() {
+  $('.selected span').text( $(this).val() )
+});
+
+$('#custom_item-active').click(function(){
+  if( $(this).is(':checked') ){
+    $('.selected').addClass('active');
+  }
+  else {
+    if ($('#menuBar-items li.active').size()==5){ 
+      alert("Deactivating this item will put your total number of active menu items below the minimum of 5. Please activate additional items before deactivating this one. ");
+      $(this).prop('checked', true);
+    }
+    else{
+      $('.selected').removeClass('active');
+      if($('.selected').hasClass('inMenuBar')){ $('.selected').insertAfter($("#menuBar-items li:eq(5)")); }
+    }
+  }
+$('#menu_more').insertAfter($("#menuBar-items li:eq(4)"))
+$('#menuBar-items').sortable( "refresh" );
+setFeatured();setButtonBarColor();
+
+})
+
+$('input[name="custom_nav"]').change(function() {
+  $('.selected img')
+    .attr('src', "img/icons/"+$(this).val()+".png")
+    .attr('data-icon', $(this).val() );
+});
+
+$('input[name="custom_item-url"]').change(function() {
+  $('.selected').attr('data-url', $(this).val() );
+})
+
+
+/* === Menu bar management === */
+$( "#menuBar-items" ).on( "sortupdate", function(){ 
+  setFeatured();
+  setButtonBarColor(); 
+});
+$('#colorThumbnail').click(function() {
+  document.getElementById('app_style-background_color').color.showPicker()
+});
+
+$("#app_style-menu_bar_color").change(function() {
+setButtonBarColor()
+});
+
+})
+
+
+/* ====================
+Data Management Settings 
+==================== */
+
+/* === Update Condition Types === */
+$('#createCondition').click(function() {
+  $('<tr></tr>')
+    .append( $('<td></td>').text( $('#createCondition_text').val() ) )
+    .append( $('<td><button class="btn btn-danger" style="float:right;">Delete</button></td>'))
+    .appendTo('#conditionGroups');
+
+  $('#createCondition_text').val('');  
+});
+
+$('#conditionGroups').on('click', 'button', function() {
+  $(this).closest('tr').remove();
+});
+
+/* === Update Notification Types  === */
+
+$('#createNotification').click(function() {
+  $('<tr></tr>')
+    .append( $('<td></td>').text( $('#createNotification_text').val() ) )
+    .append( $('<td><button class="btn btn-danger" style="float:right;">Delete</button></td>'))
+    .appendTo('#notificationTypes');
+
+  $('#createNotification_text').val('');  
+});
+
+$('#notificationTypes').on('click', 'button', function() {
+  $(this).closest('tr').remove();
+});
+
+
+
+
 
 /*    Add analytics when available
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

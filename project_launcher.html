@@ -25,6 +25,34 @@
             }
             .define_feed_location input {margin-top:10px; 
             }
+            .fileupload-preview.thumbnail{
+            background-repeat: no-repeat;
+            background-position: center center;
+            -webkit-background-size: cover !important;
+            -moz-background-size: cover !important;  
+            -o-background-size: cover !important;
+            background-size: cover !important;
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.myBackground.jpg', sizingMethod='scale');
+            -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";
+            }
+            .fileupload .thumbnail>img.middle{
+              vertical-align: middle; 
+              margin-top: -15px;
+            }
+            #splash_background {padding:0px;}
+            .sampleBackgrounds{
+              position: relative;
+              margin-top: 10px;
+              text-align: center;
+            }
+
+            .sampleBackgrounds .thumbnail {width: 100%;}
+            #colorThumbnail{};
+            #app_style-background_color{
+              border:0px;
+              -webkit-box-shadow: 0px;
+              box-shadow: 0px;}
+
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
@@ -65,76 +93,176 @@
     <div class="container">
       <h1>Project Launcher</h1>
 
-<form>
-
-          <div class="col-md-6">
-            <div class="col-xs-12">
-            <h3>Project Name</h3>
-            <input type="text" class="form-control input-lg" placeholder="Project Name" style="margin-bottom:25px;">
-          </div>
-         
-            <div class="col-xs-12">
-               <h4>Primary Contact</h4> 
-               <input type="text" class="form-control">
-            </div>
-            <div class="col-xs-12">
-              <h4>Notes</h4>
-              <textarea class="form-control" rows="8"></textarea>
-
-
-            </div>
-          </div>
-  <div class="col-md-4">
-
+      <div class="col-md-6">
+        <div class="col-xs-12">
+          <h3>Project Name</h3>
+          <input type="text" class="form-control input-lg" placeholder="Project Name" style="margin-bottom:25px;">
+        </div>
+        <div class="col-xs-12">
+           <h4>Primary Contact</h4> 
+           <input type="text" class="form-control">
+        </div>
+        <div class="col-xs-12">
+            <h4>Notes</h4>
+            <textarea class="form-control" rows="8"></textarea>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="col-xs-12">
           <div class="panel panel-default">
-            <div class="panel-heading"><h4>Modules/Functionality</h4></div>
+            <div class="panel-heading"><h4>App Info</h4></div>
             <div class="panel-body">
-              <p>Select which components will be used in the project</p>
-            <fieldset id="define_functionality">  
-              <label>
-                <input type="checkbox" class="input-md" id="define_functionality-news">News 
-              </label>
-              <label>
-                <input type="checkbox" class="input-md" id="define_functionality-events" value="events">Events 
-              </label>              
-              <label>
-                <input type="checkbox" class="input-md" id="define_functionality-facilities" value="facilities">Facilities/Parks 
-              </label>     
-              <label>
-                <input type="checkbox" class="input-md" id="define_functionality-conditions" value="conditions">Conditions 
-              </label>     
-              <label>
-                <input type="checkbox" class="input-md" id="define_functionality-contacts" value="contacts">Contacts
-              </label>
-              <label>
-                <input type="checkbox" class="input-md" id="define_functionality-notifications" value="notifications">Push Notifications  
-              </label>                                                  
-              <label>
-                <input type="checkbox" class="input-md" id="define_functionality-manageUsers" value="manageUsers">Manage Users                 
-              </label>     
-              <!-- 
-              <label>
-                <input type="checkbox" class="input-md" id="define_functionality-syndication" value="syndication">Syndication of Content
-              </label>
-              -->
-              <!--                 
-              <label>
-                <input type="checkbox" class="input-md" id="define_functionality-stats" value="stats">View Stats 
-              </label>
-              -->     
-              <label>
-                <input type="checkbox" class="input-md" id="define_functionality-additionalURL" value="additionalURL">Custom Menu Items/Additional URLs
-              </label>
-             <!--
-              <label>
-                <input type="checkbox" class="input-md" id="define_functionality-customBG" value="customBG">
-                Allow a custom background to be loaded? 
-              </label>
-              -->                        
-            </fieldset>       
+              <fieldset id="org_info">
+                <label class="col-xs-12">
+                  <div class="input-group">
+                    <span class="input-group-addon">App Name</span>
+                    <input type="text" class="form-control" id="app_info-name" name="app_info-name">
+                  </div>
+                </label>
+                <label class="col-xs-12">
+                  <div class="input-group">
+                    <span class="input-group-addon">App Store<br> Description</span>
+                    <textarea class="form-control" maxlength="700" rows="6" id="app_info-description"></textarea>
+                  </div>
+                </label>
+                <label class="col-xs-12">
+                  <div class="input-group">
+                    <span class="input-group-addon">Keywords</span>
+                    <textarea class="form-control" max-length="100" rows="3" id="app_info-keywords"></textarea>
+                  </div>
+                </label>
+                <label class="col-xs-12">
+                  <div class="input-group">
+                    <span class="input-group-addon">District Website</span><input type="text" class="form-control" id="app_info-district_websites">
+                  </div>
+                </label>
+                <label class="col-xs-12">
+                  <div class="input-group">
+                    <span class="input-group-addon">App Contact Email</span><input type="text" class="form-control" id="app_info-contact_email">
+                  </div>
+                </label>
+                <label class="col-xs-12">
+                  <div class="input-group">
+                    <span class="input-group-addon">Google Analytics ID</span><input type="text" class="form-control" id="app_info-UA_code">
+                  </div>
+                </label>                                   
+              </fieldset>
             </div>
           </div>
         </div>
+      </div>
+<div class="col-md-6 col-sm-6">
+  <div class="panel panel-default">
+    <div class="panel-heading"><h4>Welcome/Splash Image</h4></div>
+    <div class="panel-body">
+      <p class="col-xs-12">Upload a logo and then select a background image to be used as your app's welcome screen. <em>(.png files with no background work best)</em> 
+    <div class="col-md-7 col-sm-12 col-xs-7" >
+      <div class="fileupload fileupload-new" data-provides="fileupload">
+        <div class="fileupload-preview thumbnail" style="width: 250px; height: 444px;"></div>
+        <div>
+          <span class="btn btn-default btn-file"><span class="fileupload-new">Upload</span><span class="fileupload-exists">Change</span><input type="file" /></span>
+          <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+        </div>
+      </div>
+    </div>    
+    <div class="col-md-5 col-sm-12 col-xs-5" id="splash_background">
+      <div class="sampleBackgrounds col-xs-6">
+        <label>
+        <input type="radio" id="app_style-background_1" name="app_style-background" value="GrassyField">                      
+        <img src="img/backgrounds/GrassyField.jpg" alt="img" class="thumbnail">
+        </label>
+      </div>
+      <div class="sampleBackgrounds col-xs-6">
+        <label>
+        <input type="radio" id="app_style-background_2" name="app_style-background" value="Family">                      
+        <img src="img/backgrounds/Family.jpg" alt="img" class="thumbnail">
+        </label>
+      </div>        
+      <div class="sampleBackgrounds col-xs-6">
+        <label>
+        <input type="radio" id="app_style-background_3" name="app_style-background" value="SnowBird">                      
+        <img src="img/backgrounds/SnowBird.jpg" alt="img" class="thumbnail">
+        </label>
+      </div>
+      <div class="sampleBackgrounds col-xs-6">
+        <label>
+        <input type="radio" id="app_style-background_4" name="app_style-background" value="Butterfly">                      
+        <img src="img/backgrounds/Butterfly.jpg" alt="img" class="thumbnail">
+        </label>
+      </div>
+      <div class="sampleBackgrounds col-xs-6">
+        <label>
+        <input type="radio" id="app_style-background_5" name="app_style-background" value="FlowerTree">                      
+        <img src="img/backgrounds/FlowerTree.jpg" alt="img" class="thumbnail">
+        </label>
+      </div>
+      
+      <div class="sampleBackgrounds col-xs-6">
+        <div>
+          <input type="radio" id="app_style-background_6" name="app_style-background" value="color">                      
+          <img src="img/backgrounds/clear.png" alt="color" class="thumbnail" id="colorThumbnail" />
+          <input class="thumbnail color" id="app_style-background_color">
+        </div>
+      </div>                                                         
+     </div> 
+    </div>
+  </div>
+</div>      
+
+
+
+  <div class="col-md-6">
+    <div class="col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading"><h4>Modules/Functionality</h4></div>
+        <div class="panel-body">
+          <p>Select which components will be used in the project</p>
+        <fieldset id="define_functionality">  
+          <label>
+            <input type="checkbox" class="input-md" id="define_functionality-news">News 
+          </label>
+          <label>
+            <input type="checkbox" class="input-md" id="define_functionality-events" value="events">Events 
+          </label>              
+          <label>
+            <input type="checkbox" class="input-md" id="define_functionality-facilities" value="facilities">Facilities/Parks 
+          </label>     
+          <label>
+            <input type="checkbox" class="input-md" id="define_functionality-conditions" value="conditions">Conditions 
+          </label>     
+          <label>
+            <input type="checkbox" class="input-md" id="define_functionality-contacts" value="contacts">Contacts
+          </label>
+          <label>
+            <input type="checkbox" class="input-md" id="define_functionality-notifications" value="notifications">Push Notifications  
+          </label>                                                  
+          <label>
+            <input type="checkbox" class="input-md" id="define_functionality-manageUsers" value="manageUsers">Manage Users                 
+          </label>     
+          <!-- 
+          <label>
+            <input type="checkbox" class="input-md" id="define_functionality-syndication" value="syndication">Syndication of Content
+          </label>
+          -->
+          <!--                 
+          <label>
+            <input type="checkbox" class="input-md" id="define_functionality-stats" value="stats">View Stats 
+          </label>
+          -->     
+          <label>
+            <input type="checkbox" class="input-md" id="define_functionality-additionalURL" value="additionalURL">Custom Menu Items/Additional URLs
+          </label>
+         <!--
+          <label>
+            <input type="checkbox" class="input-md" id="define_functionality-customBG" value="customBG">
+            Allow a custom background to be loaded? 
+          </label>
+          -->                        
+        </fieldset> 
+        </div>
+      </div>
+    </div>
+  </div>
           
 <!-- future feature
         <div class="col-md-4">
@@ -289,13 +417,61 @@
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         <script src="js/project_setup.js"></script>
+        <script src="js/plugins/jscolor/jscolor.js"></script>
+        <script src="js/plugins/fileupload.js"></script>        
         <script>
+$(function() {
+  
+
+/* ====================
+Splash image construction 
+==================== */
+
+
+var bgRadio = $('#splash_background input[name="app_style-background"]');
+
+
+function splashBG_color(){
+    $('.fileupload-preview').css({
+      backgroundImage: '',
+      "background-color": $('#app_style-background_color').val()
+    });
+};
+
+
+$('#app_style-background_color')
+.css({
+  'margin-top':  "-"+$('#app_style-background_color').outerHeight()+"px",
+  'border':'0px'
+})
+.on("change", function() {
+  $('#colorThumbnail').css('background-color',$('#app_style-background_color').val());
+    if(bgRadio.filter(":checked").val()==="color"){ splashBG_color() };
+ });
+
+
+bgRadio.click(function(){
+  if ($(this).val() === "color") { 
+    splashBG_color();
+    $('.fileupload .thumbnail>img').addClass('middle');  
+  }
+  else{
+    var backgroundImage = "url(img/backgrounds/"+$(this).val()+".jpg)";
+    $('.fileupload .thumbnail>img').removeClass('middle') 
+    $('.fileupload-preview').css('background', backgroundImage);
+    }   
+});
+
+$('form').submit(function(){return false}) ;        
+
+
 /*    Add analytics when available
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src='//www.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
 */
+});
         </script>
     </body>
 </html>

@@ -114,7 +114,9 @@ label input[type="radio"] {
     margin-right: 5px;
     vertical-align: top;
 }
-
+div.panel-heading.mid-page{
+  border-top: 1px solid #DDD;
+}
 footer {
     position: absolute;
     left: 0;

@@ -4,7 +4,19 @@ if(page ==="edit_project.html?project=links_park_district"){
 	$('#define_functionality input[type="checkbox"]').prop('checked', true);
 	$('#projectName').val('Links Park District');
 	$('#projectContact').val('John Smith');
-	$('#active').prop('checked', true)
+	$('#active').prop('checked', true);
+	$('#projectNotes').val('Needed help with uploading a new logo. Currently are just using a splash image.')
+	$('#app_info-name').val('The Links Park App');
+	$('#app_info-description').val('Keep up to date with the Links Park District with our new app. Get all the latest info, closings, and events straight to your phone!');
+	$('#app_info-keywords').val('Links, park, park district, outdoors, family ');
+	$('#app_info-district_websites').val('http://www.LinksTechnology.com');
+	$('#app_info-contact_email').val('jsmith@linkstechnology.com');
+	$('#app_info-UA_code').val('UA-12345-6');
+	$('#app_style-background_4').click();
+
+
+
+
 }
 else if (page ==="build_request.html?admin=true&project=Ogdenville"){
 $('#app_info-name').val('Ogdenville Parks');
